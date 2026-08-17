@@ -47,3 +47,26 @@ kifoya.
 - `components/` - kichik yordamchi komponentlar (til tanlash, tema
   tugmasi)
 - `app/globals.css` - ClinIQ'ning "shisha" (glassmorphic) dizayn tizimi
+
+## Klinika so'rov formasi - Telegram orqali xabar olish
+
+Bosh sahifadagi "Klinika sifatida bog'lanish" formasi ishlashi uchun,
+Railway'da (yangi xizmat -> Variables bo'limida) IKKITA muhit
+o'zgaruvchisini qo'shing:
+
+- `TELEGRAM_BOT_TOKEN` - @BotFather orqali yaratilgan bot tokeni
+  (agar asosiy ilovada allaqachon bot bo'lsa, o'sha tokenni qayta
+  ishlatsangiz ham bo'ladi)
+- `TELEGRAM_CHAT_ID` - xabarlar kelishi kerak bo'lgan chat/guruh ID'si
+  (o'zingizning shaxsiy Telegram ID'ingiz yoki alohida guruh bo'lishi
+  mumkin)
+
+Bular sozlanmaguncha, forma "hozircha sozlanmagan, to'g'ridan-to'g'ri
+bog'laning" deb ko'rsatadi - jimgina ishlamay qolmaydi.
+
+## Google Analytics qo'shish (ixtiyoriy)
+
+Saytga necha kishi kirganini kuzatish uchun, app/layout.tsx fayliga
+Google Analytics skriptini qo'shishingiz mumkin - avval
+analytics.google.com'da hisob oching, Measurement ID (masalan
+G-XXXXXXX) oling, keyin so'rasangiz shu skriptni qo'shib beraman.

@@ -3,6 +3,9 @@
 import { useLang, TranslationKey } from "@/lib/i18n";
 import ThemeToggle from "@/components/ThemeToggle";
 import LangMenu from "@/components/LangMenu";
+import { PatientIllustration, ClinicIllustration } from "@/components/Illustrations";
+import ContactForm from "@/components/ContactForm";
+import PricingSection from "@/components/PricingSection";
 
 // Asosiy mahsulot (bemor/xodim ilovasi) - BOSHQA, alohida joylashtirilgan
 // Railway xizmatida turadi. Shu sabab oddiy <a> havolalar ishlatiladi
@@ -24,6 +27,26 @@ const FEATURE_CARDS: { icon: string; titleKey: TranslationKey; descKey: Translat
   { icon: "\u23F1\uFE0F", titleKey: "feature_2_title", descKey: "feature_2_desc" },
   { icon: "\uD83D\uDCCA", titleKey: "feature_3_title", descKey: "feature_3_desc" },
   { icon: "\uD83D\uDD01", titleKey: "feature_4_title", descKey: "feature_4_desc" },
+];
+
+const PATIENT_FEATURES: { icon: string; titleKey: TranslationKey; descKey: TranslationKey }[] = [
+  { icon: "\uD83D\uDCDD", titleKey: "pf_1_title", descKey: "pf_1_desc" },
+  { icon: "\uD83D\uDCC5", titleKey: "pf_2_title", descKey: "pf_2_desc" },
+  { icon: "\u2B50", titleKey: "pf_3_title", descKey: "pf_3_desc" },
+  { icon: "\u2696\uFE0F", titleKey: "pf_4_title", descKey: "pf_4_desc" },
+  { icon: "\uD83E\uDD16", titleKey: "pf_5_title", descKey: "pf_5_desc" },
+  { icon: "\uD83E\uDDEA", titleKey: "pf_6_title", descKey: "pf_6_desc" },
+  { icon: "\uD83D\uDC8A", titleKey: "pf_7_title", descKey: "pf_7_desc" },
+  { icon: "\uD83C\uDF81", titleKey: "pf_8_title", descKey: "pf_8_desc" },
+];
+
+const CLINIC_FEATURES: { icon: string; titleKey: TranslationKey; descKey: TranslationKey }[] = [
+  { icon: "\uD83D\uDC65", titleKey: "cf_1_title", descKey: "cf_1_desc" },
+  { icon: "\u2728", titleKey: "cf_2_title", descKey: "cf_2_desc" },
+  { icon: "\uD83E\uDDE0", titleKey: "cf_3_title", descKey: "cf_3_desc" },
+  { icon: "\uD83D\uDCC8", titleKey: "cf_4_title", descKey: "cf_4_desc" },
+  { icon: "\uD83D\uDC64", titleKey: "cf_5_title", descKey: "cf_5_desc" },
+  { icon: "\uD83D\uDDC2\uFE0F", titleKey: "cf_6_title", descKey: "cf_6_desc" },
 ];
 
 export default function LandingPage() {
@@ -153,27 +176,121 @@ export default function LandingPage() {
         </div>
       </section>
 
-      <section id="klinikalar" className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
-        <div className="glass-card overflow-hidden p-8 text-center sm:p-12">
-          <h3 className="font-serif text-2xl italic text-glass-textLight dark:text-glass-textDark sm:text-3xl">
-            {t("clinics_title")}
-          </h3>
-          <p className="glass-muted mx-auto mt-3 max-w-xl text-sm leading-relaxed sm:text-base">
-            {t("clinics_desc")}
-          </p>
-          <div className="mt-7 flex flex-wrap justify-center gap-3">
-            <a href={`${APP_URL}/login`} className="glass-btn-secondary">{t("clinics_cta")}</a>
+      {/* --- Bemorlar uchun to'liq imkoniyatlar --- */}
+      <section className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
+        <div className="grid items-center gap-8 lg:grid-cols-[1.1fr_1fr]">
+          <div>
+            <h2 className="font-serif text-2xl italic text-glass-textLight dark:text-glass-textDark sm:text-3xl">
+              {t("patient_features_title")}
+            </h2>
+            <p className="glass-muted mt-2 max-w-xl text-sm sm:text-base">{t("patient_features_subtitle")}</p>
           </div>
+          <div className="glass-card h-40 p-4 sm:h-48">
+            <PatientIllustration />
+          </div>
+        </div>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {PATIENT_FEATURES.map((f) => (
+            <div key={f.titleKey} className="glass-card p-5">
+              <span className="text-2xl" aria-hidden="true">{f.icon}</span>
+              <p className="mt-3 text-sm font-bold text-glass-textLight dark:text-glass-textDark">{t(f.titleKey)}</p>
+              <p className="glass-muted mt-1.5 text-xs leading-relaxed">{t(f.descKey)}</p>
+            </div>
+          ))}
         </div>
       </section>
 
-      <footer className="border-t border-glass-borderLight px-5 py-8 dark:border-glass-borderDark">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 text-xs sm:flex-row">
-          <span className="font-bold">
-            <span className="text-glass-textLight dark:text-glass-textDark">Clin</span>
-            <span className="bg-gradient-to-r from-glass-teal via-glass-purple to-glass-magenta bg-clip-text text-transparent">IQ</span>
-          </span>
-          <p className="glass-muted">{t("footer_tagline")}</p>
+      {/* --- Klinikalar uchun to'liq imkoniyatlar --- */}
+      <section className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
+        <div className="grid items-center gap-8 lg:grid-cols-[1fr_1.1fr]">
+          <div className="glass-card order-2 h-40 p-4 sm:h-48 lg:order-1">
+            <ClinicIllustration />
+          </div>
+          <div className="order-1 lg:order-2">
+            <h2 className="font-serif text-2xl italic text-glass-textLight dark:text-glass-textDark sm:text-3xl">
+              {t("clinic_features_title")}
+            </h2>
+            <p className="glass-muted mt-2 max-w-xl text-sm sm:text-base">{t("clinic_features_subtitle")}</p>
+          </div>
+        </div>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {CLINIC_FEATURES.map((f) => (
+            <div key={f.titleKey} className="glass-card p-5">
+              <span className="text-2xl" aria-hidden="true">{f.icon}</span>
+              <p className="mt-3 text-sm font-bold text-glass-textLight dark:text-glass-textDark">{t(f.titleKey)}</p>
+              <p className="glass-muted mt-1.5 text-xs leading-relaxed">{t(f.descKey)}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* --- Narxlar (B2B) --- */}
+      <section className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
+        <h2 className="font-serif text-2xl italic text-glass-textLight dark:text-glass-textDark sm:text-3xl">
+          {t("pricing_title")}
+        </h2>
+        <p className="glass-muted mt-2 max-w-xl text-sm sm:text-base">{t("pricing_subtitle")}</p>
+        <div className="mt-8">
+          <PricingSection />
+        </div>
+      </section>
+
+      {/* --- Klinikalar uchun - so'rov formasi --- */}
+      <section id="klinikalar" className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
+        <div className="glass-card grid gap-8 overflow-hidden p-8 sm:p-12 lg:grid-cols-2">
+          <div className="flex flex-col justify-center text-center lg:text-left">
+            <h3 className="font-serif text-2xl italic text-glass-textLight dark:text-glass-textDark sm:text-3xl">
+              {t("clinics_title")}
+            </h3>
+            <p className="glass-muted mx-auto mt-3 max-w-xl text-sm leading-relaxed sm:text-base lg:mx-0">
+              {t("clinics_desc")}
+            </p>
+          </div>
+          <ContactForm />
+        </div>
+      </section>
+
+      {/* --- Biz haqimizda / asoschi --- */}
+      <section className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
+        <div className="glass-card flex flex-col items-center gap-5 p-8 text-center sm:p-10">
+          <span className="glass-pill-track"><span className="glass-pill-item-active">{t("about_title")}</span></span>
+          <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-r from-glass-purple to-glass-magenta text-xl font-bold text-white">
+            MN
+          </div>
+          <div>
+            <p className="text-sm font-bold text-glass-textLight dark:text-glass-textDark">Munisa Nematova</p>
+            <p className="glass-muted text-xs">{t("about_founder_role")}</p>
+          </div>
+          <p className="glass-muted max-w-2xl text-sm leading-relaxed">{t("about_founder_bio")}</p>
+        </div>
+      </section>
+
+      <footer className="border-t border-glass-borderLight px-5 py-10 dark:border-glass-borderDark">
+        <div className="mx-auto grid max-w-6xl gap-8 sm:grid-cols-3">
+          <div>
+            <span className="text-lg font-extrabold">
+              <span className="text-glass-textLight dark:text-glass-textDark">Clin</span>
+              <span className="bg-gradient-to-r from-glass-teal via-glass-purple to-glass-magenta bg-clip-text text-transparent">IQ</span>
+            </span>
+            <p className="glass-muted mt-2 text-xs leading-relaxed">{t("footer_tagline")}</p>
+          </div>
+          <div>
+            <p className="text-xs font-bold text-glass-textLight dark:text-glass-textDark">{t("footer_contact_title")}</p>
+            <div className="glass-muted mt-2 space-y-1.5 text-xs">
+              <a href="tel:+998974646665" className="block hover:underline">+998 97 464 66 65</a>
+              <a href="mailto:munisanematova2023@gmail.com" className="block hover:underline">munisanematova2023@gmail.com</a>
+            </div>
+          </div>
+          <div>
+            <p className="text-xs font-bold text-glass-textLight dark:text-glass-textDark">{t("footer_links_title")}</p>
+            <div className="glass-muted mt-2 space-y-1.5 text-xs">
+              <a href="/privacy" className="block hover:underline">{t("footer_privacy")}</a>
+              <a href="/terms" className="block hover:underline">{t("footer_terms")}</a>
+            </div>
+          </div>
+        </div>
+        <div className="mx-auto mt-8 max-w-6xl border-t border-glass-borderLight pt-5 dark:border-glass-borderDark">
+          <p className="glass-muted text-center text-[11px]">© {new Date().getFullYear()} ClinIQ. {t("footer_rights")}</p>
         </div>
       </footer>
     </div>
