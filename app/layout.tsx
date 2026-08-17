@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 const THEME_INIT_SCRIPT = `
 (function() {
   try {
-    var theme = localStorage.getItem('cliniq_website_theme') || 'dark';
+    var theme = localStorage.getItem('cliniq_website_theme') || 'light';
     if (theme === 'dark') document.documentElement.classList.add('dark');
   } catch (e) {}
 })();

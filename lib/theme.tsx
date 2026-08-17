@@ -9,10 +9,10 @@ const ThemeContext = createContext<ThemeContextValue | null>(null);
 const STORAGE_KEY = "cliniq_website_theme";
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useState<Theme>("dark");
+  const [theme, setTheme] = useState<Theme>("light");
 
   useEffect(() => {
-    const saved = (localStorage.getItem(STORAGE_KEY) as Theme | null) || "dark";
+    const saved = (localStorage.getItem(STORAGE_KEY) as Theme | null) || "light";
     setTheme(saved);
     document.documentElement.classList.toggle("dark", saved === "dark");
   }, []);

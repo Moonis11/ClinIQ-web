@@ -4,11 +4,11 @@ import { useLang, TranslationKey } from "@/lib/i18n";
 import ThemeToggle from "@/components/ThemeToggle";
 import LangMenu from "@/components/LangMenu";
 import { PatientIllustration, ClinicIllustration } from "@/components/Illustrations";
-import ScrollyFeatures from "@/components/ScrollyFeatures";
 import ContactForm from "@/components/ContactForm";
 import PricingSection from "@/components/PricingSection";
 import StepsSection from "@/components/StepsSection";
 import FaqSection from "@/components/FaqSection";
+import PulseAnimation from "@/components/PulseAnimation";
 
 // Asosiy mahsulot (bemor/xodim ilovasi) - BOSHQA, alohida joylashtirilgan
 // Railway xizmatida turadi. Shu sabab oddiy <a> havolalar ishlatiladi
@@ -64,9 +64,11 @@ export default function LandingPage() {
             <span className="text-glass-textLight dark:text-glass-textDark">Clin</span>
             <span className="bg-gradient-to-r from-glass-teal via-glass-purple to-glass-magenta bg-clip-text text-transparent">IQ</span>
           </span>
-          <nav className="hidden items-center gap-7 text-sm font-medium text-glass-mutedLight dark:text-glass-mutedDark sm:flex">
-            <a href="#xususiyatlar" className="transition hover:text-glass-textLight dark:hover:text-glass-textDark">{t("nav_features")}</a>
+          <nav className="hidden items-center gap-6 text-sm font-medium text-glass-mutedLight dark:text-glass-mutedDark sm:flex">
+            <a href="#haqida" className="transition hover:text-glass-textLight dark:hover:text-glass-textDark">{t("nav_about")}</a>
+            <a href="#bemorlar" className="transition hover:text-glass-textLight dark:hover:text-glass-textDark">{t("nav_patients")}</a>
             <a href="#klinikalar" className="transition hover:text-glass-textLight dark:hover:text-glass-textDark">{t("nav_clinics")}</a>
+            <a href="#narxlar" className="transition hover:text-glass-textLight dark:hover:text-glass-textDark">{t("nav_pricing")}</a>
           </nav>
           <div className="flex items-center gap-2">
             <div className="hidden sm:block"><LangMenu /></div>
@@ -85,7 +87,7 @@ export default function LandingPage() {
           </span>
           <h1 className="mt-5 font-serif text-4xl italic leading-[1.08] tracking-tight text-glass-textLight dark:text-glass-textDark sm:text-5xl lg:text-[3.4rem]">
             {t("hero_title_1")}<br />
-            <span className="bg-gradient-to-r from-glass-purple via-glass-magenta to-glass-teal bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-glass-teal via-glass-tealLight to-glass-purple bg-clip-text text-transparent">
               {t("hero_title_2")}
             </span>
           </h1>
@@ -135,6 +137,23 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* --- ClinIQ haqida (to'liq) --- */}
+      <section id="haqida" className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
+        <div className="glass-card p-7 sm:p-12">
+          <h2 className="font-serif text-2xl italic text-glass-textLight dark:text-glass-textDark sm:text-3xl">
+            {t("about_full_title")}
+          </h2>
+          <div className="mt-6 h-16 text-glass-purple dark:text-glass-accentDark sm:h-20">
+            <PulseAnimation />
+          </div>
+          <div className="mt-6 space-y-4 text-sm leading-relaxed sm:text-base">
+            <p className="glass-muted">{t("about_full_p1")}</p>
+            <p className="glass-muted">{t("about_full_p2")}</p>
+            <p className="glass-muted">{t("about_full_p3")}</p>
+          </div>
+        </div>
+      </section>
+
       <section id="xususiyatlar" className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
         <h2 className="font-serif text-2xl italic text-glass-textLight dark:text-glass-textDark sm:text-3xl">
           {t("features_title")}
@@ -148,11 +167,6 @@ export default function LandingPage() {
             </div>
           ))}
         </div>
-      </section>
-
-      {/* --- Scrollytelling: AI/tezkor yordam/solishtirish/aloqa, aylanadigan organ bilan --- */}
-      <section className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
-        <ScrollyFeatures />
       </section>
 
       <section className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
@@ -186,7 +200,7 @@ export default function LandingPage() {
       </section>
 
       {/* --- Bemorlar uchun to'liq imkoniyatlar --- */}
-      <section className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
+      <section id="bemorlar" className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
         <div className="grid items-center gap-8 lg:grid-cols-[1.1fr_1fr]">
           <div>
             <h2 className="font-serif text-2xl italic text-glass-textLight dark:text-glass-textDark sm:text-3xl">
@@ -210,7 +224,7 @@ export default function LandingPage() {
       </section>
 
       {/* --- Klinikalar uchun to'liq imkoniyatlar --- */}
-      <section className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
+      <section id="klinikalar" className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
         <div className="grid items-center gap-8 lg:grid-cols-[1fr_1.1fr]">
           <div className="glass-card order-2 h-40 p-4 sm:h-48 lg:order-1">
             <ClinicIllustration />
@@ -234,7 +248,7 @@ export default function LandingPage() {
       </section>
 
       {/* --- Narxlar (B2B) --- */}
-      <section className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
+      <section id="narxlar" className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
         <h2 className="font-serif text-2xl italic text-glass-textLight dark:text-glass-textDark sm:text-3xl">
           {t("pricing_title")}
         </h2>
@@ -245,7 +259,7 @@ export default function LandingPage() {
       </section>
 
       {/* --- Klinikalar uchun - so'rov formasi --- */}
-      <section id="klinikalar" className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
+      <section className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
         <div className="glass-card grid gap-8 overflow-hidden p-8 sm:p-12 lg:grid-cols-2">
           <div className="flex flex-col justify-center text-center lg:text-left">
             <h3 className="font-serif text-2xl italic text-glass-textLight dark:text-glass-textDark sm:text-3xl">
@@ -284,7 +298,7 @@ export default function LandingPage() {
       <section className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
         <div className="glass-card flex flex-col items-center gap-5 p-8 text-center sm:p-10">
           <span className="glass-pill-track"><span className="glass-pill-item-active">{t("about_title")}</span></span>
-          <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-r from-glass-purple to-glass-magenta text-xl font-bold text-white">
+          <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-r from-glass-teal to-glass-purple text-xl font-bold text-white">
             MN
           </div>
           <div>

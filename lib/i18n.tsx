@@ -6,6 +6,9 @@ export type Lang = "uz" | "ru" | "en";
 
 const translations = {
   nav_features: { uz: "Xususiyatlar", ru: "Возможности", en: "Features" },
+  nav_about: { uz: "ClinIQ haqida", ru: "О ClinIQ", en: "About ClinIQ" },
+  nav_patients: { uz: "Bemorlar uchun", ru: "Для пациентов", en: "For patients" },
+  nav_pricing: { uz: "Narxlar", ru: "Цены", en: "Pricing" },
   nav_clinics: { uz: "Klinikalar uchun", ru: "Для клиник", en: "For clinics" },
   nav_login: { uz: "Kirish", ru: "Войти", en: "Sign in" },
   hero_eyebrow: { uz: "AI asosidagi klinik intellekt platformasi", ru: "Платформа клинического интеллекта на основе ИИ", en: "AI-powered clinical intelligence platform" },
@@ -31,15 +34,25 @@ const translations = {
   flow_care: { uz: "Davolash", ru: "Лечение", en: "Care" },
   features_title: { uz: "Nima uchun bu muhim", ru: "Почему это важно", en: "Why this matters" },
 
+  // --- ClinIQ haqida (to'liq) ---
+  about_full_title: { uz: "ClinIQ haqida", ru: "О ClinIQ", en: "About ClinIQ" },
+  about_full_p1: {
+    uz: "ClinIQ - shunchaki ilova emas, O'zbekiston sog'liqni saqlash tizimini birlashtiruvchi ekotizim. Biz bitta aniq muammoni hal qilishni maqsad qilganmiz: bemorning tibbiy tarixi klinikadan klinikaga o'tganda yo'qolmasligi kerak.",
+    ru: "ClinIQ - это не просто приложение, а экосистема, объединяющая систему здравоохранения Узбекистана. Мы решаем одну конкретную проблему: медицинская история пациента не должна теряться при переходе из одной клиники в другую.",
+    en: "ClinIQ isn't just an app — it's an ecosystem connecting Uzbekistan's healthcare system. We're solving one specific problem: a patient's medical history shouldn't be lost when moving from one clinic to another.",
+  },
+  about_full_p2: {
+    uz: "Har bir bemor, qaysi klinikani tanlashidan qat'iy nazar, o'z sog'lig'i haqida to'liq va uzluksiz ma'lumotga ega bo'lishi kerak - biz shunga ishonamiz. Shu sababli ClinIQ orqali bemorlar mustaqil ravishda ro'yxatdan o'tadi, o'z shifokorini tanlaydi, sun'iy intellekt yordamida maslahat oladi va favqulodda holatlarda hayotini saqlab qoladigan ma'lumotga ega bo'ladi.",
+    ru: "Мы верим, что каждый пациент, независимо от выбранной клиники, должен иметь полный и непрерывный доступ к информации о своём здоровье. Поэтому через ClinIQ пациенты самостоятельно регистрируются, выбирают своего врача, получают консультацию с помощью ИИ и имеют информацию, которая может спасти жизнь в экстренной ситуации.",
+    en: "We believe every patient, no matter which clinic they choose, deserves complete and continuous access to their own health information. That's why through ClinIQ, patients register themselves, choose their doctor, get AI-assisted consultations, and hold onto information that could save their life in an emergency.",
+  },
+  about_full_p3: {
+    uz: "Klinikalar uchun esa ClinIQ - qog'ozbozlikni kamaytiradigan, yangi bemorlarni jalb qiladigan va ish jarayonini sun'iy intellekt bilan tezlashtiradigan hamkor. Biz - O'zbekistonda tug'ilgan, lekin butun mintaqa uchun qurilayotgan platformamiz.",
+    ru: "А для клиник ClinIQ - это партнёр, который сокращает бумажную работу, привлекает новых пациентов и ускоряет рабочие процессы с помощью искусственного интеллекта. Мы - платформа, рождённая в Узбекистане, но создаваемая для всего региона.",
+    en: "For clinics, ClinIQ is a partner that cuts down paperwork, attracts new patients, and speeds up workflows with artificial intelligence. We're a platform born in Uzbekistan, built for the whole region.",
+  },
+
   // --- Scrollytelling bo'limi (organ illyustratsiyalari bilan) ---
-  scrolly_nav_ai: { uz: "AI va tashxis", ru: "ИИ и диагностика", en: "AI & diagnostics" },
-  scrolly_title_ai: { uz: "Sun'iy intellekt yordamida", ru: "С помощью искусственного интеллекта", en: "Powered by artificial intelligence" },
-  scrolly_nav_care: { uz: "Tezkor yordam", ru: "Быстрая помощь", en: "Fast care" },
-  scrolly_title_care: { uz: "Har lahzada yoningizda", ru: "Рядом с вами в любой момент", en: "By your side at every moment" },
-  scrolly_nav_compare: { uz: "Solishtirish", ru: "Сравнение", en: "Comparison" },
-  scrolly_title_compare: { uz: "Ongli tanlov qiling", ru: "Делайте осознанный выбор", en: "Make an informed choice" },
-  scrolly_nav_connect: { uz: "Aloqa", ru: "Связь", en: "Connection" },
-  scrolly_title_connect: { uz: "Doim bog'lanishda", ru: "Всегда на связи", en: "Always connected" },
   feature_1_title: { uz: "Yagona tibbiy ma'lumotlar bazasi", ru: "Единая база медицинских данных", en: "One unified medical database" },
   feature_1_desc: { uz: "Bemorning butun tibbiy tarixi bitta joyda saqlanadi va istalgan klinikada darhol mavjud bo'ladi.", ru: "Вся медицинская история пациента хранится в одном месте и сразу доступна в любой клинике.", en: "The patient's entire medical history is stored in one place and instantly available at any clinic." },
   feature_2_title: { uz: "Ikkala tomon uchun vaqtni tejash", ru: "Экономия времени для обеих сторон", en: "Saves time for both sides" },
@@ -180,7 +193,7 @@ const translations = {
   faq_3_a: { uz: "Hozircha ha - ilova sinov rejimida, bemorlar uchun bepul taqdim etilmoqda.", ru: "Пока да - приложение находится в тестовом режиме и предоставляется пациентам бесплатно.", en: "Currently yes — the app is in test mode and offered to patients for free." },
   faq_4_q: { uz: "Klinika uchun narx qanday belgilanadi?", ru: "Как формируется цена для клиники?", en: "How is clinic pricing determined?" },
   faq_4_a: { uz: "Narx shifokorlar soniga va kunlik AI tahlil limitiga qarab belgilanadi - Sinov (bepul) dan Korporativgacha. Batafsil - yuqoridagi narxlar jadvalida.", ru: "Цена зависит от количества врачей и дневного лимита анализов ИИ - от Пробного (бесплатно) до Корпоративного. Подробнее - в таблице цен выше.", en: "Price depends on the number of doctors and the daily AI-analysis limit — from Trial (free) to Corporate. See the pricing table above for details." },
-  faq_5_q: { uz: "ClinIQ boshqa tizimlardan (masalan DMED) nimasi bilan farq qiladi?", ru: "Чем ClinIQ отличается от других систем (например DMED)?", en: "How is ClinIQ different from other systems (e.g. DMED)?" },
+  faq_5_q: { uz: "ClinIQ boshqa tizimlardan nimasi bilan farq qiladi?", ru: "Чем ClinIQ отличается от других систем?", en: "How is ClinIQ different from other systems?" },
   faq_5_a: { uz: "ClinIQ - shaxsiy AI maslahat, favqulodda tibbiy karta (QR orqali, login'siz), elektron retsept, shifokor reytingi va klinikalarni narx/navbat bo'yicha solishtirish kabi xususiyatlarga ega, va klinikaga bormasdan mustaqil ro'yxatdan o'tish imkonini beradi.", ru: "ClinIQ предлагает персональную консультацию ИИ, карту неотложной помощи (через QR, без входа), электронный рецепт, рейтинг врачей и сравнение клиник по цене/очереди, а также самостоятельную регистрацию без визита в клинику.", en: "ClinIQ offers personal AI consultation, an emergency medical card (via QR, no login), electronic prescriptions, doctor ratings, and clinic comparison by price/queue — plus self-registration without visiting a clinic." },
   faq_6_q: { uz: "Telefonim yo'qolsa, Favqulodda kartam nima bo'ladi?", ru: "Что будет с картой неотложной помощи, если я потеряю телефон?", en: "What happens to my emergency card if I lose my phone?" },
   faq_6_a: { uz: "Ilova ichida eski QR kodni bekor qilib, yangisini generatsiya qilishingiz mumkin - eski QR shu zahoti ishlamay qoladi.", ru: "В приложении можно аннулировать старый QR-код и создать новый - старый сразу перестанет работать.", en: "In the app, you can revoke the old QR code and generate a new one — the old one stops working immediately." },

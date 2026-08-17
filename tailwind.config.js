@@ -21,9 +21,9 @@ module.exports = {
           mutedLight: "#70809B",
           mutedDark: "#A5AEC5",
 
-          cardLight: "rgba(255,255,255,0.38)",
+          cardLight: "rgba(255,255,255,0.85)",
           cardDark: "rgba(255,255,255,0.06)",
-          borderLight: "rgba(255,255,255,0.55)",
+          borderLight: "rgba(20,199,176,0.22)",
           borderDark: "rgba(255,255,255,0.12)",
           inputLight: "rgba(255,255,255,0.55)",
           inputDark: "rgba(255,255,255,0.08)",

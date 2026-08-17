@@ -8,11 +8,11 @@
     @apply font-sans text-glass-textLight dark:text-glass-textDark;
     @apply min-h-screen transition-colors duration-300;
     background-attachment: fixed;
-    background-color: #F3F5FA;
+    background-color: #FCFEFE;
     background-image:
-      radial-gradient(circle at 15% 20%, rgba(139,92,246,0.08), transparent 40%),
-      radial-gradient(circle at 85% 15%, rgba(236,72,153,0.07), transparent 40%),
-      radial-gradient(circle at 50% 90%, rgba(20,199,176,0.07), transparent 45%);
+      radial-gradient(circle at 15% 20%, rgba(20,199,176,0.10), transparent 42%),
+      radial-gradient(circle at 85% 15%, rgba(20,199,176,0.06), transparent 40%),
+      radial-gradient(circle at 50% 95%, rgba(109,93,251,0.05), transparent 45%);
   }
   .dark body {
     background-color: #080B14;
@@ -61,8 +61,8 @@
 
   .glass-btn-primary {
     @apply rounded-full px-5 py-2.5 text-sm font-semibold text-white shadow-lg transition;
-    @apply bg-gradient-to-r from-glass-purple via-glass-purpleLight to-glass-magenta hover:brightness-110;
-    @apply dark:from-glass-accentDark dark:via-glass-purple dark:to-glass-magenta dark:text-glass-bgDark1;
+    @apply bg-gradient-to-r from-glass-teal via-glass-tealLight to-glass-purple hover:brightness-110;
+    @apply dark:from-glass-accentDark dark:via-glass-teal dark:to-glass-purple dark:text-glass-bgDark1;
     box-shadow: 0 4px 18px -4px rgba(109,93,251,0.55), 0 0 16px -6px rgba(236,72,153,0.4);
   }
   .dark .glass-btn-primary {
@@ -88,8 +88,8 @@
   }
   .glass-pill-item-active {
     @apply rounded-full px-3.5 py-1.5 text-xs font-medium text-white shadow;
-    @apply bg-gradient-to-r from-glass-purple to-glass-purpleLight;
-    @apply dark:from-glass-accentDark dark:to-glass-purple dark:text-glass-bgDark1;
+    @apply bg-gradient-to-r from-glass-teal to-glass-tealLight;
+    @apply dark:from-glass-accentDark dark:to-glass-teal dark:text-glass-bgDark1;
   }
 
   .glass-muted {
@@ -103,8 +103,8 @@
   }
   .glass-toggle-thumb {
     @apply absolute h-5 w-5 rounded-full shadow-md transition-all;
-    @apply bg-gradient-to-r from-glass-purple to-glass-purpleLight;
-    @apply dark:from-glass-accentDark dark:to-glass-purple;
+    @apply bg-gradient-to-r from-glass-teal to-glass-tealLight;
+    @apply dark:from-glass-accentDark dark:to-glass-teal;
   }
 }
 
@@ -130,35 +130,17 @@
   }
 }
 
-/* --- Organ illyustratsiyasi - uzluksiz sekin aylanish --- */
-@keyframes organ-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+/* --- Yurak zarbi (puls) chizig'i animatsiyasi - "ClinIQ haqida" bo'limi,
+   uzluksiz chapga siljiydigan "yurak monitori" uslubida --- */
+@keyframes pulse-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-33.3333%); }
 }
-.organ-spin {
-  animation: organ-spin 22s linear infinite;
+.pulse-track {
+  animation: pulse-scroll 6s linear infinite;
 }
 @media (prefers-reduced-motion: reduce) {
-  .organ-spin {
+  .pulse-track {
     animation: none;
-  }
-}
-
-/* --- Scrollytelling panel - bo'lim faollashganda ONGDAN chapga
-   sirg'alib, xiralikdan aniq holatga o'tadi --- */
-.scrolly-panel {
-  opacity: 0.35;
-  transform: translateX(24px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-.scrolly-panel-active {
-  opacity: 1;
-  transform: translateX(0);
-}
-@media (prefers-reduced-motion: reduce) {
-  .scrolly-panel {
-    opacity: 1;
-    transform: none;
-    transition: none;
   }
 }
