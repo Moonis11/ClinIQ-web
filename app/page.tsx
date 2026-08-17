@@ -4,6 +4,7 @@ import { useLang, TranslationKey } from "@/lib/i18n";
 import ThemeToggle from "@/components/ThemeToggle";
 import LangMenu from "@/components/LangMenu";
 import { PatientIllustration, ClinicIllustration } from "@/components/Illustrations";
+import ScrollyFeatures from "@/components/ScrollyFeatures";
 import ContactForm from "@/components/ContactForm";
 import PricingSection from "@/components/PricingSection";
 import StepsSection from "@/components/StepsSection";
@@ -147,6 +148,11 @@ export default function LandingPage() {
             </div>
           ))}
         </div>
+      </section>
+
+      {/* --- Scrollytelling: AI/tezkor yordam/solishtirish/aloqa, aylanadigan organ bilan --- */}
+      <section className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
+        <ScrollyFeatures />
       </section>
 
       <section className="mx-auto max-w-6xl px-5 py-16 sm:py-20">

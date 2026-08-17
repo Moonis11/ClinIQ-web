@@ -30,6 +30,16 @@ const translations = {
   flow_ai: { uz: "AI", ru: "ИИ", en: "AI" },
   flow_care: { uz: "Davolash", ru: "Лечение", en: "Care" },
   features_title: { uz: "Nima uchun bu muhim", ru: "Почему это важно", en: "Why this matters" },
+
+  // --- Scrollytelling bo'limi (organ illyustratsiyalari bilan) ---
+  scrolly_nav_ai: { uz: "AI va tashxis", ru: "ИИ и диагностика", en: "AI & diagnostics" },
+  scrolly_title_ai: { uz: "Sun'iy intellekt yordamida", ru: "С помощью искусственного интеллекта", en: "Powered by artificial intelligence" },
+  scrolly_nav_care: { uz: "Tezkor yordam", ru: "Быстрая помощь", en: "Fast care" },
+  scrolly_title_care: { uz: "Har lahzada yoningizda", ru: "Рядом с вами в любой момент", en: "By your side at every moment" },
+  scrolly_nav_compare: { uz: "Solishtirish", ru: "Сравнение", en: "Comparison" },
+  scrolly_title_compare: { uz: "Ongli tanlov qiling", ru: "Делайте осознанный выбор", en: "Make an informed choice" },
+  scrolly_nav_connect: { uz: "Aloqa", ru: "Связь", en: "Connection" },
+  scrolly_title_connect: { uz: "Doim bog'lanishda", ru: "Всегда на связи", en: "Always connected" },
   feature_1_title: { uz: "Yagona tibbiy ma'lumotlar bazasi", ru: "Единая база медицинских данных", en: "One unified medical database" },
   feature_1_desc: { uz: "Bemorning butun tibbiy tarixi bitta joyda saqlanadi va istalgan klinikada darhol mavjud bo'ladi.", ru: "Вся медицинская история пациента хранится в одном месте и сразу доступна в любой клинике.", en: "The patient's entire medical history is stored in one place and instantly available at any clinic." },
   feature_2_title: { uz: "Ikkala tomon uchun vaqtni tejash", ru: "Экономия времени для обеих сторон", en: "Saves time for both sides" },
