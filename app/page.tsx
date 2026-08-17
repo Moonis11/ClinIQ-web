@@ -91,15 +91,22 @@ export default function LandingPage() {
 
         <div className="relative mx-auto w-full max-w-md">
           <div className="glass-card overflow-hidden p-0">
-            <img
-              src="https://images.unsplash.com/photo-1758691462620-9018c602ed3e?fm=jpg&q=80&w=900&auto=format&fit=crop"
-              alt={t("hero_photo_alt")}
+            <video
               className="aspect-[4/5] w-full object-cover"
-            />
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              aria-label={t("hero_photo_alt")}
+              poster="https://images.pexels.com/videos/30141938/adventist-adventist-health-doctor-nurse-30141938.jpeg?auto=compress&w=900&h=1125&fit=crop"
+            >
+              <source src="https://videos.pexels.com/video-files/30141938/12925561_1920_1080_24fps.mp4" type="video/mp4" />
+            </video>
           </div>
           <div className="glass-card absolute -bottom-5 -left-5 flex items-center gap-3 p-3.5 pr-5 sm:-bottom-6 sm:-left-6">
-            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-glass-teal to-glass-purple text-lg">
-              🏥
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-glass-teal to-glass-purple">
+              <span className="h-3.5 w-3.5 rounded-full bg-white" aria-hidden="true" />
             </div>
             <div>
               <p className="text-sm font-extrabold leading-none text-glass-textLight dark:text-glass-textDark">8,700+</p>
@@ -145,7 +152,7 @@ export default function LandingPage() {
                   className="glass-card absolute flex w-[76px] -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-0.5 p-2 text-center"
                   style={{ left: `${x}%`, top: `${y}%` }}
                 >
-                  <span className="text-base" aria-hidden="true">{node.icon}</span>
+                  <span className="mb-0.5 block h-2 w-2 rounded-full bg-gradient-to-r from-glass-teal to-glass-purple" aria-hidden="true" />
                   <span className="text-[9px] font-semibold leading-tight text-glass-textLight dark:text-glass-textDark">
                     {t(node.labelKey)}
                   </span>
@@ -161,7 +168,7 @@ export default function LandingPage() {
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {FEATURE_CARDS.map((f) => (
             <div key={f.titleKey} className="glass-card p-5">
-              <span className="text-2xl" aria-hidden="true">{f.icon}</span>
+              <span className="mb-1 block h-1.5 w-8 rounded-full bg-gradient-to-r from-glass-teal to-glass-purple" aria-hidden="true" />
               <p className="mt-3 text-sm font-bold text-glass-textLight dark:text-glass-textDark">{t(f.titleKey)}</p>
               <p className="glass-muted mt-1.5 text-xs leading-relaxed">{t(f.descKey)}</p>
             </div>
@@ -215,7 +222,7 @@ export default function LandingPage() {
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {PATIENT_FEATURES.map((f) => (
             <div key={f.titleKey} className="glass-card p-5">
-              <span className="text-2xl" aria-hidden="true">{f.icon}</span>
+              <span className="mb-1 block h-1.5 w-8 rounded-full bg-gradient-to-r from-glass-teal to-glass-purple" aria-hidden="true" />
               <p className="mt-3 text-sm font-bold text-glass-textLight dark:text-glass-textDark">{t(f.titleKey)}</p>
               <p className="glass-muted mt-1.5 text-xs leading-relaxed">{t(f.descKey)}</p>
             </div>
@@ -239,7 +246,7 @@ export default function LandingPage() {
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {CLINIC_FEATURES.map((f) => (
             <div key={f.titleKey} className="glass-card p-5">
-              <span className="text-2xl" aria-hidden="true">{f.icon}</span>
+              <span className="mb-1 block h-1.5 w-8 rounded-full bg-gradient-to-r from-glass-teal to-glass-purple" aria-hidden="true" />
               <p className="mt-3 text-sm font-bold text-glass-textLight dark:text-glass-textDark">{t(f.titleKey)}</p>
               <p className="glass-muted mt-1.5 text-xs leading-relaxed">{t(f.descKey)}</p>
             </div>

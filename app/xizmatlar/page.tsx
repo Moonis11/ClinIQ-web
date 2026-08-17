@@ -52,7 +52,7 @@ export default function ServicesPage() {
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {PATIENT_FEATURES.map((f) => (
             <div key={f.titleKey} className="glass-card p-5">
-              <span className="text-2xl" aria-hidden="true">{f.icon}</span>
+              <span className="mb-1 block h-1.5 w-8 rounded-full bg-gradient-to-r from-glass-teal to-glass-purple" aria-hidden="true" />
               <p className="mt-3 text-sm font-bold text-glass-textLight dark:text-glass-textDark">{t(f.titleKey)}</p>
               <p className="glass-muted mt-1.5 text-xs leading-relaxed">{t(f.descKey)}</p>
             </div>
@@ -68,7 +68,7 @@ export default function ServicesPage() {
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {CLINIC_FEATURES.map((f) => (
             <div key={f.titleKey} className="glass-card p-5">
-              <span className="text-2xl" aria-hidden="true">{f.icon}</span>
+              <span className="mb-1 block h-1.5 w-8 rounded-full bg-gradient-to-r from-glass-teal to-glass-purple" aria-hidden="true" />
               <p className="mt-3 text-sm font-bold text-glass-textLight dark:text-glass-textDark">{t(f.titleKey)}</p>
               <p className="glass-muted mt-1.5 text-xs leading-relaxed">{t(f.descKey)}</p>
             </div>
