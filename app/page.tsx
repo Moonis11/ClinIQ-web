@@ -6,6 +6,8 @@ import LangMenu from "@/components/LangMenu";
 import { PatientIllustration, ClinicIllustration } from "@/components/Illustrations";
 import ContactForm from "@/components/ContactForm";
 import PricingSection from "@/components/PricingSection";
+import StepsSection from "@/components/StepsSection";
+import FaqSection from "@/components/FaqSection";
 
 // Asosiy mahsulot (bemor/xodim ilovasi) - BOSHQA, alohida joylashtirilgan
 // Railway xizmatida turadi. Shu sabab oddiy <a> havolalar ishlatiladi
@@ -38,6 +40,7 @@ const PATIENT_FEATURES: { icon: string; titleKey: TranslationKey; descKey: Trans
   { icon: "\uD83E\uDDEA", titleKey: "pf_6_title", descKey: "pf_6_desc" },
   { icon: "\uD83D\uDC8A", titleKey: "pf_7_title", descKey: "pf_7_desc" },
   { icon: "\uD83C\uDF81", titleKey: "pf_8_title", descKey: "pf_8_desc" },
+  { icon: "\uD83D\uDCC4", titleKey: "pf_9_title", descKey: "pf_9_desc" },
 ];
 
 const CLINIC_FEATURES: { icon: string; titleKey: TranslationKey; descKey: TranslationKey }[] = [
@@ -247,6 +250,27 @@ export default function LandingPage() {
             </p>
           </div>
           <ContactForm />
+        </div>
+      </section>
+
+      {/* --- 3 qadamda boshlash --- */}
+      <section className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
+        <h2 className="font-serif text-2xl italic text-glass-textLight dark:text-glass-textDark sm:text-3xl">
+          {t("steps_title")}
+        </h2>
+        <p className="glass-muted mt-2 max-w-xl text-sm sm:text-base">{t("steps_subtitle")}</p>
+        <div className="mt-8">
+          <StepsSection />
+        </div>
+      </section>
+
+      {/* --- FAQ --- */}
+      <section className="mx-auto max-w-3xl px-5 py-16 sm:py-20">
+        <h2 className="text-center font-serif text-2xl italic text-glass-textLight dark:text-glass-textDark sm:text-3xl">
+          {t("faq_title")}
+        </h2>
+        <div className="mt-8">
+          <FaqSection />
         </div>
       </section>
 

@@ -81,6 +81,8 @@ const translations = {
   pf_7_desc: { uz: "Shifokor belgilagan vaqtlarda Telegram orqali dori qabul qilish eslatmasi keladi.", ru: "Получайте напоминания о приёме лекарств в Telegram в назначенное врачом время.", en: "Get Telegram reminders to take your medication at the times your doctor set." },
   pf_8_title: { uz: "Do'stni taklif qilish", ru: "Пригласить друга", en: "Invite a friend" },
   pf_8_desc: { uz: "O'z kodingiz orqali do'stingizni taklif qiling — ikkalangiz ham bonusga ega bo'lasiz.", ru: "Приглашайте друзей по своему коду — вы оба получите бонус.", en: "Invite friends with your own code — you both get a bonus." },
+  pf_9_title: { uz: "Elektron retsept (eRX)", ru: "Электронный рецепт (eRX)", en: "Electronic prescription (eRX)" },
+  pf_9_desc: { uz: "Qog'oz retsept o'rniga - QR kodli, tekshiriladigan rasmiy elektron retsept, doim ilovangizda saqlanadi.", ru: "Вместо бумажного рецепта - официальный электронный рецепт с QR-кодом, который можно проверить, всегда доступен в приложении.", en: "Instead of a paper prescription — an official, verifiable electronic prescription with a QR code, always saved in your app." },
 
   // --- Klinikalar uchun to'liq imkoniyatlar ---
   clinic_features_title: { uz: "Klinikalar uchun", ru: "Для клиник", en: "For clinics" },
@@ -147,6 +149,31 @@ const translations = {
   footer_privacy: { uz: "Maxfiylik siyosati", ru: "Политика конфиденциальности", en: "Privacy policy" },
   footer_terms: { uz: "Foydalanish shartlari", ru: "Условия использования", en: "Terms of use" },
   footer_rights: { uz: "Barcha huquqlar himoyalangan.", ru: "Все права защищены.", en: "All rights reserved." },
+
+  // --- 3 qadamda boshlash (klinikalar uchun) ---
+  steps_title: { uz: "3 qadamda boshlang", ru: "Начните за 3 шага", en: "Get started in 3 steps" },
+  steps_subtitle: { uz: "Oddiy va qo'llab-quvvatlanadigan - sozlashdan foydalanishgacha", ru: "Просто и с поддержкой - от настройки до запуска", en: "Simple and supported — from setup to launch" },
+  step_1_title: { uz: "So'rov qoldiring", ru: "Оставьте заявку", en: "Send a request" },
+  step_1_desc: { uz: "Yuqoridagi forma orqali klinikangiz haqida qisqa ma'lumot qoldiring - biz tez orada bog'lanamiz.", ru: "Оставьте краткую информацию о клинике через форму выше - мы скоро свяжемся с вами.", en: "Leave brief info about your clinic via the form above — we'll reach out soon." },
+  step_2_title: { uz: "Sozlash va o'rgatish", ru: "Настройка и обучение", en: "Setup and training" },
+  step_2_desc: { uz: "Xodimlaringizni tizimga kiritamiz, mavjud ma'lumotlaringizni ko'chirishda yordam beramiz.", ru: "Добавим ваших сотрудников в систему, поможем перенести имеющиеся данные.", en: "We add your staff to the system and help migrate your existing data." },
+  step_3_title: { uz: "Ishga tushiring", ru: "Запускайтесь", en: "Launch" },
+  step_3_desc: { uz: "Bemorlar bilan ClinIQ orqali ishlashni boshlaysiz - qog'ozbozlik kamayadi, vaqt tejaladi.", ru: "Начинаете работать с пациентами через ClinIQ - меньше бумажной работы, больше времени.", en: "Start working with patients through ClinIQ — less paperwork, more time saved." },
+
+  // --- FAQ ---
+  faq_title: { uz: "Ko'p so'raladigan savollar", ru: "Часто задаваемые вопросы", en: "Frequently asked questions" },
+  faq_1_q: { uz: "Mening ma'lumotlarim xavfsizmi?", ru: "Безопасны ли мои данные?", en: "Is my data secure?" },
+  faq_1_a: { uz: "Ha. Barcha ma'lumotlar shifrlangan holda saqlanadi, parollar hash'lanadi, tizimga kirish JWT autentifikatsiya orqali himoyalangan. Batafsil - Maxfiylik siyosati sahifasida.", ru: "Да. Все данные хранятся в зашифрованном виде, пароли хешируются, вход в систему защищён JWT-аутентификацией. Подробнее - на странице политики конфиденциальности.", en: "Yes. All data is stored encrypted, passwords are hashed, and login is protected via JWT authentication. See the Privacy Policy page for details." },
+  faq_2_q: { uz: "AI tashxis qo'yadimi?", ru: "Ставит ли ИИ диагноз?", en: "Does the AI make a diagnosis?" },
+  faq_2_a: { uz: "Yo'q. AI hech qachon rasmiy tashxis yoki davolash tavsiyasi bermaydi - faqat umumiy ma'lumot beradi va kerak bo'lganda shifokorga murojaat qilishni tavsiya qiladi. Yakuniy qarorni doim shifokor qabul qiladi.", ru: "Нет. ИИ никогда не ставит официальный диагноз и не даёт рекомендаций по лечению - только общую информацию и совет обратиться к врачу при необходимости. Окончательное решение всегда принимает врач.", en: "No. The AI never provides an official diagnosis or treatment recommendation — only general information, and it advises seeing a doctor when needed. The doctor always makes the final decision." },
+  faq_3_q: { uz: "Bemorlar uchun bepulmi?", ru: "Бесплатно ли для пациентов?", en: "Is it free for patients?" },
+  faq_3_a: { uz: "Hozircha ha - ilova sinov rejimida, bemorlar uchun bepul taqdim etilmoqda.", ru: "Пока да - приложение находится в тестовом режиме и предоставляется пациентам бесплатно.", en: "Currently yes — the app is in test mode and offered to patients for free." },
+  faq_4_q: { uz: "Klinika uchun narx qanday belgilanadi?", ru: "Как формируется цена для клиники?", en: "How is clinic pricing determined?" },
+  faq_4_a: { uz: "Narx shifokorlar soniga va kunlik AI tahlil limitiga qarab belgilanadi - Sinov (bepul) dan Korporativgacha. Batafsil - yuqoridagi narxlar jadvalida.", ru: "Цена зависит от количества врачей и дневного лимита анализов ИИ - от Пробного (бесплатно) до Корпоративного. Подробнее - в таблице цен выше.", en: "Price depends on the number of doctors and the daily AI-analysis limit — from Trial (free) to Corporate. See the pricing table above for details." },
+  faq_5_q: { uz: "ClinIQ boshqa tizimlardan (masalan DMED) nimasi bilan farq qiladi?", ru: "Чем ClinIQ отличается от других систем (например DMED)?", en: "How is ClinIQ different from other systems (e.g. DMED)?" },
+  faq_5_a: { uz: "ClinIQ - shaxsiy AI maslahat, favqulodda tibbiy karta (QR orqali, login'siz), elektron retsept, shifokor reytingi va klinikalarni narx/navbat bo'yicha solishtirish kabi xususiyatlarga ega, va klinikaga bormasdan mustaqil ro'yxatdan o'tish imkonini beradi.", ru: "ClinIQ предлагает персональную консультацию ИИ, карту неотложной помощи (через QR, без входа), электронный рецепт, рейтинг врачей и сравнение клиник по цене/очереди, а также самостоятельную регистрацию без визита в клинику.", en: "ClinIQ offers personal AI consultation, an emergency medical card (via QR, no login), electronic prescriptions, doctor ratings, and clinic comparison by price/queue — plus self-registration without visiting a clinic." },
+  faq_6_q: { uz: "Telefonim yo'qolsa, Favqulodda kartam nima bo'ladi?", ru: "Что будет с картой неотложной помощи, если я потеряю телефон?", en: "What happens to my emergency card if I lose my phone?" },
+  faq_6_a: { uz: "Ilova ichida eski QR kodni bekor qilib, yangisini generatsiya qilishingiz mumkin - eski QR shu zahoti ishlamay qoladi.", ru: "В приложении можно аннулировать старый QR-код и создать новый - старый сразу перестанет работать.", en: "In the app, you can revoke the old QR code and generate a new one — the old one stops working immediately." },
 } as const;
 
 export type TranslationKey = keyof typeof translations;
