@@ -1,8 +1,8 @@
 "use client";
 
 import { useLang, TranslationKey } from "@/lib/i18n";
-import ThemeToggle from "@/components/ThemeToggle";
-import LangMenu from "@/components/LangMenu";
+import SiteHeader from "@/components/SiteHeader";
+import SiteFooter from "@/components/SiteFooter";
 import { PatientIllustration, ClinicIllustration } from "@/components/Illustrations";
 import ContactForm from "@/components/ContactForm";
 import PricingSection from "@/components/PricingSection";
@@ -58,29 +58,7 @@ export default function LandingPage() {
 
   return (
     <div className="min-h-screen">
-      <header className="sticky top-0 z-30 border-b border-glass-borderLight bg-glass-cardLight backdrop-blur-xl dark:border-glass-borderDark dark:bg-glass-cardDark">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3.5">
-          <span className="text-xl font-extrabold tracking-tight">
-            <span className="text-glass-textLight dark:text-glass-textDark">Clin</span>
-            <span className="bg-gradient-to-r from-glass-teal via-glass-purple to-glass-magenta bg-clip-text text-transparent">IQ</span>
-          </span>
-          <nav className="hidden items-center gap-5 text-sm font-medium text-glass-mutedLight dark:text-glass-mutedDark lg:flex">
-            <a href="#top" className="transition hover:text-glass-textLight dark:hover:text-glass-textDark">{t("nav_home")}</a>
-            <a href="#xususiyatlar" className="transition hover:text-glass-textLight dark:hover:text-glass-textDark">{t("nav_services")}</a>
-            <a href="#klinikalar" className="transition hover:text-glass-textLight dark:hover:text-glass-textDark">{t("nav_clinics")}</a>
-            <a href="#yangiliklar" className="transition hover:text-glass-textLight dark:hover:text-glass-textDark">{t("nav_news")}</a>
-            <a href="#haqida" className="transition hover:text-glass-textLight dark:hover:text-glass-textDark">{t("nav_about")}</a>
-            <a href="#aloqa" className="transition hover:text-glass-textLight dark:hover:text-glass-textDark">{t("nav_contact")}</a>
-          </nav>
-          <div className="flex items-center gap-2">
-            <div className="hidden sm:block"><LangMenu /></div>
-            <ThemeToggle />
-            <a href={`${APP_URL}/patient/login`} className="glass-btn-primary text-xs sm:text-sm">
-              {t("nav_login")}
-            </a>
-          </div>
-        </div>
-      </header>
+      <SiteHeader home />
 
       <section id="top" className="mx-auto grid max-w-6xl items-center gap-10 px-5 pb-16 pt-14 sm:pb-24 sm:pt-20 lg:grid-cols-2 lg:gap-16">
         <div>
@@ -290,6 +268,7 @@ export default function LandingPage() {
         <div className="mt-8">
           <PricingSection />
         </div>
+        <p className="glass-muted mt-4 text-xs italic">{t("pricing_per_doctor_note")}</p>
       </section>
 
       {/* --- Klinikalar uchun - so'rov formasi --- */}
@@ -343,34 +322,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      <footer className="border-t border-glass-borderLight px-5 py-10 dark:border-glass-borderDark">
-        <div className="mx-auto grid max-w-6xl gap-8 sm:grid-cols-3">
-          <div>
-            <span className="text-lg font-extrabold">
-              <span className="text-glass-textLight dark:text-glass-textDark">Clin</span>
-              <span className="bg-gradient-to-r from-glass-teal via-glass-purple to-glass-magenta bg-clip-text text-transparent">IQ</span>
-            </span>
-            <p className="glass-muted mt-2 text-xs leading-relaxed">{t("footer_tagline")}</p>
-          </div>
-          <div>
-            <p className="text-xs font-bold text-glass-textLight dark:text-glass-textDark">{t("footer_contact_title")}</p>
-            <div className="glass-muted mt-2 space-y-1.5 text-xs">
-              <a href="tel:+998974646665" className="block hover:underline">+998 97 464 66 65</a>
-              <a href="mailto:munisanematova2023@gmail.com" className="block hover:underline">munisanematova2023@gmail.com</a>
-            </div>
-          </div>
-          <div>
-            <p className="text-xs font-bold text-glass-textLight dark:text-glass-textDark">{t("footer_links_title")}</p>
-            <div className="glass-muted mt-2 space-y-1.5 text-xs">
-              <a href="/privacy" className="block hover:underline">{t("footer_privacy")}</a>
-              <a href="/terms" className="block hover:underline">{t("footer_terms")}</a>
-            </div>
-          </div>
-        </div>
-        <div className="mx-auto mt-8 max-w-6xl border-t border-glass-borderLight pt-5 dark:border-glass-borderDark">
-          <p className="glass-muted text-center text-[11px]">© {new Date().getFullYear()} ClinIQ. {t("footer_rights")}</p>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }

@@ -10,6 +10,15 @@ const translations = {
   nav_services: { uz: "Xizmatlar", ru: "Услуги", en: "Services" },
   nav_news: { uz: "Yangiliklar", ru: "Новости", en: "News" },
   nav_contact: { uz: "Aloqa", ru: "Контакты", en: "Contact" },
+
+  // --- Xizmatlar sahifasi ---
+  services_eyebrow: { uz: "ClinIQ platformasi", ru: "Платформа ClinIQ", en: "The ClinIQ platform" },
+  services_title: { uz: "Xizmatlarimiz", ru: "Наши услуги", en: "Our services" },
+  services_subtitle: {
+    uz: "ClinIQ — klinika emas, dasturiy platforma. Biz tibbiy xizmat ko'rsatmaymiz — bemorlar, shifokorlar va klinikalarni yagona raqamli tizimda bog'laymiz.",
+    ru: "ClinIQ — это не клиника, а программная платформа. Мы не оказываем медицинские услуги напрямую — мы связываем пациентов, врачей и клиники в единой цифровой системе.",
+    en: "ClinIQ isn't a clinic — it's a software platform. We don't provide medical care directly; we connect patients, doctors, and clinics in one digital system.",
+  },
   news_empty_title: { uz: "Tez orada", ru: "Скоро", en: "Coming soon" },
   news_empty_desc: {
     uz: "Hozircha yangiliklarimiz yo'q, lekin ClinIQ'dagi so'nggi yangilanishlar tez orada shu yerda paydo bo'ladi.",
@@ -143,6 +152,7 @@ const translations = {
   // --- B2B narxlar ---
   pricing_title: { uz: "Klinikalar uchun narxlar", ru: "Цены для клиник", en: "Pricing for clinics" },
   pricing_subtitle: { uz: "Bepul sinovdan boshlang, o'sishingiz bilan tarifni oshiring", ru: "Начните с бесплатного пробного периода и повышайте тариф по мере роста", en: "Start with a free trial and upgrade as you grow" },
+  pricing_per_doctor_note: { uz: "* Narx klinikadagi har bir shifokor uchun alohida hisoblanadi", ru: "* Цена рассчитывается отдельно за каждого врача в клинике", en: "* Price is calculated per doctor at your clinic" },
   price_popular_badge: { uz: "Eng ko'p tanlanadi", ru: "Популярный", en: "Most popular" },
   price_trial_name: { uz: "Sinov", ru: "Пробный", en: "Trial" },
   price_trial_price: { uz: "Bepul", ru: "Бесплатно", en: "Free" },
