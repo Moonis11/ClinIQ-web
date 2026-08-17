@@ -3,12 +3,10 @@
 import { useLang, TranslationKey } from "@/lib/i18n";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
-import { PatientIllustration, ClinicIllustration } from "@/components/Illustrations";
 import ContactForm from "@/components/ContactForm";
 import PricingSection from "@/components/PricingSection";
 import StepsSection from "@/components/StepsSection";
 import FaqSection from "@/components/FaqSection";
-import PulseAnimation from "@/components/PulseAnimation";
 
 // Asosiy mahsulot (bemor/xodim ilovasi) - BOSHQA, alohida joylashtirilgan
 // Railway xizmatida turadi. Shu sabab oddiy <a> havolalar ishlatiladi
@@ -99,9 +97,9 @@ export default function LandingPage() {
               playsInline
               preload="metadata"
               aria-label={t("hero_photo_alt")}
-              poster="https://images.pexels.com/videos/30141938/adventist-adventist-health-doctor-nurse-30141938.jpeg?auto=compress&w=900&h=1125&fit=crop"
+              poster="https://images.pexels.com/videos/5030436/pexels-photo-5030436.jpeg?auto=compress&w=900&h=1125&fit=crop"
             >
-              <source src="https://videos.pexels.com/video-files/30141938/12925561_1920_1080_24fps.mp4" type="video/mp4" />
+              <source src="https://videos.pexels.com/video-files/5030436/5030436-hd_1080_1920_30fps.mp4" type="video/mp4" />
             </video>
           </div>
           <div className="glass-card absolute -bottom-5 -left-5 flex items-center gap-3 p-3.5 pr-5 sm:-bottom-6 sm:-left-6">
@@ -118,17 +116,25 @@ export default function LandingPage() {
 
       {/* --- ClinIQ haqida (to'liq) --- */}
       <section id="haqida" className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
-        <div className="glass-card p-7 sm:p-12">
-          <h2 className="font-serif text-2xl italic text-glass-textLight dark:text-glass-textDark sm:text-3xl">
-            {t("about_full_title")}
-          </h2>
-          <div className="mt-6 h-16 text-glass-purple dark:text-glass-accentDark sm:h-20">
-            <PulseAnimation />
-          </div>
-          <div className="mt-6 space-y-4 text-sm leading-relaxed sm:text-base">
-            <p className="glass-muted">{t("about_full_p1")}</p>
-            <p className="glass-muted">{t("about_full_p2")}</p>
-            <p className="glass-muted">{t("about_full_p3")}</p>
+        <div className="glass-card overflow-hidden p-7 sm:p-12">
+          <div className="grid items-start gap-8 lg:grid-cols-[1fr_1.1fr]">
+            <div>
+              <h2 className="font-serif text-2xl italic text-glass-textLight dark:text-glass-textDark sm:text-3xl">
+                {t("about_full_title")}
+              </h2>
+              <div className="mt-4 space-y-4 text-sm leading-relaxed sm:text-base">
+                <p className="glass-muted">{t("about_full_p1")}</p>
+                <p className="glass-muted">{t("about_full_p2")}</p>
+                <p className="glass-muted">{t("about_full_p3")}</p>
+              </div>
+            </div>
+            <div className="overflow-hidden rounded-2xl">
+              <img
+                src="https://images.pexels.com/photos/5327654/pexels-photo-5327654.jpeg?auto=compress&cs=tinysrgb&w=900&h=700&fit=crop"
+                alt={t("about_full_title")}
+                className="h-full max-h-72 w-full object-cover lg:max-h-none"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -139,6 +145,30 @@ export default function LandingPage() {
             {t("features_title")}
           </h2>
           <div className="relative mx-auto flex aspect-[4/3] w-full max-w-sm items-center justify-center">
+            <svg className="pointer-events-none absolute inset-0 h-full w-full" viewBox="0 0 100 75" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="connector-grad" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stopColor="#14C7B0" />
+                  <stop offset="100%" stopColor="#6D5DFB" />
+                </linearGradient>
+              </defs>
+              {FLOW_NODES.map((node, i) => {
+                const angle = (i / FLOW_NODES.length) * 2 * Math.PI - Math.PI / 2;
+                const radius = 42;
+                const x = 50 + radius * Math.cos(angle);
+                const y = 50 + radius * Math.sin(angle) * 0.85;
+                return (
+                  <line
+                    key={node.key}
+                    x1="50" y1="37.5" x2={x} y2={y * 0.75}
+                    stroke="url(#connector-grad)"
+                    strokeWidth="0.4"
+                    className="connector-line"
+                    style={{ animationDelay: `${i * 0.35}s` }}
+                  />
+                );
+              })}
+            </svg>
             <div className="clinIQ-orbit-ring absolute inset-[8%] rounded-full border border-dashed border-glass-teal/30 dark:border-glass-purpleLight/25" />
             <div className="clinIQ-orbit-dot absolute h-3 w-3 rounded-full bg-gradient-to-r from-glass-teal to-glass-purple shadow-glowAccent" />
             {FLOW_NODES.map((node, i) => {
@@ -149,8 +179,8 @@ export default function LandingPage() {
               return (
                 <div
                   key={node.key}
-                  className="glass-card absolute flex w-[76px] -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-0.5 p-2 text-center"
-                  style={{ left: `${x}%`, top: `${y}%` }}
+                  className="node-pulse glass-card absolute flex w-[76px] -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-0.5 p-2 text-center"
+                  style={{ left: `${x}%`, top: `${y}%`, animationDelay: `${i * 0.35}s` }}
                 >
                   <span className="mb-0.5 block h-2 w-2 rounded-full bg-gradient-to-r from-glass-teal to-glass-purple" aria-hidden="true" />
                   <span className="text-[9px] font-semibold leading-tight text-glass-textLight dark:text-glass-textDark">
@@ -159,7 +189,7 @@ export default function LandingPage() {
                 </div>
               );
             })}
-            <div className="glass-card flex h-[68px] w-[68px] flex-col items-center justify-center gap-0.5 rounded-full text-center">
+            <div className="hub-pulse glass-card relative flex h-[68px] w-[68px] flex-col items-center justify-center gap-0.5 rounded-full text-center">
               <span className="text-[9px] font-bold uppercase tracking-wide text-glass-mutedLight dark:text-glass-mutedDark">ClinIQ</span>
               <span className="text-[8px] leading-tight text-glass-mutedLight dark:text-glass-mutedDark">{t("hero_hub_label")}</span>
             </div>
@@ -215,8 +245,10 @@ export default function LandingPage() {
             </h2>
             <p className="glass-muted mt-2 max-w-xl text-sm sm:text-base">{t("patient_features_subtitle")}</p>
           </div>
-          <div className="glass-card h-40 p-4 sm:h-48">
-            <PatientIllustration />
+          <div className="glass-card h-40 overflow-hidden p-0 sm:h-48">
+            <video className="h-full w-full object-cover" autoPlay muted loop playsInline preload="metadata" aria-label={t("patient_features_title")}>
+              <source src="https://videos.pexels.com/video-files/9780882/9780882-uhd_1440_2560_25fps.mp4" type="video/mp4" />
+            </video>
           </div>
         </div>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -233,8 +265,10 @@ export default function LandingPage() {
       {/* --- Klinikalar uchun to'liq imkoniyatlar --- */}
       <section id="klinikalar" className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
         <div className="grid items-center gap-8 lg:grid-cols-[1fr_1.1fr]">
-          <div className="glass-card order-2 h-40 p-4 sm:h-48 lg:order-1">
-            <ClinicIllustration />
+          <div className="glass-card order-2 h-40 overflow-hidden p-0 sm:h-48 lg:order-1">
+            <video className="h-full w-full object-cover" autoPlay muted loop playsInline preload="metadata" aria-label={t("clinic_features_title")}>
+              <source src="https://videos.pexels.com/video-files/6130622/6130622-hd_1920_1080_30fps.mp4" type="video/mp4" />
+            </video>
           </div>
           <div className="order-1 lg:order-2">
             <h2 className="font-serif text-2xl italic text-glass-textLight dark:text-glass-textDark sm:text-3xl">
