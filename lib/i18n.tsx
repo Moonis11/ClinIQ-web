@@ -6,6 +6,16 @@ export type Lang = "uz" | "ru" | "en";
 
 const translations = {
   nav_features: { uz: "Xususiyatlar", ru: "Возможности", en: "Features" },
+  nav_home: { uz: "Bosh sahifa", ru: "Главная", en: "Home" },
+  nav_services: { uz: "Xizmatlar", ru: "Услуги", en: "Services" },
+  nav_news: { uz: "Yangiliklar", ru: "Новости", en: "News" },
+  nav_contact: { uz: "Aloqa", ru: "Контакты", en: "Contact" },
+  news_empty_title: { uz: "Tez orada", ru: "Скоро", en: "Coming soon" },
+  news_empty_desc: {
+    uz: "Hozircha yangiliklarimiz yo'q, lekin ClinIQ'dagi so'nggi yangilanishlar tez orada shu yerda paydo bo'ladi.",
+    ru: "Пока новостей нет, но последние обновления ClinIQ скоро появятся здесь.",
+    en: "We don't have any news yet, but the latest ClinIQ updates will appear here soon.",
+  },
   nav_about: { uz: "ClinIQ haqida", ru: "О ClinIQ", en: "About ClinIQ" },
   nav_patients: { uz: "Bemorlar uchun", ru: "Для пациентов", en: "For patients" },
   nav_pricing: { uz: "Narxlar", ru: "Цены", en: "Pricing" },
@@ -22,6 +32,7 @@ const translations = {
   hero_cta_patient: { uz: "Bemor sifatida boshlash", ru: "Начать как пациент", en: "Get started as a patient" },
   hero_cta_clinic: { uz: "Klinika sifatida qo'shilish", ru: "Присоединиться как клиника", en: "Join as a clinic" },
   hero_hub_label: { uz: "yagona tarix", ru: "единая история", en: "unified history" },
+  hero_photo_alt: { uz: "ClinIQ orqali ishlayotgan shifokor", ru: "Врач, работающий через ClinIQ", en: "A doctor working with ClinIQ" },
   stat_clinics: { uz: "xususiy klinika O'zbekistonda", ru: "частных клиник в Узбекистане", en: "private clinics in Uzbekistan" },
   stat_languages: { uz: "tilda ishlaydi", ru: "языка интерфейса", en: "languages supported" },
   stat_roles: { uz: "integratsiyalashgan rol", ru: "интегрированных ролей", en: "integrated roles" },

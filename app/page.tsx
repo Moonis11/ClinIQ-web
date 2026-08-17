@@ -64,11 +64,13 @@ export default function LandingPage() {
             <span className="text-glass-textLight dark:text-glass-textDark">Clin</span>
             <span className="bg-gradient-to-r from-glass-teal via-glass-purple to-glass-magenta bg-clip-text text-transparent">IQ</span>
           </span>
-          <nav className="hidden items-center gap-6 text-sm font-medium text-glass-mutedLight dark:text-glass-mutedDark sm:flex">
-            <a href="#haqida" className="transition hover:text-glass-textLight dark:hover:text-glass-textDark">{t("nav_about")}</a>
-            <a href="#bemorlar" className="transition hover:text-glass-textLight dark:hover:text-glass-textDark">{t("nav_patients")}</a>
+          <nav className="hidden items-center gap-5 text-sm font-medium text-glass-mutedLight dark:text-glass-mutedDark lg:flex">
+            <a href="#top" className="transition hover:text-glass-textLight dark:hover:text-glass-textDark">{t("nav_home")}</a>
+            <a href="#xususiyatlar" className="transition hover:text-glass-textLight dark:hover:text-glass-textDark">{t("nav_services")}</a>
             <a href="#klinikalar" className="transition hover:text-glass-textLight dark:hover:text-glass-textDark">{t("nav_clinics")}</a>
-            <a href="#narxlar" className="transition hover:text-glass-textLight dark:hover:text-glass-textDark">{t("nav_pricing")}</a>
+            <a href="#yangiliklar" className="transition hover:text-glass-textLight dark:hover:text-glass-textDark">{t("nav_news")}</a>
+            <a href="#haqida" className="transition hover:text-glass-textLight dark:hover:text-glass-textDark">{t("nav_about")}</a>
+            <a href="#aloqa" className="transition hover:text-glass-textLight dark:hover:text-glass-textDark">{t("nav_contact")}</a>
           </nav>
           <div className="flex items-center gap-2">
             <div className="hidden sm:block"><LangMenu /></div>
@@ -80,7 +82,7 @@ export default function LandingPage() {
         </div>
       </header>
 
-      <section className="mx-auto grid max-w-6xl items-center gap-10 px-5 pb-16 pt-14 sm:pb-24 sm:pt-20 lg:grid-cols-2 lg:gap-16">
+      <section id="top" className="mx-auto grid max-w-6xl items-center gap-10 px-5 pb-16 pt-14 sm:pb-24 sm:pt-20 lg:grid-cols-2 lg:gap-16">
         <div>
           <span className="glass-pill-track">
             <span className="glass-pill-item-active">{t("hero_eyebrow")}</span>
@@ -109,30 +111,22 @@ export default function LandingPage() {
           </div>
         </div>
 
-        <div className="relative mx-auto flex aspect-square w-full max-w-md items-center justify-center">
-          <div className="clinIQ-orbit-ring absolute inset-[6%] rounded-full border border-dashed border-glass-purple/30 dark:border-glass-purpleLight/25" />
-          <div className="clinIQ-orbit-dot absolute h-3.5 w-3.5 rounded-full bg-gradient-to-r from-glass-teal to-glass-magenta shadow-glowPurple" />
-          {FLOW_NODES.map((node, i) => {
-            const angle = (i / FLOW_NODES.length) * 2 * Math.PI - Math.PI / 2;
-            const radius = 44;
-            const x = 50 + radius * Math.cos(angle);
-            const y = 50 + radius * Math.sin(angle);
-            return (
-              <div
-                key={node.key}
-                className="glass-card absolute flex w-[86px] -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-1 p-2.5 text-center sm:w-[96px]"
-                style={{ left: `${x}%`, top: `${y}%` }}
-              >
-                <span className="text-lg sm:text-xl" aria-hidden="true">{node.icon}</span>
-                <span className="text-[10px] font-semibold leading-tight text-glass-textLight dark:text-glass-textDark sm:text-[11px]">
-                  {t(node.labelKey)}
-                </span>
-              </div>
-            );
-          })}
-          <div className="glass-card flex h-24 w-24 flex-col items-center justify-center gap-0.5 rounded-full text-center sm:h-28 sm:w-28">
-            <span className="text-[10px] font-bold uppercase tracking-wide text-glass-mutedLight dark:text-glass-mutedDark">ClinIQ</span>
-            <span className="text-[9px] leading-tight text-glass-mutedLight dark:text-glass-mutedDark">{t("hero_hub_label")}</span>
+        <div className="relative mx-auto w-full max-w-md">
+          <div className="glass-card overflow-hidden p-0">
+            <img
+              src="https://images.unsplash.com/photo-1758691462620-9018c602ed3e?fm=jpg&q=80&w=900&auto=format&fit=crop"
+              alt={t("hero_photo_alt")}
+              className="aspect-[4/5] w-full object-cover"
+            />
+          </div>
+          <div className="glass-card absolute -bottom-5 -left-5 flex items-center gap-3 p-3.5 pr-5 sm:-bottom-6 sm:-left-6">
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-glass-teal to-glass-purple text-lg">
+              🏥
+            </div>
+            <div>
+              <p className="text-sm font-extrabold leading-none text-glass-textLight dark:text-glass-textDark">8,700+</p>
+              <p className="glass-muted mt-1 text-[11px] leading-none">{t("stat_clinics")}</p>
+            </div>
           </div>
         </div>
       </section>
@@ -155,9 +149,37 @@ export default function LandingPage() {
       </section>
 
       <section id="xususiyatlar" className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
-        <h2 className="font-serif text-2xl italic text-glass-textLight dark:text-glass-textDark sm:text-3xl">
-          {t("features_title")}
-        </h2>
+        <div className="grid items-center gap-10 lg:grid-cols-[1fr_1.05fr]">
+          <h2 className="font-serif text-2xl italic text-glass-textLight dark:text-glass-textDark sm:text-3xl">
+            {t("features_title")}
+          </h2>
+          <div className="relative mx-auto flex aspect-[4/3] w-full max-w-sm items-center justify-center">
+            <div className="clinIQ-orbit-ring absolute inset-[8%] rounded-full border border-dashed border-glass-teal/30 dark:border-glass-purpleLight/25" />
+            <div className="clinIQ-orbit-dot absolute h-3 w-3 rounded-full bg-gradient-to-r from-glass-teal to-glass-purple shadow-glowAccent" />
+            {FLOW_NODES.map((node, i) => {
+              const angle = (i / FLOW_NODES.length) * 2 * Math.PI - Math.PI / 2;
+              const radius = 42;
+              const x = 50 + radius * Math.cos(angle);
+              const y = 50 + radius * Math.sin(angle) * 0.85;
+              return (
+                <div
+                  key={node.key}
+                  className="glass-card absolute flex w-[76px] -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-0.5 p-2 text-center"
+                  style={{ left: `${x}%`, top: `${y}%` }}
+                >
+                  <span className="text-base" aria-hidden="true">{node.icon}</span>
+                  <span className="text-[9px] font-semibold leading-tight text-glass-textLight dark:text-glass-textDark">
+                    {t(node.labelKey)}
+                  </span>
+                </div>
+              );
+            })}
+            <div className="glass-card flex h-[68px] w-[68px] flex-col items-center justify-center gap-0.5 rounded-full text-center">
+              <span className="text-[9px] font-bold uppercase tracking-wide text-glass-mutedLight dark:text-glass-mutedDark">ClinIQ</span>
+              <span className="text-[8px] leading-tight text-glass-mutedLight dark:text-glass-mutedDark">{t("hero_hub_label")}</span>
+            </div>
+          </div>
+        </div>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {FEATURE_CARDS.map((f) => (
             <div key={f.titleKey} className="glass-card p-5">
@@ -247,6 +269,18 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* --- Yangiliklar --- */}
+      <section id="yangiliklar" className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
+        <h2 className="font-serif text-2xl italic text-glass-textLight dark:text-glass-textDark sm:text-3xl">
+          {t("nav_news")}
+        </h2>
+        <div className="glass-card mt-8 flex flex-col items-center gap-3 p-10 text-center">
+          <span className="text-3xl" aria-hidden="true">📰</span>
+          <p className="text-sm font-bold text-glass-textLight dark:text-glass-textDark">{t("news_empty_title")}</p>
+          <p className="glass-muted max-w-md text-sm">{t("news_empty_desc")}</p>
+        </div>
+      </section>
+
       {/* --- Narxlar (B2B) --- */}
       <section id="narxlar" className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
         <h2 className="font-serif text-2xl italic text-glass-textLight dark:text-glass-textDark sm:text-3xl">
@@ -259,7 +293,7 @@ export default function LandingPage() {
       </section>
 
       {/* --- Klinikalar uchun - so'rov formasi --- */}
-      <section className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
+      <section id="aloqa" className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
         <div className="glass-card grid gap-8 overflow-hidden p-8 sm:p-12 lg:grid-cols-2">
           <div className="flex flex-col justify-center text-center lg:text-left">
             <h3 className="font-serif text-2xl italic text-glass-textLight dark:text-glass-textDark sm:text-3xl">
