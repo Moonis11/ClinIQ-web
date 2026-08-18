@@ -218,43 +218,6 @@ const translations = {
   faq_5_a: { uz: "ClinIQ - shaxsiy AI maslahat, favqulodda tibbiy karta (QR orqali, login'siz), elektron retsept, shifokor reytingi va klinikalarni narx/navbat bo'yicha solishtirish kabi xususiyatlarga ega, va klinikaga bormasdan mustaqil ro'yxatdan o'tish imkonini beradi.", ru: "ClinIQ предлагает персональную консультацию ИИ, карту неотложной помощи (через QR, без входа), электронный рецепт, рейтинг врачей и сравнение клиник по цене/очереди, а также самостоятельную регистрацию без визита в клинику.", en: "ClinIQ offers personal AI consultation, an emergency medical card (via QR, no login), electronic prescriptions, doctor ratings, and clinic comparison by price/queue — plus self-registration without visiting a clinic." },
   faq_6_q: { uz: "Telefonim yo'qolsa, Favqulodda kartam nima bo'ladi?", ru: "Что будет с картой неотложной помощи, если я потеряю телефон?", en: "What happens to my emergency card if I lose my phone?" },
   faq_6_a: { uz: "Ilova ichida eski QR kodni bekor qilib, yangisini generatsiya qilishingiz mumkin - eski QR shu zahoti ishlamay qoladi.", ru: "В приложении можно аннулировать старый QR-код и создать новый - старый сразу перестанет работать.", en: "In the app, you can revoke the old QR code and generate a new one — the old one stops working immediately." },
-
-  roadmap_eyebrow: { uz: "Tez orada", ru: "Скоро", en: "Coming soon" },
-  roadmap_title: { uz: "Kelajakdagi rejalar", ru: "Планы на будущее", en: "Future roadmap" },
-  roadmap_subtitle: { uz: "Bular hozircha mavjud emas — bu ustida ishlayapmiz.", ru: "Этого пока нет — мы над этим работаем.", en: "These aren't live yet — we're building toward them." },
-  rm_1: { uz: "AI ovozli yordamchi", ru: "Голосовой ИИ-помощник", en: "AI voice assistant" },
-  rm_2: { uz: "Dorixona integratsiyasi", ru: "Интеграция с аптеками", en: "Pharmacy integration" },
-  rm_3: { uz: "Sug'urta integratsiyasi", ru: "Интеграция со страхованием", en: "Insurance integration" },
-  rm_4: { uz: "Mobil ilova", ru: "Мобильное приложение", en: "Mobile app" },
-  rm_5: { uz: "Wearable qurilmalar bilan ulanish", ru: "Интеграция с носимыми устройствами", en: "Wearable integration" },
-  rm_6: { uz: "Kengaytirilgan kasallik bashorati", ru: "Расширенный прогноз заболеваний", en: "Advanced disease prediction" },
-  rm_7: { uz: "Katta radiologiya AI bazasi", ru: "Большая база данных радиологии для ИИ", en: "Large-scale radiology AI dataset" },
-  rm_8: { uz: "Populyatsiya salomatligi analitikasi", ru: "Аналитика здоровья населения", en: "Population health analytics" },
-  rm_9: { uz: "Klinik tadqiqot va data analitika", ru: "Клинические исследования и аналитика данных", en: "Clinical research & data analytics" },
-  rm_10: { uz: "Klinikalararo interoperabellik", ru: "Взаимодействие между клиниками", en: "Cross-clinic interoperability" },
-  rm_11: { uz: "Markaziy Osiyo bo'ylab tarmoq", ru: "Сеть по всей Центральной Азии", en: "Central Asia–wide network" },
-
-  strip_1_label: { uz: "Patient ID", ru: "Patient ID", en: "Patient ID" },
-  strip_1_sub: { uz: "Yagona raqamli profil", ru: "Единый цифровой профиль", en: "One digital profile" },
-  strip_2_label: { uz: "AI tahlil", ru: "ИИ-анализ", en: "AI analysis" },
-  strip_2_sub: { uz: "Tibbiy tarix asosida", ru: "На основе истории болезни", en: "Based on medical history" },
-  strip_3_label: { uz: "Telemedicina", ru: "Телемедицина", en: "Telemedicine" },
-  strip_3_sub: { uz: "Onlayn konsultatsiya", ru: "Онлайн-консультация", en: "Online consultation" },
-  strip_4_label: { uz: "Laboratoriya", ru: "Лаборатория", en: "Laboratory" },
-  strip_4_sub: { uz: "Natijalar profilga bog'lanadi", ru: "Результаты привязаны к профилю", en: "Results linked to your profile" },
-  strip_5_label: { uz: "Radiologiya", ru: "Радиология", en: "Radiology" },
-  strip_5_sub: { uz: "AI yordamida tahlil", ru: "Анализ с помощью ИИ", en: "AI-assisted analysis" },
-
-  testimonials_eyebrow: { uz: "Foydalanuvchilar", ru: "Пользователи", en: "Users" },
-  testimonials_title: { uz: "Ular ClinIQ'dan foydalanmoqda", ru: "Они уже пользуются ClinIQ", en: "They're already using ClinIQ" },
-  testi_1_text: { uz: "Klinikani almashtirsam ham tibbiy tarixim yo'qolmadi — buni birinchi marta ko'rdim.", ru: "Даже сменив клинику, моя медицинская история не потерялась - вижу такое впервые.", en: "Even after switching clinics, my medical history wasn't lost — first time I've seen that." },
-  testi_1_name: { uz: "Aziza, bemor", ru: "Азиза, пациент", en: "Aziza, patient" },
-  testi_2_text: { uz: "Navbat kutish yo'q, natijalar ilovada — vaqtim ancha tejaldi.", ru: "Без очередей, результаты в приложении - сильно экономит время.", en: "No waiting in line, results right in the app — saves me real time." },
-  testi_2_name: { uz: "Botir, bemor", ru: "Ботир, пациент", en: "Botir, patient" },
-  testi_3_text: { uz: "Bemorlar oqimi va shifokorlar statistikasini bir joyda ko'rish klinikamiz uchun katta yordam.", ru: "Видеть поток пациентов и статистику врачей в одном месте — большая помощь для нашей клиники.", en: "Seeing patient flow and doctor stats in one place has been a huge help for our clinic." },
-  testi_3_name: { uz: "Dr. Yusupova, klinika", ru: "Др. Юсупова, клиника", en: "Dr. Yusupova, clinic" },
-
-  sticky_bar_label: { uz: "ClinIQ — bemor sifatida bepul boshlang", ru: "ClinIQ — начните бесплатно как пациент", en: "ClinIQ — start free as a patient" },
 } as const;
 
 export type TranslationKey = keyof typeof translations;

@@ -15,7 +15,7 @@ export default function StepsSection() {
     <div className="grid gap-6 sm:grid-cols-3">
       {STEPS.map((step) => (
         <div key={step.num} className="glass-card p-6">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-glass-teal text-sm font-bold text-white">
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-glass-teal to-glass-purple text-sm font-bold text-white">
             {step.num}
           </div>
           <p className="mt-4 text-sm font-bold text-glass-textLight dark:text-glass-textDark">{t(step.titleKey)}</p>

@@ -7,7 +7,6 @@ import ContactForm from "@/components/ContactForm";
 import PricingSection from "@/components/PricingSection";
 import StepsSection from "@/components/StepsSection";
 import FaqSection from "@/components/FaqSection";
-import { HeroMockup, AboutMockup, PatientDashboardMockup, ClinicDashboardMockup, FullBleedHero } from "@/components/AppMockups";
 
 // Asosiy mahsulot (bemor/xodim ilovasi) - BOSHQA, alohida joylashtirilgan
 // Railway xizmatida turadi. Shu sabab oddiy <a> havolalar ishlatiladi
@@ -52,20 +51,6 @@ const CLINIC_FEATURES: { icon: string; titleKey: TranslationKey; descKey: Transl
   { icon: "\uD83D\uDDC2\uFE0F", titleKey: "cf_6_title", descKey: "cf_6_desc" },
 ];
 
-const ROADMAP_ITEMS: { icon: string; key: TranslationKey }[] = [
-  { icon: "\uD83C\uDF99\uFE0F", key: "rm_1" },
-  { icon: "\uD83D\uDC8A", key: "rm_2" },
-  { icon: "\uD83D\uDEE1\uFE0F", key: "rm_3" },
-  { icon: "\uD83D\uDCF1", key: "rm_4" },
-  { icon: "\u231A", key: "rm_5" },
-  { icon: "\uD83E\uDDE0", key: "rm_6" },
-  { icon: "\uD83E\uDE7B", key: "rm_7" },
-  { icon: "\uD83D\uDCCA", key: "rm_8" },
-  { icon: "\uD83D\uDD2C", key: "rm_9" },
-  { icon: "\uD83D\uDD17", key: "rm_10" },
-  { icon: "\uD83C\uDF0D", key: "rm_11" },
-];
-
 export default function LandingPage() {
   const { t } = useLang();
 
@@ -73,56 +58,64 @@ export default function LandingPage() {
     <div className="min-h-screen">
       <SiteHeader home />
 
-      <section id="top" className="relative h-[78vh] min-h-[460px] w-full overflow-hidden">
-        <FullBleedHero />
-        <div className="absolute inset-0 bg-gradient-to-t from-glass-bgDark1 via-glass-bgDark1/10 to-transparent" />
-        <div className="absolute inset-x-0 bottom-0 px-5 pb-10 sm:pb-14">
-          <div className="mx-auto max-w-6xl">
-            <h1 className="font-serif text-3xl italic leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl">
-              {t("hero_title_1")}<br />
-              <span className="text-glass-tealLight">{t("hero_title_2")}</span>
-            </h1>
-            <p className="mt-4 max-w-md text-sm leading-relaxed text-white/70 sm:text-base">
-              {t("hero_subtitle")}
-            </p>
-            <div className="mt-7 flex flex-wrap items-center gap-3">
-              <a href={`${APP_URL}/patient/login`} className="glass-btn-primary">
-                {t("hero_cta_patient")}
-              </a>
-              <a href="#klinikalar" className="rounded-full border border-white/25 bg-white/[0.06] px-5 py-2.5 text-sm font-semibold text-white backdrop-blur-md transition hover:bg-white/[0.12]">
-                {t("hero_cta_clinic")}
-              </a>
+      <section id="top" className="mx-auto grid max-w-6xl items-center gap-10 px-5 pb-16 pt-14 sm:pb-24 sm:pt-20 lg:grid-cols-2 lg:gap-16">
+        <div>
+          <span className="glass-pill-track">
+            <span className="glass-pill-item-active">{t("hero_eyebrow")}</span>
+          </span>
+          <h1 className="mt-5 font-serif text-4xl italic leading-[1.08] tracking-tight text-glass-textLight dark:text-glass-textDark sm:text-5xl lg:text-[3.4rem]">
+            {t("hero_title_1")}<br />
+            <span className="bg-gradient-to-r from-glass-teal via-glass-tealLight to-glass-purple bg-clip-text text-transparent">
+              {t("hero_title_2")}
+            </span>
+          </h1>
+          <p className="glass-muted mt-5 max-w-md text-base leading-relaxed sm:text-lg">
+            {t("hero_subtitle")}
+          </p>
+          <div className="mt-8 flex flex-wrap items-center gap-3">
+            <a href={`${APP_URL}/patient/login`} className="glass-btn-primary">
+              {t("hero_cta_patient")}
+            </a>
+            <a href="#klinikalar" className="glass-btn-outline">
+              {t("hero_cta_clinic")}
+            </a>
+          </div>
+          <div className="mt-9 flex flex-wrap gap-x-8 gap-y-2 text-sm">
+            <div><span className="font-bold text-glass-textLight dark:text-glass-textDark">8,700+</span> <span className="glass-muted">{t("stat_clinics")}</span></div>
+            <div><span className="font-bold text-glass-textLight dark:text-glass-textDark">3</span> <span className="glass-muted">{t("stat_languages")}</span></div>
+            <div><span className="font-bold text-glass-textLight dark:text-glass-textDark">7</span> <span className="glass-muted">{t("stat_roles")}</span></div>
+          </div>
+        </div>
+
+        <div className="relative mx-auto w-full max-w-md">
+          <div className="glass-card overflow-hidden p-0">
+            <video
+              className="aspect-[4/5] w-full object-cover"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              aria-label={t("hero_photo_alt")}
+              poster="https://images.pexels.com/videos/7581435/achievement-aid-anti-aging-appointment-7581435.jpeg?auto=compress&w=900&h=1125&fit=crop"
+            >
+              <source src="https://videos.pexels.com/video-files/7581435/7581435-uhd_1440_2732_25fps.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div className="glass-card absolute -bottom-5 -left-5 flex items-center gap-3 p-3.5 pr-5 sm:-bottom-6 sm:-left-6">
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-glass-teal to-glass-purple">
+              <span className="h-3.5 w-3.5 rounded-full bg-white" aria-hidden="true" />
+            </div>
+            <div>
+              <p className="text-sm font-extrabold leading-none text-glass-textLight dark:text-glass-textDark">8,700+</p>
+              <p className="glass-muted mt-1 text-[11px] leading-none">{t("stat_clinics")}</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* --- Ikonka-qator: Neko uslubidagi qisqa xususiyat satri --- */}
-      <section className="mx-auto max-w-6xl px-5 py-12 sm:py-16">
-        <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-5">
-          {[
-            { icon: "🪪", labelKey: "strip_1_label" as TranslationKey, subKey: "strip_1_sub" as TranslationKey },
-            { icon: "🧠", labelKey: "strip_2_label" as TranslationKey, subKey: "strip_2_sub" as TranslationKey },
-            { icon: "🎥", labelKey: "strip_3_label" as TranslationKey, subKey: "strip_3_sub" as TranslationKey },
-            { icon: "🧪", labelKey: "strip_4_label" as TranslationKey, subKey: "strip_4_sub" as TranslationKey },
-            { icon: "📡", labelKey: "strip_5_label" as TranslationKey, subKey: "strip_5_sub" as TranslationKey },
-          ].map((it) => (
-            <div key={it.labelKey} className="flex flex-col items-center text-center sm:items-start sm:text-left">
-              <span className="text-2xl" aria-hidden="true">{it.icon}</span>
-              <p className="mt-3 text-sm font-bold uppercase tracking-wide text-glass-textLight dark:text-glass-textDark">{t(it.labelKey)}</p>
-              <p className="glass-muted mt-1 text-xs">{t(it.subKey)}</p>
-            </div>
-          ))}
-        </div>
-        <div className="mt-10 flex flex-wrap gap-x-10 gap-y-2 border-t border-glass-borderLight pt-6 text-sm dark:border-glass-borderDark">
-          <div><span className="font-bold text-glass-textLight dark:text-glass-textDark">8,700+</span> <span className="glass-muted">{t("stat_clinics")}</span></div>
-          <div><span className="font-bold text-glass-textLight dark:text-glass-textDark">3</span> <span className="glass-muted">{t("stat_languages")}</span></div>
-          <div><span className="font-bold text-glass-textLight dark:text-glass-textDark">7</span> <span className="glass-muted">{t("stat_roles")}</span></div>
-        </div>
-      </section>
-
       {/* --- ClinIQ haqida (to'liq) --- */}
-      <section id="haqida" className="mx-auto max-w-6xl px-5 py-20 sm:py-28">
+      <section id="haqida" className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
         <div className="glass-card overflow-hidden p-7 sm:p-12">
           <div className="grid items-start gap-8 lg:grid-cols-[1fr_1.1fr]">
             <div>
@@ -136,15 +129,17 @@ export default function LandingPage() {
               </div>
             </div>
             <div className="overflow-hidden rounded-2xl">
-              <div className="h-full max-h-72 w-full lg:max-h-none lg:h-full" style={{ minHeight: 260 }}>
-                <AboutMockup />
-              </div>
+              <img
+                src="https://images.pexels.com/photos/5327654/pexels-photo-5327654.jpeg?auto=compress&cs=tinysrgb&w=900&h=700&fit=crop"
+                alt={t("about_full_title")}
+                className="h-full max-h-72 w-full object-cover lg:max-h-none"
+              />
             </div>
           </div>
         </div>
       </section>
 
-      <section id="xususiyatlar" className="mx-auto max-w-6xl px-5 py-20 sm:py-28">
+      <section id="xususiyatlar" className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
         <div className="grid items-center gap-10 lg:grid-cols-[1fr_1.05fr]">
           <h2 className="font-serif text-2xl italic text-glass-textLight dark:text-glass-textDark sm:text-3xl">
             {t("features_title")}
@@ -153,8 +148,8 @@ export default function LandingPage() {
             <svg className="pointer-events-none absolute inset-0 h-full w-full" viewBox="0 0 100 75" preserveAspectRatio="none">
               <defs>
                 <linearGradient id="connector-grad" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stopColor="#0E7490" />
-                  <stop offset="100%" stopColor="#164F42" />
+                  <stop offset="0%" stopColor="#14C7B0" />
+                  <stop offset="100%" stopColor="#6D5DFB" />
                 </linearGradient>
               </defs>
               {FLOW_NODES.map((node, i) => {
@@ -174,8 +169,8 @@ export default function LandingPage() {
                 );
               })}
             </svg>
-            <div className="clinIQ-orbit-ring absolute inset-[8%] rounded-full border border-dashed border-glass-teal/30 dark:border-glass-teal/25" />
-            <div className="clinIQ-orbit-dot absolute h-3 w-3 rounded-full bg-glass-teal shadow-glowAccent" />
+            <div className="clinIQ-orbit-ring absolute inset-[8%] rounded-full border border-dashed border-glass-teal/30 dark:border-glass-purpleLight/25" />
+            <div className="clinIQ-orbit-dot absolute h-3 w-3 rounded-full bg-gradient-to-r from-glass-teal to-glass-purple shadow-glowAccent" />
             {FLOW_NODES.map((node, i) => {
               const angle = (i / FLOW_NODES.length) * 2 * Math.PI - Math.PI / 2;
               const radius = 42;
@@ -187,7 +182,7 @@ export default function LandingPage() {
                   className="node-pulse glass-card absolute flex w-[76px] -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-0.5 p-2 text-center"
                   style={{ left: `${x}%`, top: `${y}%`, animationDelay: `${i * 0.35}s` }}
                 >
-                  <span className="mb-0.5 block h-2 w-2 rounded-full bg-glass-teal" aria-hidden="true" />
+                  <span className="mb-0.5 block h-2 w-2 rounded-full bg-gradient-to-r from-glass-teal to-glass-purple" aria-hidden="true" />
                   <span className="text-[9px] font-semibold leading-tight text-glass-textLight dark:text-glass-textDark">
                     {t(node.labelKey)}
                   </span>
@@ -203,7 +198,7 @@ export default function LandingPage() {
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {FEATURE_CARDS.map((f) => (
             <div key={f.titleKey} className="glass-card p-5">
-              <span className="mb-1 block h-1.5 w-8 rounded-full bg-glass-teal" aria-hidden="true" />
+              <span className="mb-1 block h-1.5 w-8 rounded-full bg-gradient-to-r from-glass-teal to-glass-purple" aria-hidden="true" />
               <p className="mt-3 text-sm font-bold text-glass-textLight dark:text-glass-textDark">{t(f.titleKey)}</p>
               <p className="glass-muted mt-1.5 text-xs leading-relaxed">{t(f.descKey)}</p>
             </div>
@@ -211,7 +206,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-5 py-20 sm:py-28">
+      <section className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
         <div className="glass-card grid items-center gap-8 overflow-hidden p-7 sm:p-10 lg:grid-cols-2">
           <div>
             <span className="glass-pill-track"><span className="glass-pill-item-active">{t("emergency_eyebrow")}</span></span>
@@ -242,7 +237,7 @@ export default function LandingPage() {
       </section>
 
       {/* --- Bemorlar uchun to'liq imkoniyatlar --- */}
-      <section id="bemorlar" className="mx-auto max-w-6xl px-5 py-20 sm:py-28">
+      <section id="bemorlar" className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
         <div className="grid items-center gap-8 lg:grid-cols-[1.1fr_1fr]">
           <div>
             <h2 className="font-serif text-2xl italic text-glass-textLight dark:text-glass-textDark sm:text-3xl">
@@ -251,13 +246,15 @@ export default function LandingPage() {
             <p className="glass-muted mt-2 max-w-xl text-sm sm:text-base">{t("patient_features_subtitle")}</p>
           </div>
           <div className="glass-card h-64 overflow-hidden p-0 sm:h-80">
-            <PatientDashboardMockup />
+            <video className="h-full w-full object-cover" autoPlay muted loop playsInline preload="metadata" aria-label={t("patient_features_title")}>
+              <source src="https://videos.pexels.com/video-files/30141933/12925692_1920_1080_24fps.mp4" type="video/mp4" />
+            </video>
           </div>
         </div>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {PATIENT_FEATURES.map((f) => (
             <div key={f.titleKey} className="glass-card p-5">
-              <span className="mb-1 block h-1.5 w-8 rounded-full bg-glass-teal" aria-hidden="true" />
+              <span className="mb-1 block h-1.5 w-8 rounded-full bg-gradient-to-r from-glass-teal to-glass-purple" aria-hidden="true" />
               <p className="mt-3 text-sm font-bold text-glass-textLight dark:text-glass-textDark">{t(f.titleKey)}</p>
               <p className="glass-muted mt-1.5 text-xs leading-relaxed">{t(f.descKey)}</p>
             </div>
@@ -266,10 +263,12 @@ export default function LandingPage() {
       </section>
 
       {/* --- Klinikalar uchun to'liq imkoniyatlar --- */}
-      <section id="klinikalar" className="mx-auto max-w-6xl px-5 py-20 sm:py-28">
+      <section id="klinikalar" className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
         <div className="grid items-center gap-8 lg:grid-cols-[1fr_1.1fr]">
           <div className="glass-card order-2 h-72 overflow-hidden p-0 sm:h-96 lg:order-1">
-            <ClinicDashboardMockup />
+            <video className="h-full w-full object-cover" autoPlay muted loop playsInline preload="metadata" aria-label={t("clinic_features_title")}>
+              <source src="https://videos.pexels.com/video-files/5234529/5234529-hd_1920_1080_25fps.mp4" type="video/mp4" />
+            </video>
           </div>
           <div className="order-1 lg:order-2">
             <h2 className="font-serif text-2xl italic text-glass-textLight dark:text-glass-textDark sm:text-3xl">
@@ -281,7 +280,7 @@ export default function LandingPage() {
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {CLINIC_FEATURES.map((f) => (
             <div key={f.titleKey} className="glass-card p-5">
-              <span className="mb-1 block h-1.5 w-8 rounded-full bg-glass-teal" aria-hidden="true" />
+              <span className="mb-1 block h-1.5 w-8 rounded-full bg-gradient-to-r from-glass-teal to-glass-purple" aria-hidden="true" />
               <p className="mt-3 text-sm font-bold text-glass-textLight dark:text-glass-textDark">{t(f.titleKey)}</p>
               <p className="glass-muted mt-1.5 text-xs leading-relaxed">{t(f.descKey)}</p>
             </div>
@@ -289,55 +288,8 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* --- Kelajakdagi rejalar (Future roadmap) --- */}
-      <section id="roadmap" className="mx-auto max-w-6xl px-5 py-20 sm:py-28">
-        <span className="inline-flex items-center gap-1.5 rounded-full bg-glass-roseSoft px-3 py-1 text-[11px] font-semibold text-glass-rose">
-          {t("roadmap_eyebrow")}
-        </span>
-        <h2 className="mt-4 font-serif text-2xl italic text-glass-textLight dark:text-glass-textDark sm:text-3xl">
-          {t("roadmap_title")}
-        </h2>
-        <p className="glass-muted mt-2 max-w-xl text-sm sm:text-base">{t("roadmap_subtitle")}</p>
-        <div className="mt-8 flex flex-wrap gap-2.5">
-          {ROADMAP_ITEMS.map((r) => (
-            <span
-              key={r.key}
-              className="inline-flex items-center gap-2 rounded-full border border-glass-borderLight bg-glass-cardLight px-3.5 py-2 text-xs font-medium text-glass-textLight dark:border-glass-borderDark dark:bg-glass-cardDark dark:text-glass-textDark"
-            >
-              <span aria-hidden="true">{r.icon}</span>
-              {t(r.key)}
-            </span>
-          ))}
-        </div>
-      </section>
-
-      {/* --- Foydalanuvchi fikrlari --- */}
-      <section className="bg-glass-bgDark1 py-20 sm:py-28">
-        <div className="mx-auto max-w-6xl px-5">
-          <span className="inline-flex items-center rounded-full bg-white/[0.06] px-3 py-1 text-[11px] font-semibold text-white/70">
-            {t("testimonials_eyebrow")}
-          </span>
-          <h2 className="mt-4 font-serif text-2xl italic text-white sm:text-3xl">
-            {t("testimonials_title")}
-          </h2>
-          <div className="mt-9 grid gap-5 sm:grid-cols-3">
-            {[
-              { textKey: "testi_1_text" as TranslationKey, nameKey: "testi_1_name" as TranslationKey },
-              { textKey: "testi_2_text" as TranslationKey, nameKey: "testi_2_name" as TranslationKey },
-              { textKey: "testi_3_text" as TranslationKey, nameKey: "testi_3_name" as TranslationKey },
-            ].map((q) => (
-              <div key={q.nameKey} className="rounded-2xl border border-white/10 bg-white/[0.04] p-6">
-                <div className="mb-3 text-glass-tealLight" aria-hidden="true">★★★★★</div>
-                <p className="text-sm leading-relaxed text-white/85">"{t(q.textKey)}"</p>
-                <p className="mt-4 text-xs font-semibold text-white/50">{t(q.nameKey)}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* --- Yangiliklar --- */}
-      <section id="yangiliklar" className="mx-auto max-w-6xl px-5 py-20 sm:py-28">
+      <section id="yangiliklar" className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
         <h2 className="font-serif text-2xl italic text-glass-textLight dark:text-glass-textDark sm:text-3xl">
           {t("nav_news")}
         </h2>
@@ -349,7 +301,7 @@ export default function LandingPage() {
       </section>
 
       {/* --- Narxlar (B2B) --- */}
-      <section id="narxlar" className="mx-auto max-w-6xl px-5 py-20 sm:py-28">
+      <section id="narxlar" className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
         <h2 className="font-serif text-2xl italic text-glass-textLight dark:text-glass-textDark sm:text-3xl">
           {t("pricing_title")}
         </h2>
@@ -361,7 +313,7 @@ export default function LandingPage() {
       </section>
 
       {/* --- Klinikalar uchun - so'rov formasi --- */}
-      <section id="aloqa" className="mx-auto max-w-6xl px-5 py-20 sm:py-28">
+      <section id="aloqa" className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
         <div className="glass-card grid gap-8 overflow-hidden p-8 sm:p-12 lg:grid-cols-2">
           <div className="flex flex-col justify-center text-center lg:text-left">
             <h3 className="font-serif text-2xl italic text-glass-textLight dark:text-glass-textDark sm:text-3xl">
@@ -376,7 +328,7 @@ export default function LandingPage() {
       </section>
 
       {/* --- 3 qadamda boshlash --- */}
-      <section className="mx-auto max-w-6xl px-5 py-20 sm:py-28">
+      <section className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
         <h2 className="font-serif text-2xl italic text-glass-textLight dark:text-glass-textDark sm:text-3xl">
           {t("steps_title")}
         </h2>
@@ -387,7 +339,7 @@ export default function LandingPage() {
       </section>
 
       {/* --- FAQ --- */}
-      <section className="mx-auto max-w-3xl px-5 py-20 sm:py-28">
+      <section className="mx-auto max-w-3xl px-5 py-16 sm:py-20">
         <h2 className="text-center font-serif text-2xl italic text-glass-textLight dark:text-glass-textDark sm:text-3xl">
           {t("faq_title")}
         </h2>
@@ -397,10 +349,10 @@ export default function LandingPage() {
       </section>
 
       {/* --- Biz haqimizda / asoschi --- */}
-      <section className="mx-auto max-w-6xl px-5 py-20 sm:py-28">
+      <section className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
         <div className="glass-card flex flex-col items-center gap-5 p-8 text-center sm:p-10">
           <span className="glass-pill-track"><span className="glass-pill-item-active">{t("about_title")}</span></span>
-          <div className="flex h-16 w-16 items-center justify-center rounded-full bg-glass-teal text-xl font-bold text-white">
+          <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-r from-glass-teal to-glass-purple text-xl font-bold text-white">
             MN
           </div>
           <div>
@@ -412,16 +364,6 @@ export default function LandingPage() {
       </section>
 
       <SiteFooter />
-
-      {/* --- Sticky pastki CTA panel (Neko uslubidagi) --- */}
-      <div className="fixed inset-x-0 bottom-0 z-40 hidden border-t border-glass-borderLight bg-glass-cardLight/95 backdrop-blur-xl dark:border-glass-borderDark dark:bg-glass-cardDark/95 sm:block">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3">
-          <p className="text-sm font-semibold text-glass-textLight dark:text-glass-textDark">{t("sticky_bar_label")}</p>
-          <a href={`${APP_URL}/patient/login`} className="glass-btn-primary text-xs">
-            {t("hero_cta_patient")}
-          </a>
-        </div>
-      </div>
     </div>
   );
 }

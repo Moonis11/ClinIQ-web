@@ -29,7 +29,7 @@ export default function FaqSection() {
             >
               <span className="text-sm font-bold text-glass-textLight dark:text-glass-textDark">{t(item.qKey)}</span>
               <span
-                className={`shrink-0 text-lg text-glass-teal transition-transform duration-200 dark:text-glass-accentDark ${isOpen ? "rotate-45" : ""}`}
+                className={`shrink-0 text-lg text-glass-purple transition-transform duration-200 dark:text-glass-accentDark ${isOpen ? "rotate-45" : ""}`}
                 aria-hidden="true"
               >
                 +

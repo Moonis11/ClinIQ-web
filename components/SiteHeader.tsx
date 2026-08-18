@@ -20,7 +20,7 @@ export default function SiteHeader({ home = false }: { home?: boolean }) {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3.5">
         <a href="/" className="text-xl font-extrabold tracking-tight">
           <span className="text-glass-textLight dark:text-glass-textDark">Clin</span>
-          <span className="text-glass-teal">IQ</span>
+          <span className="bg-gradient-to-r from-glass-teal via-glass-purple to-glass-magenta bg-clip-text text-transparent">IQ</span>
         </a>
         <nav className="hidden items-center gap-5 text-sm font-medium text-glass-mutedLight dark:text-glass-mutedDark lg:flex">
           <a href={`${base}#top`} className="transition hover:text-glass-textLight dark:hover:text-glass-textDark">{t("nav_home")}</a>
