@@ -4,6 +4,31 @@
    juda kam pushti) qurilgan mockup illyustratsiyalar. Odam suratlari
    ishlatilmaydi, faqat mahsulot interfeysini ifodalovchi abstrakt bloklar. */
 
+export function FullBleedHero() {
+  const rows = [
+    { points: "0,30 60,30 80,10 100,55 120,22 150,22 180,30 220,30" },
+    { points: "0,55 40,55 55,38 70,72 85,48 110,48 140,55 220,55" },
+    { points: "0,78 90,78 105,62 120,95 135,70 160,70 190,78 220,78" },
+  ];
+  return (
+    <div className="relative flex h-full w-full items-center justify-center overflow-hidden bg-glass-bgDark1">
+      <div className="pointer-events-none absolute inset-0 opacity-[0.35]">
+        <svg viewBox="0 0 220 100" className="h-full w-full" preserveAspectRatio="xMidYMid slice">
+          {rows.map((r, i) => (
+            <polyline key={i} points={r.points} fill="none" stroke="#38A9BF" strokeWidth="0.6" opacity={0.5 - i * 0.12} />
+          ))}
+        </svg>
+      </div>
+      <div className="relative flex h-24 w-24 items-center justify-center rounded-full border border-white/15 bg-white/[0.04] backdrop-blur-sm sm:h-32 sm:w-32">
+        <svg width="42" height="42" viewBox="0 0 26 26" fill="none">
+          <circle cx="13" cy="13" r="12" stroke="#F4F7F6" strokeWidth="1.4" />
+          <path d="M13 7 V13 L17 15.5" stroke="#38A9BF" strokeWidth="1.8" strokeLinecap="round" />
+        </svg>
+      </div>
+    </div>
+  );
+}
+
 export function HeroMockup() {
   return (
     <div className="flex h-full w-full flex-col justify-between bg-glass-bgDark2 p-5 text-white">

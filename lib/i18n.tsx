@@ -233,6 +233,28 @@ const translations = {
   rm_9: { uz: "Klinik tadqiqot va data analitika", ru: "Клинические исследования и аналитика данных", en: "Clinical research & data analytics" },
   rm_10: { uz: "Klinikalararo interoperabellik", ru: "Взаимодействие между клиниками", en: "Cross-clinic interoperability" },
   rm_11: { uz: "Markaziy Osiyo bo'ylab tarmoq", ru: "Сеть по всей Центральной Азии", en: "Central Asia–wide network" },
+
+  strip_1_label: { uz: "Patient ID", ru: "Patient ID", en: "Patient ID" },
+  strip_1_sub: { uz: "Yagona raqamli profil", ru: "Единый цифровой профиль", en: "One digital profile" },
+  strip_2_label: { uz: "AI tahlil", ru: "ИИ-анализ", en: "AI analysis" },
+  strip_2_sub: { uz: "Tibbiy tarix asosida", ru: "На основе истории болезни", en: "Based on medical history" },
+  strip_3_label: { uz: "Telemedicina", ru: "Телемедицина", en: "Telemedicine" },
+  strip_3_sub: { uz: "Onlayn konsultatsiya", ru: "Онлайн-консультация", en: "Online consultation" },
+  strip_4_label: { uz: "Laboratoriya", ru: "Лаборатория", en: "Laboratory" },
+  strip_4_sub: { uz: "Natijalar profilga bog'lanadi", ru: "Результаты привязаны к профилю", en: "Results linked to your profile" },
+  strip_5_label: { uz: "Radiologiya", ru: "Радиология", en: "Radiology" },
+  strip_5_sub: { uz: "AI yordamida tahlil", ru: "Анализ с помощью ИИ", en: "AI-assisted analysis" },
+
+  testimonials_eyebrow: { uz: "Foydalanuvchilar", ru: "Пользователи", en: "Users" },
+  testimonials_title: { uz: "Ular ClinIQ'dan foydalanmoqda", ru: "Они уже пользуются ClinIQ", en: "They're already using ClinIQ" },
+  testi_1_text: { uz: "Klinikani almashtirsam ham tibbiy tarixim yo'qolmadi — buni birinchi marta ko'rdim.", ru: "Даже сменив клинику, моя медицинская история не потерялась - вижу такое впервые.", en: "Even after switching clinics, my medical history wasn't lost — first time I've seen that." },
+  testi_1_name: { uz: "Aziza, bemor", ru: "Азиза, пациент", en: "Aziza, patient" },
+  testi_2_text: { uz: "Navbat kutish yo'q, natijalar ilovada — vaqtim ancha tejaldi.", ru: "Без очередей, результаты в приложении - сильно экономит время.", en: "No waiting in line, results right in the app — saves me real time." },
+  testi_2_name: { uz: "Botir, bemor", ru: "Ботир, пациент", en: "Botir, patient" },
+  testi_3_text: { uz: "Bemorlar oqimi va shifokorlar statistikasini bir joyda ko'rish klinikamiz uchun katta yordam.", ru: "Видеть поток пациентов и статистику врачей в одном месте — большая помощь для нашей клиники.", en: "Seeing patient flow and doctor stats in one place has been a huge help for our clinic." },
+  testi_3_name: { uz: "Dr. Yusupova, klinika", ru: "Др. Юсупова, клиника", en: "Dr. Yusupova, clinic" },
+
+  sticky_bar_label: { uz: "ClinIQ — bemor sifatida bepul boshlang", ru: "ClinIQ — начните бесплатно как пациент", en: "ClinIQ — start free as a patient" },
 } as const;
 
 export type TranslationKey = keyof typeof translations;
