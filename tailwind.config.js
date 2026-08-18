@@ -39,6 +39,8 @@ module.exports = {
           danger: "#B5453D",
           warning: "#C89B3C",
           success: "#0E7490",
+          rose: "#C9607D",
+          roseSoft: "rgba(201,96,125,0.12)",
         },
       },
       fontFamily: {

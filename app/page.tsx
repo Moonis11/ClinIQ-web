@@ -7,6 +7,7 @@ import ContactForm from "@/components/ContactForm";
 import PricingSection from "@/components/PricingSection";
 import StepsSection from "@/components/StepsSection";
 import FaqSection from "@/components/FaqSection";
+import { HeroMockup, AboutMockup, PatientDashboardMockup, ClinicDashboardMockup } from "@/components/AppMockups";
 
 // Asosiy mahsulot (bemor/xodim ilovasi) - BOSHQA, alohida joylashtirilgan
 // Railway xizmatida turadi. Shu sabab oddiy <a> havolalar ishlatiladi
@@ -51,6 +52,20 @@ const CLINIC_FEATURES: { icon: string; titleKey: TranslationKey; descKey: Transl
   { icon: "\uD83D\uDDC2\uFE0F", titleKey: "cf_6_title", descKey: "cf_6_desc" },
 ];
 
+const ROADMAP_ITEMS: { icon: string; key: TranslationKey }[] = [
+  { icon: "\uD83C\uDF99\uFE0F", key: "rm_1" },
+  { icon: "\uD83D\uDC8A", key: "rm_2" },
+  { icon: "\uD83D\uDEE1\uFE0F", key: "rm_3" },
+  { icon: "\uD83D\uDCF1", key: "rm_4" },
+  { icon: "\u231A", key: "rm_5" },
+  { icon: "\uD83E\uDDE0", key: "rm_6" },
+  { icon: "\uD83E\uDE7B", key: "rm_7" },
+  { icon: "\uD83D\uDCCA", key: "rm_8" },
+  { icon: "\uD83D\uDD2C", key: "rm_9" },
+  { icon: "\uD83D\uDD17", key: "rm_10" },
+  { icon: "\uD83C\uDF0D", key: "rm_11" },
+];
+
 export default function LandingPage() {
   const { t } = useLang();
 
@@ -89,18 +104,9 @@ export default function LandingPage() {
 
         <div className="relative mx-auto w-full max-w-md">
           <div className="glass-card overflow-hidden p-0">
-            <video
-              className="aspect-[4/5] w-full object-cover"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
-              aria-label={t("hero_photo_alt")}
-              poster="https://images.pexels.com/videos/7581435/achievement-aid-anti-aging-appointment-7581435.jpeg?auto=compress&w=900&h=1125&fit=crop"
-            >
-              <source src="https://videos.pexels.com/video-files/7581435/7581435-uhd_1440_2732_25fps.mp4" type="video/mp4" />
-            </video>
+            <div className="aspect-[4/5] w-full" role="img" aria-label={t("hero_photo_alt")}>
+              <HeroMockup />
+            </div>
           </div>
           <div className="glass-card absolute -bottom-5 -left-5 flex items-center gap-3 p-3.5 pr-5 sm:-bottom-6 sm:-left-6">
             <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-glass-teal">
@@ -129,11 +135,9 @@ export default function LandingPage() {
               </div>
             </div>
             <div className="overflow-hidden rounded-2xl">
-              <img
-                src="https://images.pexels.com/photos/5327654/pexels-photo-5327654.jpeg?auto=compress&cs=tinysrgb&w=900&h=700&fit=crop"
-                alt={t("about_full_title")}
-                className="h-full max-h-72 w-full object-cover lg:max-h-none"
-              />
+              <div className="h-full max-h-72 w-full lg:max-h-none lg:h-full" style={{ minHeight: 260 }}>
+                <AboutMockup />
+              </div>
             </div>
           </div>
         </div>
@@ -246,9 +250,7 @@ export default function LandingPage() {
             <p className="glass-muted mt-2 max-w-xl text-sm sm:text-base">{t("patient_features_subtitle")}</p>
           </div>
           <div className="glass-card h-64 overflow-hidden p-0 sm:h-80">
-            <video className="h-full w-full object-cover" autoPlay muted loop playsInline preload="metadata" aria-label={t("patient_features_title")}>
-              <source src="https://videos.pexels.com/video-files/30141933/12925692_1920_1080_24fps.mp4" type="video/mp4" />
-            </video>
+            <PatientDashboardMockup />
           </div>
         </div>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -266,9 +268,7 @@ export default function LandingPage() {
       <section id="klinikalar" className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
         <div className="grid items-center gap-8 lg:grid-cols-[1fr_1.1fr]">
           <div className="glass-card order-2 h-72 overflow-hidden p-0 sm:h-96 lg:order-1">
-            <video className="h-full w-full object-cover" autoPlay muted loop playsInline preload="metadata" aria-label={t("clinic_features_title")}>
-              <source src="https://videos.pexels.com/video-files/5234529/5234529-hd_1920_1080_25fps.mp4" type="video/mp4" />
-            </video>
+            <ClinicDashboardMockup />
           </div>
           <div className="order-1 lg:order-2">
             <h2 className="font-serif text-2xl italic text-glass-textLight dark:text-glass-textDark sm:text-3xl">
@@ -284,6 +284,28 @@ export default function LandingPage() {
               <p className="mt-3 text-sm font-bold text-glass-textLight dark:text-glass-textDark">{t(f.titleKey)}</p>
               <p className="glass-muted mt-1.5 text-xs leading-relaxed">{t(f.descKey)}</p>
             </div>
+          ))}
+        </div>
+      </section>
+
+      {/* --- Kelajakdagi rejalar (Future roadmap) --- */}
+      <section id="roadmap" className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
+        <span className="inline-flex items-center gap-1.5 rounded-full bg-glass-roseSoft px-3 py-1 text-[11px] font-semibold text-glass-rose">
+          {t("roadmap_eyebrow")}
+        </span>
+        <h2 className="mt-4 font-serif text-2xl italic text-glass-textLight dark:text-glass-textDark sm:text-3xl">
+          {t("roadmap_title")}
+        </h2>
+        <p className="glass-muted mt-2 max-w-xl text-sm sm:text-base">{t("roadmap_subtitle")}</p>
+        <div className="mt-8 flex flex-wrap gap-2.5">
+          {ROADMAP_ITEMS.map((r) => (
+            <span
+              key={r.key}
+              className="inline-flex items-center gap-2 rounded-full border border-glass-borderLight bg-glass-cardLight px-3.5 py-2 text-xs font-medium text-glass-textLight dark:border-glass-borderDark dark:bg-glass-cardDark dark:text-glass-textDark"
+            >
+              <span aria-hidden="true">{r.icon}</span>
+              {t(r.key)}
+            </span>
           ))}
         </div>
       </section>
