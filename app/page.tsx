@@ -97,9 +97,9 @@ export default function LandingPage() {
               playsInline
               preload="metadata"
               aria-label={t("hero_photo_alt")}
-              poster="https://images.pexels.com/videos/5030436/pexels-photo-5030436.jpeg?auto=compress&w=900&h=1125&fit=crop"
+              poster="https://images.pexels.com/videos/13808077/ekg-hologram-medical-pulse-13808077.jpeg?auto=compress&w=900&h=1125&fit=crop"
             >
-              <source src="https://videos.pexels.com/video-files/5030436/5030436-hd_1080_1920_30fps.mp4" type="video/mp4" />
+              <source src="https://videos.pexels.com/video-files/13808077/13808077-hd_1920_1080_25fps.mp4" type="video/mp4" />
             </video>
           </div>
           <div className="glass-card absolute -bottom-5 -left-5 flex items-center gap-3 p-3.5 pr-5 sm:-bottom-6 sm:-left-6">
@@ -245,10 +245,12 @@ export default function LandingPage() {
             </h2>
             <p className="glass-muted mt-2 max-w-xl text-sm sm:text-base">{t("patient_features_subtitle")}</p>
           </div>
-          <div className="glass-card h-40 overflow-hidden p-0 sm:h-48">
-            <video className="h-full w-full object-cover" autoPlay muted loop playsInline preload="metadata" aria-label={t("patient_features_title")}>
-              <source src="https://videos.pexels.com/video-files/9780882/9780882-uhd_1440_2560_25fps.mp4" type="video/mp4" />
-            </video>
+          <div className="glass-card h-64 overflow-hidden p-0 sm:h-80">
+            <img
+              src="/images/cliniq-ai-mockup.png"
+              alt={t("patient_features_title")}
+              className="h-full w-full object-cover"
+            />
           </div>
         </div>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -265,9 +267,9 @@ export default function LandingPage() {
       {/* --- Klinikalar uchun to'liq imkoniyatlar --- */}
       <section id="klinikalar" className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
         <div className="grid items-center gap-8 lg:grid-cols-[1fr_1.1fr]">
-          <div className="glass-card order-2 h-40 overflow-hidden p-0 sm:h-48 lg:order-1">
+          <div className="glass-card order-2 h-64 overflow-hidden p-0 sm:h-80 lg:order-1">
             <video className="h-full w-full object-cover" autoPlay muted loop playsInline preload="metadata" aria-label={t("clinic_features_title")}>
-              <source src="https://videos.pexels.com/video-files/6130622/6130622-hd_1920_1080_30fps.mp4" type="video/mp4" />
+              <source src="https://videos.pexels.com/video-files/5234529/5234529-hd_1920_1080_25fps.mp4" type="video/mp4" />
             </video>
           </div>
           <div className="order-1 lg:order-2">
