@@ -26,7 +26,7 @@ export default function LangMenu() {
               key={l.key}
               onClick={() => { setLang(l.key); setOpen(false); }}
               className={`block w-full rounded-lg px-3 py-1.5 text-left text-xs transition ${
-                lang === l.key ? "bg-glass-purple/20 font-semibold" : "hover:bg-white/10"
+                lang === l.key ? "bg-glass-teal/15 font-semibold" : "hover:bg-white/10"
               }`}
             >
               {l.label}

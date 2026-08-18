@@ -65,7 +65,7 @@ export default function LandingPage() {
           </span>
           <h1 className="mt-5 font-serif text-4xl italic leading-[1.08] tracking-tight text-glass-textLight dark:text-glass-textDark sm:text-5xl lg:text-[3.4rem]">
             {t("hero_title_1")}<br />
-            <span className="bg-gradient-to-r from-glass-teal via-glass-tealLight to-glass-purple bg-clip-text text-transparent">
+            <span className="text-glass-teal">
               {t("hero_title_2")}
             </span>
           </h1>
@@ -103,7 +103,7 @@ export default function LandingPage() {
             </video>
           </div>
           <div className="glass-card absolute -bottom-5 -left-5 flex items-center gap-3 p-3.5 pr-5 sm:-bottom-6 sm:-left-6">
-            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-glass-teal to-glass-purple">
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-glass-teal">
               <span className="h-3.5 w-3.5 rounded-full bg-white" aria-hidden="true" />
             </div>
             <div>
@@ -148,8 +148,8 @@ export default function LandingPage() {
             <svg className="pointer-events-none absolute inset-0 h-full w-full" viewBox="0 0 100 75" preserveAspectRatio="none">
               <defs>
                 <linearGradient id="connector-grad" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stopColor="#14C7B0" />
-                  <stop offset="100%" stopColor="#6D5DFB" />
+                  <stop offset="0%" stopColor="#1F6F5C" />
+                  <stop offset="100%" stopColor="#164F42" />
                 </linearGradient>
               </defs>
               {FLOW_NODES.map((node, i) => {
@@ -169,8 +169,8 @@ export default function LandingPage() {
                 );
               })}
             </svg>
-            <div className="clinIQ-orbit-ring absolute inset-[8%] rounded-full border border-dashed border-glass-teal/30 dark:border-glass-purpleLight/25" />
-            <div className="clinIQ-orbit-dot absolute h-3 w-3 rounded-full bg-gradient-to-r from-glass-teal to-glass-purple shadow-glowAccent" />
+            <div className="clinIQ-orbit-ring absolute inset-[8%] rounded-full border border-dashed border-glass-teal/30 dark:border-glass-teal/25" />
+            <div className="clinIQ-orbit-dot absolute h-3 w-3 rounded-full bg-glass-teal shadow-glowAccent" />
             {FLOW_NODES.map((node, i) => {
               const angle = (i / FLOW_NODES.length) * 2 * Math.PI - Math.PI / 2;
               const radius = 42;
@@ -182,7 +182,7 @@ export default function LandingPage() {
                   className="node-pulse glass-card absolute flex w-[76px] -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-0.5 p-2 text-center"
                   style={{ left: `${x}%`, top: `${y}%`, animationDelay: `${i * 0.35}s` }}
                 >
-                  <span className="mb-0.5 block h-2 w-2 rounded-full bg-gradient-to-r from-glass-teal to-glass-purple" aria-hidden="true" />
+                  <span className="mb-0.5 block h-2 w-2 rounded-full bg-glass-teal" aria-hidden="true" />
                   <span className="text-[9px] font-semibold leading-tight text-glass-textLight dark:text-glass-textDark">
                     {t(node.labelKey)}
                   </span>
@@ -198,7 +198,7 @@ export default function LandingPage() {
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {FEATURE_CARDS.map((f) => (
             <div key={f.titleKey} className="glass-card p-5">
-              <span className="mb-1 block h-1.5 w-8 rounded-full bg-gradient-to-r from-glass-teal to-glass-purple" aria-hidden="true" />
+              <span className="mb-1 block h-1.5 w-8 rounded-full bg-glass-teal" aria-hidden="true" />
               <p className="mt-3 text-sm font-bold text-glass-textLight dark:text-glass-textDark">{t(f.titleKey)}</p>
               <p className="glass-muted mt-1.5 text-xs leading-relaxed">{t(f.descKey)}</p>
             </div>
@@ -254,7 +254,7 @@ export default function LandingPage() {
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {PATIENT_FEATURES.map((f) => (
             <div key={f.titleKey} className="glass-card p-5">
-              <span className="mb-1 block h-1.5 w-8 rounded-full bg-gradient-to-r from-glass-teal to-glass-purple" aria-hidden="true" />
+              <span className="mb-1 block h-1.5 w-8 rounded-full bg-glass-teal" aria-hidden="true" />
               <p className="mt-3 text-sm font-bold text-glass-textLight dark:text-glass-textDark">{t(f.titleKey)}</p>
               <p className="glass-muted mt-1.5 text-xs leading-relaxed">{t(f.descKey)}</p>
             </div>
@@ -280,7 +280,7 @@ export default function LandingPage() {
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {CLINIC_FEATURES.map((f) => (
             <div key={f.titleKey} className="glass-card p-5">
-              <span className="mb-1 block h-1.5 w-8 rounded-full bg-gradient-to-r from-glass-teal to-glass-purple" aria-hidden="true" />
+              <span className="mb-1 block h-1.5 w-8 rounded-full bg-glass-teal" aria-hidden="true" />
               <p className="mt-3 text-sm font-bold text-glass-textLight dark:text-glass-textDark">{t(f.titleKey)}</p>
               <p className="glass-muted mt-1.5 text-xs leading-relaxed">{t(f.descKey)}</p>
             </div>
@@ -352,7 +352,7 @@ export default function LandingPage() {
       <section className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
         <div className="glass-card flex flex-col items-center gap-5 p-8 text-center sm:p-10">
           <span className="glass-pill-track"><span className="glass-pill-item-active">{t("about_title")}</span></span>
-          <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-r from-glass-teal to-glass-purple text-xl font-bold text-white">
+          <div className="flex h-16 w-16 items-center justify-center rounded-full bg-glass-teal text-xl font-bold text-white">
             MN
           </div>
           <div>

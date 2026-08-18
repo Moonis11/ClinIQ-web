@@ -17,13 +17,13 @@ export default function PricingSection() {
       {TIERS.map((tier) => (
         <div
           key={tier.key}
-          className={`glass-card p-5 ${tier.highlight ? "border-2 border-glass-magenta/50" : ""}`}
+          className={`glass-card p-5 ${tier.highlight ? "border-2 border-glass-teal/50" : ""}`}
         >
           {tier.highlight && (
             <span className="glass-pill-item-active mb-2 inline-block text-[10px]">{t("price_popular_badge")}</span>
           )}
           <p className="text-base font-bold text-glass-textLight dark:text-glass-textDark">{t(tier.nameKey)}</p>
-          <p className="mt-1 text-lg font-extrabold bg-gradient-to-r from-glass-teal to-glass-purple bg-clip-text text-transparent">
+          <p className="mt-1 text-lg font-extrabold bg-glass-teal bg-clip-text text-transparent">
             {t(tier.priceKey)}
           </p>
           <p className="glass-muted mt-3 text-xs">{t(tier.limitKey)}</p>

@@ -11,7 +11,7 @@ export default function SiteFooter() {
         <div>
           <span className="text-lg font-extrabold">
             <span className="text-glass-textLight dark:text-glass-textDark">Clin</span>
-            <span className="bg-gradient-to-r from-glass-teal via-glass-purple to-glass-magenta bg-clip-text text-transparent">IQ</span>
+            <span className="text-glass-teal">IQ</span>
           </span>
           <p className="glass-muted mt-2 text-xs leading-relaxed">{t("footer_tagline")}</p>
         </div>
