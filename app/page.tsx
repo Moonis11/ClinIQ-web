@@ -148,7 +148,7 @@ export default function LandingPage() {
             <svg className="pointer-events-none absolute inset-0 h-full w-full" viewBox="0 0 100 75" preserveAspectRatio="none">
               <defs>
                 <linearGradient id="connector-grad" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stopColor="#1F6F5C" />
+                  <stop offset="0%" stopColor="#0E7490" />
                   <stop offset="100%" stopColor="#164F42" />
                 </linearGradient>
               </defs>
