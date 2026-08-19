@@ -15,14 +15,14 @@ export function FullBleedHero() {
       <div className="pointer-events-none absolute inset-0 opacity-[0.35]">
         <svg viewBox="0 0 220 100" className="h-full w-full" preserveAspectRatio="xMidYMid slice">
           {rows.map((r, i) => (
-            <polyline key={i} points={r.points} fill="none" stroke="#38A9BF" strokeWidth="0.6" opacity={0.5 - i * 0.12} />
+            <polyline key={i} points={r.points} fill="none" stroke="#22D3EE" strokeWidth="0.6" opacity={0.5 - i * 0.12} />
           ))}
         </svg>
       </div>
       <div className="relative flex h-24 w-24 items-center justify-center rounded-full border border-white/15 bg-white/[0.04] backdrop-blur-sm sm:h-32 sm:w-32">
         <svg width="42" height="42" viewBox="0 0 26 26" fill="none">
           <circle cx="13" cy="13" r="12" stroke="#F4F7F6" strokeWidth="1.4" />
-          <path d="M13 7 V13 L17 15.5" stroke="#38A9BF" strokeWidth="1.8" strokeLinecap="round" />
+          <path d="M13 7 V13 L17 15.5" stroke="#22D3EE" strokeWidth="1.8" strokeLinecap="round" />
         </svg>
       </div>
     </div>
@@ -50,10 +50,10 @@ export function HeroMockup() {
         <svg viewBox="0 0 220 60" className="w-full" preserveAspectRatio="none">
           <polyline
             points="0,40 30,40 45,15 60,52 75,28 95,28 115,40 150,40 165,12 180,52 195,40 220,40"
-            fill="none" stroke="#38A9BF" strokeWidth="2" strokeLinejoin="round" strokeLinecap="round"
+            fill="none" stroke="#22D3EE" strokeWidth="2" strokeLinejoin="round" strokeLinecap="round"
           />
-          <circle cx="45" cy="15" r="3" fill="#38A9BF" />
-          <circle cx="165" cy="12" r="3" fill="#C9607D" />
+          <circle cx="45" cy="15" r="3" fill="#22D3EE" />
+          <circle cx="165" cy="12" r="3" fill="#EC4899" />
         </svg>
       </div>
 
