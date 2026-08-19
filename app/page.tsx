@@ -7,7 +7,8 @@ import ContactForm from "@/components/ContactForm";
 import PricingSection from "@/components/PricingSection";
 import StepsSection from "@/components/StepsSection";
 import FaqSection from "@/components/FaqSection";
-import { HeroMockup, AboutMockup } from "@/components/AppMockups";
+import { FullBleedHero, HeroMockup, AboutMockup, PatientOrbitMockup, ClinicNetworkMockup } from "@/components/AppMockups";
+import AiBrainMark from "@/components/AiBrainMark";
 
 // Asosiy mahsulot (bemor/xodim ilovasi) - BOSHQA, alohida joylashtirilgan
 // Railway xizmatida turadi. Shu sabab oddiy <a> havolalar ishlatiladi
@@ -22,6 +23,13 @@ const FLOW_NODES: { key: string; icon: string; labelKey: TranslationKey }[] = [
   { key: "radiology", icon: "\uD83D\uDCE1", labelKey: "flow_radiology" },
   { key: "ai", icon: "\u2728", labelKey: "flow_ai" },
   { key: "care", icon: "\uD83D\uDC8A", labelKey: "flow_care" },
+];
+
+const AI_FEATURES: { titleKey: TranslationKey; descKey: TranslationKey }[] = [
+  { titleKey: "pf_5_title", descKey: "pf_5_desc" },
+  { titleKey: "cf_2_title", descKey: "cf_2_desc" },
+  { titleKey: "cf_3_title", descKey: "cf_3_desc" },
+  { titleKey: "pf_9_title", descKey: "pf_9_desc" },
 ];
 
 const FEATURE_CARDS: { icon: string; titleKey: TranslationKey; descKey: TranslationKey }[] = [
@@ -90,18 +98,9 @@ export default function LandingPage() {
 
         <div className="relative mx-auto w-full max-w-md">
           <div className="glass-card overflow-hidden p-0">
-            <video
-              className="aspect-[4/5] w-full object-cover"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
-              aria-label={t("hero_photo_alt")}
-              poster="https://images.pexels.com/videos/7581435/achievement-aid-anti-aging-appointment-7581435.jpeg?auto=compress&w=900&h=1125&fit=crop"
-            >
-              <source src="https://videos.pexels.com/video-files/7581435/7581435-uhd_1440_2732_25fps.mp4" type="video/mp4" />
-            </video>
+            <div className="aspect-[4/5] w-full">
+              <FullBleedHero />
+            </div>
           </div>
           <div className="glass-card absolute -bottom-5 -left-5 flex items-center gap-3 p-3.5 pr-5 sm:-bottom-6 sm:-left-6">
             <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-glass-teal to-glass-purple">
@@ -139,11 +138,39 @@ export default function LandingPage() {
         </div>
       </section>
 
-      <section id="xususiyatlar" className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
-        <div className="grid items-center gap-10 lg:grid-cols-[1fr_1.05fr]">
+      {/* --- AI bo'limi --- */}
+      <section id="ai" className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
+        <div className="glass-card grid items-center gap-8 overflow-hidden p-7 sm:p-12 lg:grid-cols-[1.05fr_1fr]">
+          <div>
+            <h2 className="font-serif text-2xl italic text-glass-textLight dark:text-glass-textDark sm:text-3xl">
+              {t("ai_section_title")}
+            </h2>
+            <p className="glass-muted mt-3 text-sm leading-relaxed sm:text-base">{t("ai_section_body")}</p>
+            <div className="mt-6 grid gap-3 sm:grid-cols-2">
+              {AI_FEATURES.map((f) => (
+                <div key={f.titleKey} className="rounded-xl bg-white/5 p-3.5">
+                  <span className="mb-1 block h-1.5 w-8 rounded-full bg-gradient-to-r from-glass-teal to-glass-purple" aria-hidden="true" />
+                  <p className="text-xs font-bold text-glass-textLight dark:text-glass-textDark">{t(f.titleKey)}</p>
+                  <p className="glass-muted mt-1 text-[11px] leading-relaxed">{t(f.descKey)}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="h-56 sm:h-64">
+            <AiBrainMark />
+          </div>
+        </div>
+      </section>
+
+      <section id="nima-uchun" className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
+        <div>
           <h2 className="font-serif text-2xl italic text-glass-textLight dark:text-glass-textDark sm:text-3xl">
-            {t("features_title")}
+            {t("why_title")}
           </h2>
+          <p className="glass-muted mt-2 max-w-xl text-sm sm:text-base">{t("why_subtitle")}</p>
+        </div>
+        <div className="mt-8 grid items-center gap-10 lg:grid-cols-[1fr_1.05fr]">
+          <p className="glass-muted text-sm leading-relaxed sm:text-base">{t("why_body")}</p>
           <div className="relative mx-auto flex aspect-[4/3] w-full max-w-sm items-center justify-center">
             <svg className="pointer-events-none absolute inset-0 h-full w-full" viewBox="0 0 100 75" preserveAspectRatio="none">
               <defs>
@@ -246,9 +273,7 @@ export default function LandingPage() {
             <p className="glass-muted mt-2 max-w-xl text-sm sm:text-base">{t("patient_features_subtitle")}</p>
           </div>
           <div className="glass-card h-64 overflow-hidden p-0 sm:h-80">
-            <video className="h-full w-full object-cover" autoPlay muted loop playsInline preload="metadata" aria-label={t("patient_features_title")}>
-              <source src="https://videos.pexels.com/video-files/30141933/12925692_1920_1080_24fps.mp4" type="video/mp4" />
-            </video>
+            <PatientOrbitMockup />
           </div>
         </div>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -266,9 +291,7 @@ export default function LandingPage() {
       <section id="klinikalar" className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
         <div className="grid items-center gap-8 lg:grid-cols-[1fr_1.1fr]">
           <div className="glass-card order-2 h-72 overflow-hidden p-0 sm:h-96 lg:order-1">
-            <video className="h-full w-full object-cover" autoPlay muted loop playsInline preload="metadata" aria-label={t("clinic_features_title")}>
-              <source src="https://videos.pexels.com/video-files/5234529/5234529-hd_1920_1080_25fps.mp4" type="video/mp4" />
-            </video>
+            <ClinicNetworkMockup />
           </div>
           <div className="order-1 lg:order-2">
             <h2 className="font-serif text-2xl italic text-glass-textLight dark:text-glass-textDark sm:text-3xl">
@@ -339,7 +362,7 @@ export default function LandingPage() {
       </section>
 
       {/* --- FAQ --- */}
-      <section className="mx-auto max-w-3xl px-5 py-16 sm:py-20">
+      <section id="faq" className="mx-auto max-w-3xl px-5 py-16 sm:py-20">
         <h2 className="text-center font-serif text-2xl italic text-glass-textLight dark:text-glass-textDark sm:text-3xl">
           {t("faq_title")}
         </h2>

@@ -7,6 +7,8 @@ export type Lang = "uz" | "ru" | "en";
 const translations = {
   nav_features: { uz: "Xususiyatlar", ru: "Возможности", en: "Features" },
   nav_home: { uz: "Bosh sahifa", ru: "Главная", en: "Home" },
+  nav_why: { uz: "Nima uchun ClinIQ?", ru: "Почему ClinIQ?", en: "Why ClinIQ?" },
+  nav_faq: { uz: "FAQ", ru: "FAQ", en: "FAQ" },
   nav_services: { uz: "Xizmatlar", ru: "Услуги", en: "Services" },
   nav_news: { uz: "Yangiliklar", ru: "Новости", en: "News" },
   nav_contact: { uz: "Aloqa", ru: "Контакты", en: "Contact" },
@@ -53,6 +55,19 @@ const translations = {
   flow_ai: { uz: "AI", ru: "ИИ", en: "AI" },
   flow_care: { uz: "Davolash", ru: "Лечение", en: "Care" },
   features_title: { uz: "Nima uchun bu muhim", ru: "Почему это важно", en: "Why this matters" },
+  why_title: { uz: "Bemorning tibbiy yo'li bir joyda qoladi", ru: "Медицинский путь пациента остаётся в одном месте", en: "The patient's medical journey stays in one place" },
+  why_subtitle: { uz: "Butun healthcare journey - yagona raqamli tizimda", ru: "Весь путь пациента - в единой цифровой системе", en: "The entire healthcare journey — in one digital system" },
+  why_body: {
+    uz: "Bemor turli klinika va shifokorlarga murojaat qilganda uning tibbiy ma'lumotlari parchalanib ketmasligi kerak. ClinIQ butun healthcare journey'ni yagona raqamli tizimda bog'laydi.",
+    ru: "Когда пациент обращается в разные клиники и к разным врачам, его медицинские данные не должны фрагментироваться. ClinIQ связывает весь путь пациента в единой цифровой системе.",
+    en: "When a patient visits different clinics and doctors, their medical data shouldn't fragment. ClinIQ connects the entire healthcare journey in one digital system.",
+  },
+  ai_section_title: { uz: "Sun'iy intellekt tibbiy qarorlarni qo'llab-quvvatlaydi", ru: "Искусственный интеллект поддерживает медицинские решения", en: "Artificial intelligence supports medical decisions" },
+  ai_section_body: {
+    uz: "ClinIQ tibbiy ma'lumotlarni tahlil qilish, tasvirlarni o'rganish va bemor holatidagi o'zgarishlarni aniqlash uchun sun'iy intellekt imkoniyatlaridan foydalanadi.",
+    ru: "ClinIQ использует возможности искусственного интеллекта для анализа медицинских данных, изучения изображений и выявления изменений в состоянии пациента.",
+    en: "ClinIQ uses artificial intelligence to analyze medical data, review imaging, and detect changes in a patient's condition.",
+  },
 
   // --- ClinIQ haqida (to'liq) ---
   about_full_title: { uz: "ClinIQ haqida", ru: "О ClinIQ", en: "About ClinIQ" },

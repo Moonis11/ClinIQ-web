@@ -26,13 +26,14 @@ export default function SiteHeader({ home = false }: { home?: boolean }) {
             <span className="bg-gradient-to-r from-glass-teal via-glass-purple to-glass-magenta bg-clip-text text-transparent">IQ</span>
           </span>
         </a>
-        <nav className="hidden items-center gap-5 text-sm font-medium text-glass-mutedLight dark:text-glass-mutedDark lg:flex">
+        <nav className="hidden items-center gap-4 text-sm font-medium text-glass-mutedLight dark:text-glass-mutedDark xl:flex">
           <a href={`${base}#top`} className="transition hover:text-glass-textLight dark:hover:text-glass-textDark">{t("nav_home")}</a>
-          <a href="/xizmatlar" className="transition hover:text-glass-textLight dark:hover:text-glass-textDark">{t("nav_services")}</a>
-          <a href={`${base}#klinikalar`} className="transition hover:text-glass-textLight dark:hover:text-glass-textDark">{t("nav_clinics")}</a>
-          <a href={`${base}#yangiliklar`} className="transition hover:text-glass-textLight dark:hover:text-glass-textDark">{t("nav_news")}</a>
           <a href={`${base}#haqida`} className="transition hover:text-glass-textLight dark:hover:text-glass-textDark">{t("nav_about")}</a>
-          <a href={`${base}#aloqa`} className="transition hover:text-glass-textLight dark:hover:text-glass-textDark">{t("nav_contact")}</a>
+          <a href={`${base}#nima-uchun`} className="transition hover:text-glass-textLight dark:hover:text-glass-textDark">{t("nav_why")}</a>
+          <a href={`${base}#bemorlar`} className="transition hover:text-glass-textLight dark:hover:text-glass-textDark">{t("nav_patients")}</a>
+          <a href={`${base}#klinikalar`} className="transition hover:text-glass-textLight dark:hover:text-glass-textDark">{t("nav_clinics")}</a>
+          <a href={`${base}#narxlar`} className="transition hover:text-glass-textLight dark:hover:text-glass-textDark">{t("nav_pricing")}</a>
+          <a href={`${base}#faq`} className="transition hover:text-glass-textLight dark:hover:text-glass-textDark">{t("nav_faq")}</a>
         </nav>
         <div className="flex items-center gap-2">
           <div className="hidden sm:block"><LangMenu /></div>
