@@ -7,6 +7,7 @@ import ContactForm from "@/components/ContactForm";
 import PricingSection from "@/components/PricingSection";
 import StepsSection from "@/components/StepsSection";
 import FaqSection from "@/components/FaqSection";
+import { HeroMockup, AboutMockup } from "@/components/AppMockups";
 
 // Asosiy mahsulot (bemor/xodim ilovasi) - BOSHQA, alohida joylashtirilgan
 // Railway xizmatida turadi. Shu sabab oddiy <a> havolalar ishlatiladi
@@ -111,6 +112,9 @@ export default function LandingPage() {
               <p className="glass-muted mt-1 text-[11px] leading-none">{t("stat_clinics")}</p>
             </div>
           </div>
+          <div className="glass-card absolute -top-5 -right-4 hidden h-40 w-32 overflow-hidden p-0 sm:-top-6 sm:-right-6 sm:block sm:h-48 sm:w-36">
+            <HeroMockup />
+          </div>
         </div>
       </section>
 
@@ -128,12 +132,8 @@ export default function LandingPage() {
                 <p className="glass-muted">{t("about_full_p3")}</p>
               </div>
             </div>
-            <div className="overflow-hidden rounded-2xl">
-              <img
-                src="https://images.pexels.com/photos/5327654/pexels-photo-5327654.jpeg?auto=compress&cs=tinysrgb&w=900&h=700&fit=crop"
-                alt={t("about_full_title")}
-                className="h-full max-h-72 w-full object-cover lg:max-h-none"
-              />
+            <div className="h-64 overflow-hidden rounded-2xl lg:h-auto">
+              <AboutMockup />
             </div>
           </div>
         </div>

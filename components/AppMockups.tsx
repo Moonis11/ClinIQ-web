@@ -59,7 +59,7 @@ export function HeroMockup() {
 
       <div className="flex items-center justify-between rounded-xl bg-white/[0.06] px-3 py-2.5">
         <span className="text-[10px] text-white/60">AI tahlil natijasi tayyor</span>
-        <span className="h-1.5 w-1.5 rounded-full bg-glass-rose" />
+        <span className="h-1.5 w-1.5 rounded-full bg-glass-magenta" />
       </div>
     </div>
   );
@@ -112,7 +112,7 @@ export function PatientDashboardMockup() {
         {rows.map((r) => (
           <div key={r.label} className="flex items-center justify-between rounded-lg bg-white/[0.04] px-3 py-2">
             <div className="flex items-center gap-2">
-              <span className={`h-1.5 w-1.5 rounded-full ${r.ok ? "bg-glass-teal" : "bg-glass-rose"}`} />
+              <span className={`h-1.5 w-1.5 rounded-full ${r.ok ? "bg-glass-teal" : "bg-glass-magenta"}`} />
               <span className="text-[11px] text-white/80">{r.label}</span>
             </div>
             <span className="font-mono text-[10px] text-white/40">{r.date}</span>
@@ -143,7 +143,7 @@ export function ClinicDashboardMockup() {
         {[1, 2, 3, 4].map((i) => (
           <div key={i} className="flex items-center justify-between rounded-md bg-white/[0.04] px-2.5 py-1.5">
             <div className="h-1.5 w-20 rounded-full bg-white/15" />
-            <span className={`rounded-full px-2 py-0.5 text-[8px] font-semibold ${i === 3 ? "bg-glass-rose/20 text-glass-rose" : "bg-glass-teal/20 text-glass-tealLight"}`}>
+            <span className={`rounded-full px-2 py-0.5 text-[8px] font-semibold ${i === 3 ? "bg-glass-magenta/20 text-glass-magenta" : "bg-glass-teal/20 text-glass-tealLight"}`}>
               {i === 3 ? "Bekor" : "Faol"}
             </span>
           </div>

@@ -3,6 +3,7 @@
 import { useLang } from "@/lib/i18n";
 import ThemeToggle from "@/components/ThemeToggle";
 import LangMenu from "@/components/LangMenu";
+import NeuralInfinityMark from "@/components/NeuralInfinityMark";
 
 // Asosiy mahsulot (bemor/xodim ilovasi) - BOSHQA, alohida joylashtirilgan
 // Railway xizmatida turadi.
@@ -18,9 +19,12 @@ export default function SiteHeader({ home = false }: { home?: boolean }) {
   return (
     <header className="sticky top-0 z-30 border-b border-glass-borderLight bg-glass-cardLight backdrop-blur-xl dark:border-glass-borderDark dark:bg-glass-cardDark">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3.5">
-        <a href="/" className="text-xl font-extrabold tracking-tight">
-          <span className="text-glass-textLight dark:text-glass-textDark">Clin</span>
-          <span className="bg-gradient-to-r from-glass-teal via-glass-purple to-glass-magenta bg-clip-text text-transparent">IQ</span>
+        <a href="/" className="flex items-center gap-2 text-xl font-extrabold tracking-tight">
+          <NeuralInfinityMark size={30} />
+          <span>
+            <span className="text-glass-textLight dark:text-glass-textDark">Clin</span>
+            <span className="bg-gradient-to-r from-glass-teal via-glass-purple to-glass-magenta bg-clip-text text-transparent">IQ</span>
+          </span>
         </a>
         <nav className="hidden items-center gap-5 text-sm font-medium text-glass-mutedLight dark:text-glass-mutedDark lg:flex">
           <a href={`${base}#top`} className="transition hover:text-glass-textLight dark:hover:text-glass-textDark">{t("nav_home")}</a>
