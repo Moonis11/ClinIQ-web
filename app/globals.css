@@ -74,7 +74,7 @@
 
   .glass-btn-primary {
     @apply rounded-full px-5 py-2.5 text-sm font-semibold text-white shadow-lg transition;
-    @apply bg-gradient-to-r from-glass-teal via-glass-tealLight to-glass-purple hover:brightness-110;
+    @apply bg-gradient-to-r from-cyan-400 via-cyan-300 to-violet-500 hover:brightness-110;
     @apply dark:from-glass-accentDark dark:via-glass-teal dark:to-glass-purple dark:text-glass-bgDark1;
     box-shadow: 0 4px 18px -4px rgba(109,93,251,0.55), 0 0 16px -6px rgba(236,72,153,0.4);
   }

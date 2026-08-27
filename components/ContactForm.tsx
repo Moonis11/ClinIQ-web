@@ -16,7 +16,7 @@ export default function ContactForm() {
     setStatus("sending");
     const subject = encodeURIComponent(`ClinIQ clinic enquiry — ${clinicName}`);
     const body = encodeURIComponent(`Name: ${name}\nClinic: ${clinicName}\nPhone: ${phone}\n\n${message}`);
-    window.location.href = `mailto:munisanematova2023@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:munisanematova2021@gmail.com?subject=${subject}&body=${body}`;
     setStatus("sent");
   }
 

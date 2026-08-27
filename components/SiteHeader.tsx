@@ -32,6 +32,7 @@ export default function SiteHeader({ home = false }: { home?: boolean }) {
           <a href={`${base}#top`} className="transition hover:text-glass-textLight dark:hover:text-glass-textDark">{t("nav_home")}</a>
           <a href={`${base}#platforma`} className="transition hover:text-glass-textLight dark:hover:text-glass-textDark">{t("nav_platform")}</a>
           <a href={`${base}#ai`} className="transition hover:text-glass-textLight dark:hover:text-glass-textDark">AI</a>
+          <a href={`${base}#konsultatsiya`} className="transition hover:text-glass-textLight dark:hover:text-glass-textDark">{t("nav_consultation")}</a>
           <a href={`${base}#bemorlar`} className="transition hover:text-glass-textLight dark:hover:text-glass-textDark">{t("nav_patients")}</a>
           <a href={`${base}#klinikalar`} className="transition hover:text-glass-textLight dark:hover:text-glass-textDark">{t("nav_clinics")}</a>
           <a href={`${base}#yangiliklar`} className="transition hover:text-glass-textLight dark:hover:text-glass-textDark">{t("nav_security")}</a>

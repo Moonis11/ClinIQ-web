@@ -20,7 +20,7 @@ export default function SiteFooter() {
           <p className="text-xs font-bold text-glass-textLight dark:text-glass-textDark">{t("footer_contact_title")}</p>
           <div className="glass-muted mt-2 space-y-1.5 text-xs">
             <a href="tel:+998974646665" className="block hover:underline">+998 97 464 66 65</a>
-            <a href="mailto:munisanematova2023@gmail.com" className="block hover:underline">munisanematova2023@gmail.com</a>
+            <a href="mailto:munisanematova2021@gmail.com" className="block hover:underline">munisanematova2021@gmail.com</a>
           </div>
         </div>
         <div>

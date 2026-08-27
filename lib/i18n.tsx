@@ -34,6 +34,13 @@ const translations = {
   trust_security: { uz: "Shifrlangan maxfiy ma'lumot", ru: "Шифрование чувствительных данных", en: "Encrypted sensitive data" },
   trust_audit: { uz: "Auditga tayyor jarayon", ru: "Готовность к аудиту", en: "Audit-ready workflows" },
   trust_region: { uz: "Markaziy Osiyo uchun yaratilgan", ru: "Создано для Центральной Азии", en: "Built for Central Asia" },
+  nav_consultation: { uz: "Online konsultatsiya", ru: "Онлайн-консультация", en: "Online consultation" },
+  consultation_eyebrow: { uz: "Masofadan tibbiy yordam", ru: "Медицинская помощь онлайн", en: "Care without distance" },
+  consultation_title: { uz: "Shifokorni tanlang. Vaqtni band qiling. Xavfsiz video orqali maslahatlashing.", ru: "Выберите врача. Забронируйте время. Получите безопасную видеоконсультацию.", en: "Choose a clinician. Book a time. Consult securely by video." },
+  consultation_desc: { uz: "ClinIQ bemorga mutaxassislik bo'yicha tasdiqlangan shifokorni topish, bo'sh vaqtni tanlash, konsultatsiyani band qilish va video xonaga to'g'ridan-to'g'ri kirish imkonini beradi.", ru: "ClinIQ позволяет найти проверенного врача по специальности, выбрать свободное время, забронировать консультацию и напрямую войти в защищённую видеокомнату.", en: "ClinIQ helps patients find a verified specialist, choose an available time, complete booking and join a secure video room directly." },
+  consultation_point_1: { uz: "Mutaxassislik, tajriba, til va reyting bo'yicha tanlash", ru: "Выбор по специальности, опыту, языку и рейтингу", en: "Select by specialty, experience, language and rating" },
+  consultation_point_2: { uz: "Bo'sh vaqtlar, rozilik va to'lov bir oqimda", ru: "Свободные слоты, согласие и оплата в одном потоке", en: "Availability, consent and payment in one flow" },
+  consultation_point_3: { uz: "Video qo'ng'iroq, vaqtni uzaytirish va keyingi baholash", ru: "Видеозвонок, продление времени и последующая оценка", en: "Video visit, time extension and post-consultation feedback" },
 
   // --- Xizmatlar sahifasi ---
   services_eyebrow: { uz: "ClinIQ platformasi", ru: "Платформа ClinIQ", en: "The ClinIQ platform" },

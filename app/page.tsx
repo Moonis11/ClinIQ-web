@@ -10,6 +10,7 @@ import FaqSection from "@/components/FaqSection";
 import { HeroMockup, AboutMockup, PatientDashboardMockup, ClinicDashboardMockup } from "@/components/AppMockups";
 import AiBrainMark from "@/components/AiBrainMark";
 import Image from "next/image";
+import OnlineConsultationShowcase from "@/components/OnlineConsultationShowcase";
 
 // Asosiy mahsulot (bemor/xodim ilovasi) - BOSHQA, alohida joylashtirilgan
 // Railway xizmatida turadi. Shu sabab oddiy <a> havolalar ishlatiladi
@@ -206,6 +207,26 @@ export default function LandingPage() {
           <div className="h-64 sm:h-72">
             <AiBrainMark />
           </div>
+        </div>
+      </section>
+
+      <section id="konsultatsiya" className="mx-auto max-w-6xl px-5 py-16 sm:py-24">
+        <div className="grid items-center gap-10 lg:grid-cols-[0.88fr_1.12fr] lg:gap-14">
+          <div>
+            <span className="text-xs font-bold uppercase tracking-[0.2em] text-cyan-600 dark:text-cyan-300">{t("consultation_eyebrow")}</span>
+            <h2 className="mt-4 text-3xl font-extrabold leading-tight text-glass-textLight dark:text-glass-textDark sm:text-4xl">{t("consultation_title")}</h2>
+            <p className="glass-muted mt-5 text-base leading-relaxed">{t("consultation_desc")}</p>
+            <div className="mt-7 space-y-3">
+              {["consultation_point_1", "consultation_point_2", "consultation_point_3"].map((key) => (
+                <div key={key} className="flex items-start gap-3">
+                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-cyan-400 text-[10px] font-black text-[#061225]">✓</span>
+                  <span className="text-sm font-medium text-glass-textLight dark:text-glass-textDark">{t(key as TranslationKey)}</span>
+                </div>
+              ))}
+            </div>
+            <a href={`${APP_URL}/patient/login`} className="mt-8 inline-flex rounded-full bg-cyan-400 px-6 py-3 text-sm font-extrabold text-[#061225] shadow-[0_12px_35px_rgba(34,211,238,0.35)] transition hover:bg-cyan-300">{t("hero_cta_patient")}</a>
+          </div>
+          <OnlineConsultationShowcase />
         </div>
       </section>
 
