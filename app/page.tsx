@@ -243,8 +243,8 @@ export default function LandingPage() {
             <svg className="pointer-events-none absolute inset-0 h-full w-full" viewBox="0 0 100 75" preserveAspectRatio="none">
               <defs>
                 <linearGradient id="connector-grad" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stopColor="#14C7B0" />
-                  <stop offset="100%" stopColor="#6D5DFB" />
+                  <stop className="connector-start" offset="0%" />
+                  <stop className="connector-end" offset="100%" />
                 </linearGradient>
               </defs>
               {FLOW_NODES.map((node, i) => {
@@ -266,8 +266,8 @@ export default function LandingPage() {
             </svg>
             <div className="clinIQ-orbit-ring absolute inset-[8%] rounded-full border border-dashed border-glass-teal/30 dark:border-glass-purpleLight/25" />
             <div className="ecosystem-halo absolute inset-[17%] rounded-full border border-cyan-300/10" />
-            <div className="ecosystem-particle ecosystem-particle-a absolute h-2 w-2 rounded-full bg-cyan-300" />
-            <div className="ecosystem-particle ecosystem-particle-b absolute h-1.5 w-1.5 rounded-full bg-pink-400" />
+            <div className="ecosystem-particle ecosystem-particle-a absolute h-2 w-2 rounded-full" />
+            <div className="ecosystem-particle ecosystem-particle-b absolute h-1.5 w-1.5 rounded-full" />
             <div className="clinIQ-orbit-dot absolute h-3 w-3 rounded-full bg-gradient-to-r from-glass-teal to-glass-purple shadow-glowAccent" />
             {FLOW_NODES.map((node, i) => {
               const angle = (i / FLOW_NODES.length) * 2 * Math.PI - Math.PI / 2;

@@ -5,6 +5,11 @@
 
 @layer base {
   body {
+    --motion-cyan: #0891b2;
+    --motion-purple: #6d28d9;
+    --motion-pink: #db2777;
+    --motion-aura: rgba(8,145,178,.16);
+    --motion-scan: rgba(8,145,178,.09);
     @apply font-sans text-glass-textLight dark:text-glass-textDark;
     @apply min-h-screen transition-colors duration-300;
     background-attachment: fixed;
@@ -15,6 +20,11 @@
       radial-gradient(circle at 55% 96%, rgba(236,72,153,0.08), transparent 44%);
   }
   .dark body {
+    --motion-cyan: #67e8f9;
+    --motion-purple: #a78bfa;
+    --motion-pink: #f472b6;
+    --motion-aura: rgba(103,232,249,.13);
+    --motion-scan: rgba(103,232,249,.08);
     background-color: #080B14;
     background-image:
       radial-gradient(circle at 15% 20%, rgba(73,245,247,0.06), transparent 40%),
@@ -100,10 +110,20 @@
     @apply dark:bg-glass-cardDark dark:border-glass-borderDark;
   }
   .glass-pill-item-active {
-    @apply rounded-full px-3.5 py-1.5 text-xs font-medium text-white shadow;
-    @apply bg-gradient-to-r from-glass-teal to-glass-tealLight;
-    @apply dark:from-glass-accentDark dark:to-glass-teal dark:text-glass-bgDark1;
+    @apply rounded-full bg-black px-3.5 py-1.5 text-xs font-medium text-white shadow transition-colors;
+    @apply dark:bg-white dark:text-black;
   }
+
+  .theme-select-button {
+    @apply rounded-full border border-black bg-black font-semibold text-white shadow-sm transition hover:bg-black/80;
+    @apply dark:border-white dark:bg-white dark:text-black dark:hover:bg-white/85;
+  }
+  .theme-select-menu {
+    @apply border border-black/10 bg-white text-black;
+    @apply dark:border-white/10 dark:bg-black dark:text-white;
+  }
+  .theme-select-option { @apply hover:bg-black/10 dark:hover:bg-white/10; }
+  .theme-select-option-active { @apply bg-black text-white dark:bg-white dark:text-black; }
 
   .glass-muted {
     @apply text-glass-mutedLight dark:text-glass-mutedDark;
@@ -156,6 +176,8 @@
   animation: connector-flow 2.5s linear infinite;
   opacity: 0.55;
 }
+.connector-start { stop-color: var(--motion-cyan); }
+.connector-end { stop-color: var(--motion-purple); }
 @keyframes connector-flow {
   to { stroke-dashoffset: -14; }
 }
@@ -194,7 +216,7 @@
   position: absolute;
   inset: 12%;
   border-radius: 999px;
-  background: radial-gradient(circle, rgba(34,211,238,.13), transparent 62%);
+  background: radial-gradient(circle, var(--motion-aura), transparent 62%);
   animation: ecosystem-aura 4s ease-in-out infinite;
 }
 .ecosystem-halo { animation: ecosystem-halo 12s linear infinite reverse; }
@@ -205,6 +227,8 @@
   offset-path: ellipse(43% 36% at 50% 50%);
   animation: ecosystem-travel 7s linear infinite;
 }
+.ecosystem-particle-a { color:var(--motion-cyan); background:var(--motion-cyan); }
+.ecosystem-particle-b { color:var(--motion-pink); background:var(--motion-pink); }
 .ecosystem-particle-b { animation-delay: -3.5s; animation-duration: 9s; }
 @keyframes ecosystem-travel { from { offset-distance: 0%; } to { offset-distance: 100%; } }
 @keyframes ecosystem-aura { 0%,100% { opacity:.45; transform:scale(.92); } 50% { opacity:1; transform:scale(1.08); } }
@@ -213,7 +237,7 @@
 
 /* Mahsulot oynalarining yumshoq kirishi va real-time yangilanishi */
 .dashboard-enter > *:not(.dashboard-scan) { animation: dashboard-rise .65s ease-out both; }
-.dashboard-scan { position:absolute; inset:0; pointer-events:none; background:linear-gradient(180deg,transparent 0%,rgba(34,211,238,.07) 48%,transparent 54%); animation:dashboard-scan 5s linear infinite; }
+.dashboard-scan { position:absolute; inset:0; pointer-events:none; background:linear-gradient(180deg,transparent 0%,var(--motion-scan) 48%,transparent 54%); animation:dashboard-scan 5s linear infinite; }
 .patient-chart-bar,.clinic-chart-bar { transform-origin:bottom; animation:chart-grow .7s cubic-bezier(.2,.8,.2,1) both; }
 .clinic-row { animation:dashboard-rise .5s ease-out both; }
 @keyframes dashboard-rise { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }

@@ -16,18 +16,20 @@ export default function LangMenu() {
 
   return (
     <div className="relative">
-      <button onClick={() => setOpen((v) => !v)} className="glass-btn-outline px-3 py-1.5 text-xs">
+      <button onClick={() => setOpen((v) => !v)} className="theme-select-button px-3 py-1.5 text-xs" aria-expanded={open} aria-haspopup="listbox">
         {current} ▾
       </button>
       {open && (
-        <div className="glass-card absolute right-0 top-full z-20 mt-2 w-24 overflow-hidden p-1">
+        <div className="theme-select-menu absolute right-0 top-full z-20 mt-2 w-24 overflow-hidden rounded-xl p-1 shadow-xl" role="listbox">
           {LANGS.map((l) => (
             <button
               key={l.key}
               onClick={() => { setLang(l.key); setOpen(false); }}
-              className={`block w-full rounded-lg px-3 py-1.5 text-left text-xs transition ${
-                lang === l.key ? "bg-glass-purple/20 font-semibold" : "hover:bg-white/10"
+              className={`theme-select-option block w-full rounded-lg px-3 py-1.5 text-left text-xs transition ${
+                lang === l.key ? "theme-select-option-active font-semibold" : ""
               }`}
+              role="option"
+              aria-selected={lang === l.key}
             >
               {l.label}
             </button>
