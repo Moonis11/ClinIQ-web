@@ -3,7 +3,7 @@
 import { useLang } from "@/lib/i18n";
 import ThemeToggle from "@/components/ThemeToggle";
 import LangMenu from "@/components/LangMenu";
-import NeuralInfinityMark from "@/components/NeuralInfinityMark";
+import Image from "next/image";
 
 // Asosiy mahsulot (bemor/xodim ilovasi) - BOSHQA, alohida joylashtirilgan
 // Railway xizmatida turadi.
@@ -20,7 +20,9 @@ export default function SiteHeader({ home = false }: { home?: boolean }) {
     <header className="sticky top-0 z-30 border-b border-glass-borderLight bg-glass-cardLight backdrop-blur-xl dark:border-glass-borderDark dark:bg-glass-cardDark">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3.5">
         <a href="/" className="flex items-center gap-2 text-xl font-extrabold tracking-tight">
-          <NeuralInfinityMark size={30} />
+          <span className="h-9 w-9 overflow-hidden rounded-xl border border-glass-purple/20 bg-white shadow-sm">
+            <Image src="/cliniq-logo.jpeg" alt="" width={36} height={36} className="h-full w-full object-cover" />
+          </span>
           <span>
             <span className="text-glass-textLight dark:text-glass-textDark">Clin</span>
             <span className="bg-gradient-to-r from-glass-teal via-glass-purple to-glass-magenta bg-clip-text text-transparent">IQ</span>

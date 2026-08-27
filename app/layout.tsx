@@ -13,6 +13,13 @@ export const metadata: Metadata = {
     siteName: "ClinIQ",
     locale: "uz_UZ",
     type: "website",
+    images: ["https://cliniq-medica.munisanematova2021.chatgpt.site/og.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ClinIQ — One continuous record. Every step of care.",
+    description: "Secure clinical intelligence connecting patients, clinicians and clinics.",
+    images: ["https://cliniq-medica.munisanematova2021.chatgpt.site/og.png"],
   },
   robots: { index: true, follow: true },
 };

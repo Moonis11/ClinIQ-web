@@ -7,8 +7,9 @@ import ContactForm from "@/components/ContactForm";
 import PricingSection from "@/components/PricingSection";
 import StepsSection from "@/components/StepsSection";
 import FaqSection from "@/components/FaqSection";
-import { HeroMockup, AboutMockup } from "@/components/AppMockups";
+import { HeroMockup, AboutMockup, PatientDashboardMockup, ClinicDashboardMockup } from "@/components/AppMockups";
 import AiBrainMark from "@/components/AiBrainMark";
+import Image from "next/image";
 
 // Asosiy mahsulot (bemor/xodim ilovasi) - BOSHQA, alohida joylashtirilgan
 // Railway xizmatida turadi. Shu sabab oddiy <a> havolalar ishlatiladi
@@ -97,19 +98,20 @@ export default function LandingPage() {
         </div>
 
         <div className="relative mx-auto w-full max-w-md">
-          <div className="glass-card overflow-hidden p-0">
-            <video
-              className="aspect-[4/5] w-full object-cover"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
-              aria-label={t("hero_photo_alt")}
-              poster="https://images.pexels.com/videos/7581435/achievement-aid-anti-aging-appointment-7581435.jpeg?auto=compress&w=900&h=1125&fit=crop"
-            >
-              <source src="https://videos.pexels.com/video-files/7581435/7581435-uhd_1440_2732_25fps.mp4" type="video/mp4" />
-            </video>
+          <div className="glass-card hero-brand-frame aspect-[4/5] overflow-hidden p-6 sm:p-10">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_20%,rgba(34,211,238,0.28),transparent_38%),radial-gradient(circle_at_80%_78%,rgba(236,72,153,0.23),transparent_42%),linear-gradient(145deg,#081124,#11183b_52%,#250e36)]" />
+            <div className="relative flex h-full flex-col justify-between">
+              <div className="flex items-center justify-between text-[10px] font-semibold uppercase tracking-[0.18em] text-white/65">
+                <span>Clinical intelligence</span><span>UZ • RU • EN</span>
+              </div>
+              <div className="mx-auto w-full max-w-[300px] overflow-hidden rounded-[2rem] bg-white p-5 shadow-[0_30px_80px_rgba(0,0,0,0.4)] sm:p-7">
+                <Image src="/cliniq-logo.jpeg" alt="ClinIQ logo" width={512} height={512} priority className="aspect-square w-full object-cover" />
+              </div>
+              <div className="flex items-center gap-3 text-xs font-medium text-white/75">
+                <span className="h-2 w-2 rounded-full bg-glass-teal shadow-[0_0_18px_rgba(34,211,238,0.9)]" />
+                <span>One continuous record. Every step of care.</span>
+              </div>
+            </div>
           </div>
           <div className="glass-card absolute -bottom-5 -left-5 flex items-center gap-3 p-3.5 pr-5 sm:-bottom-6 sm:-left-6">
             <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-glass-teal to-glass-purple">
@@ -282,9 +284,7 @@ export default function LandingPage() {
             <p className="glass-muted mt-2 max-w-xl text-sm sm:text-base">{t("patient_features_subtitle")}</p>
           </div>
           <div className="glass-card h-64 overflow-hidden p-0 sm:h-80">
-            <video className="h-full w-full object-cover" autoPlay muted loop playsInline preload="metadata" aria-label={t("patient_features_title")}>
-              <source src="https://videos.pexels.com/video-files/30141933/12925692_1920_1080_24fps.mp4" type="video/mp4" />
-            </video>
+            <PatientDashboardMockup />
           </div>
         </div>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -302,9 +302,7 @@ export default function LandingPage() {
       <section id="klinikalar" className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
         <div className="grid items-center gap-8 lg:grid-cols-[1fr_1.1fr]">
           <div className="glass-card order-2 h-72 overflow-hidden p-0 sm:h-96 lg:order-1">
-            <video className="h-full w-full object-cover" autoPlay muted loop playsInline preload="metadata" aria-label={t("clinic_features_title")}>
-              <source src="https://videos.pexels.com/video-files/5234529/5234529-hd_1920_1080_25fps.mp4" type="video/mp4" />
-            </video>
+            <ClinicDashboardMockup />
           </div>
           <div className="order-1 lg:order-2">
             <h2 className="font-serif text-2xl italic text-glass-textLight dark:text-glass-textDark sm:text-3xl">
