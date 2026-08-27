@@ -1,5 +1,7 @@
 "use client";
 
+import { useLang } from "@/lib/i18n";
+
 /* Stok video/rasmlar o'rniga — brendning o'z ranglarida (siyan, siyoh,
    binafsha, pushti) qurilgan mockup illyustratsiyalar. Odam suratlari
    ISHLATILMAYDI, faqat mahsulot interfeysini ifodalovchi abstrakt
@@ -105,47 +107,55 @@ export function AboutMockup() {
 }
 
 export function PatientDashboardMockup() {
-  const rows = [true, true, false];
+  const { lang } = useLang();
+  const copy = {
+    uz: { hello: "Xayrli kun, Munisa", record: "Sog'liq markazi", next: "Keyingi konsultatsiya", doctor: "Dr. Dilnoza Karimova", time: "Bugun · 16:30", join: "Video xonaga kirish", meds: "Dori rejasi", med: "Vitamin D · 1 kapsula", result: "Yangi natija", lab: "Umumiy qon tahlili", ready: "Tayyor", history: "Tibbiy tarix" },
+    ru: { hello: "Добрый день, Муниса", record: "Центр здоровья", next: "Следующая консультация", doctor: "Д-р Дилноза Каримова", time: "Сегодня · 16:30", join: "Войти в видеочат", meds: "План лечения", med: "Витамин D · 1 капсула", result: "Новый результат", lab: "Общий анализ крови", ready: "Готов", history: "История здоровья" },
+    en: { hello: "Good afternoon, Munisa", record: "Health center", next: "Next consultation", doctor: "Dr Dilnoza Karimova", time: "Today · 16:30", join: "Join video room", meds: "Medication plan", med: "Vitamin D · 1 capsule", result: "New result", lab: "Complete blood count", ready: "Ready", history: "Health timeline" },
+  }[lang];
   return (
-    <div className="flex h-full w-full flex-col gap-3 bg-glass-bgDark2 p-5">
-      <div className="rounded-xl bg-gradient-to-r from-glass-teal to-[#0B5A70] px-4 py-3">
-        <Bar w="70px" tone="light" />
-        <div className="mt-1.5" />
-        <Bar w="110px" tone="light" />
+    <div className="dashboard-enter relative flex h-full w-full flex-col gap-3 overflow-hidden bg-[#08111f] p-4 text-white sm:p-5">
+      <div className="dashboard-scan" aria-hidden="true" />
+      <div className="flex items-center justify-between">
+        <div><p className="text-[9px] text-cyan-200/60">CLINIQ • PATIENT</p><p className="mt-0.5 text-sm font-bold">{copy.hello}</p></div>
+        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-cyan-300 to-violet-500 text-[10px] font-black">MN</div>
       </div>
-      <div className="flex-1 space-y-2 rounded-xl bg-white/[0.05] p-3">
-        {rows.map((ok, i) => (
-          <div key={i} className="flex items-center justify-between rounded-lg bg-white/[0.04] px-3 py-2.5">
-            <div className="flex items-center gap-2">
-              <span className={`h-1.5 w-1.5 rounded-full ${ok ? "bg-glass-teal" : "bg-glass-magenta"}`} />
-              <Bar w="90px" tone="faint" />
-            </div>
-            <Bar w="30px" tone="faint" />
+      <div className="grid flex-1 grid-cols-[1.2fr_.8fr] gap-2.5">
+        <div className="space-y-2.5">
+          <div className="rounded-xl border border-cyan-300/20 bg-gradient-to-br from-cyan-400/20 to-violet-500/10 p-3">
+            <p className="text-[9px] font-semibold uppercase tracking-wider text-cyan-200/70">{copy.next}</p>
+            <div className="mt-2 flex items-center gap-2"><span className="flex h-7 w-7 items-center justify-center rounded-lg bg-cyan-300/15 text-xs">✚</span><div><p className="text-[11px] font-bold">{copy.doctor}</p><p className="text-[9px] text-white/50">{copy.time}</p></div></div>
+            <button className="mt-2.5 w-full rounded-lg bg-cyan-300 py-1.5 text-[9px] font-black text-[#061225]">{copy.join} →</button>
           </div>
-        ))}
+          <div className="rounded-xl bg-white/[0.055] p-3"><p className="text-[9px] font-semibold text-white/55">{copy.history}</p><div className="mt-2 flex items-end gap-1">{[35,58,44,76,62,88,72,94].map((h,i)=><span key={i} className="patient-chart-bar flex-1 rounded-t bg-gradient-to-t from-cyan-500/30 to-cyan-300" style={{height:`${h/2}px`,animationDelay:`${i*.08}s`}} />)}</div></div>
+        </div>
+        <div className="space-y-2.5">
+          <div className="rounded-xl bg-white/[0.055] p-3"><p className="text-[9px] text-white/50">{copy.meds}</p><p className="mt-2 text-[10px] font-bold">{copy.med}</p><div className="mt-2 h-1 overflow-hidden rounded-full bg-white/10"><div className="h-full w-3/4 rounded-full bg-gradient-to-r from-cyan-300 to-violet-400" /></div></div>
+          <div className="rounded-xl border border-pink-400/15 bg-pink-400/[0.06] p-3"><div className="flex items-center justify-between"><p className="text-[9px] text-white/50">{copy.result}</p><span className="h-2 w-2 rounded-full bg-pink-400 shadow-[0_0_10px_#ec4899]" /></div><p className="mt-2 text-[10px] font-bold leading-tight">{copy.lab}</p><p className="mt-2 text-[9px] font-semibold text-cyan-300">✓ {copy.ready}</p></div>
+        </div>
       </div>
     </div>
   );
 }
 
 export function ClinicDashboardMockup() {
+  const { lang } = useLang();
+  const copy = {
+    uz: { title: "Klinika boshqaruvi", live: "Jonli", patients: "Bugungi bemorlar", doctors: "Shifokorlar", revenue: "Oylik tushum", queue: "Qabul navbati", analytics: "Haftalik qabul", statuses: ["Qabulda", "Kutilmoqda", "Tahlilda"] },
+    ru: { title: "Управление клиникой", live: "Онлайн", patients: "Пациенты сегодня", doctors: "Врачи", revenue: "Доход за месяц", queue: "Очередь приёма", analytics: "Приёмы за неделю", statuses: ["На приёме", "Ожидает", "Анализы"] },
+    en: { title: "Clinic operations", live: "Live", patients: "Patients today", doctors: "Clinicians", revenue: "Monthly revenue", queue: "Appointment queue", analytics: "Weekly visits", statuses: ["In consultation", "Waiting", "In lab"] },
+  }[lang];
+  const patients = ["M. Abdukarimova", "A. Yusupov", "D. Rasulova"];
   return (
-    <div className="flex h-full w-full flex-col gap-3 bg-glass-bgDark2 p-5">
-      <div className="grid grid-cols-3 gap-2">
-        {[0, 1, 2].map((i) => (
-          <div key={i} className="rounded-lg bg-white/[0.06] p-2.5 text-center">
-            <p className="text-base font-bold text-white">{["342", "12", "18"][i]}</p>
-            <div className="mt-1 flex justify-center"><Bar w="24px" tone="faint" /></div>
-          </div>
-        ))}
+    <div className="dashboard-enter relative flex h-full w-full flex-col overflow-hidden bg-[#08111f] p-4 text-white sm:p-5">
+      <div className="dashboard-scan" aria-hidden="true" />
+      <div className="flex items-center justify-between"><div><p className="text-[9px] text-cyan-200/60">CLINIQ • OPERATIONS</p><p className="mt-0.5 text-sm font-bold">{copy.title}</p></div><span className="flex items-center gap-1.5 rounded-full bg-cyan-300/10 px-2.5 py-1 text-[9px] font-bold text-cyan-200"><i className="h-1.5 w-1.5 animate-pulse rounded-full bg-cyan-300" />{copy.live}</span></div>
+      <div className="mt-3 grid grid-cols-3 gap-2">
+        {[["48",copy.patients],["12",copy.doctors],["186M",copy.revenue]].map(([value,label],i)=><div key={label} className="rounded-xl border border-white/[0.06] bg-white/[0.045] p-2.5"><p className="text-sm font-black text-white">{value}</p><p className="mt-0.5 truncate text-[8px] text-white/45">{label}</p><div className="mt-2 h-0.5 rounded-full bg-white/10"><div className="h-full rounded-full bg-gradient-to-r from-cyan-300 to-violet-400" style={{width:["78%","60%","86%"][i]}} /></div></div>)}
       </div>
-      <div className="flex-1 space-y-1.5 rounded-xl bg-white/[0.05] p-3">
-        {[0, 1, 2, 3].map((i) => (
-          <div key={i} className="flex items-center justify-between rounded-md bg-white/[0.04] px-2.5 py-2">
-            <Bar w="80px" tone="faint" />
-            <span className={`h-2 w-8 rounded-full ${i === 3 ? "bg-glass-magenta/40" : "bg-glass-teal/40"}`} />
-          </div>
-        ))}
+      <div className="mt-2.5 grid min-h-0 flex-1 grid-cols-[1.15fr_.85fr] gap-2.5">
+        <div className="rounded-xl bg-white/[0.045] p-3"><div className="mb-2 flex items-center justify-between"><p className="text-[9px] font-bold">{copy.queue}</p><span className="text-[8px] text-cyan-300">08:00–19:00</span></div>{patients.map((name,i)=><div key={name} className="clinic-row flex items-center justify-between border-t border-white/[0.05] py-2" style={{animationDelay:`${i*.12}s`}}><div className="flex items-center gap-2"><span className="flex h-5 w-5 items-center justify-center rounded-md bg-gradient-to-br from-cyan-400/25 to-violet-500/20 text-[8px] font-bold">{i+1}</span><div><p className="text-[9px] font-semibold">{name}</p><p className="text-[7px] text-white/40">{["09:30","10:00","10:20"][i]}</p></div></div><span className={`rounded-full px-1.5 py-1 text-[7px] font-semibold ${i===0?"bg-cyan-300/15 text-cyan-200":i===1?"bg-violet-400/15 text-violet-200":"bg-pink-400/15 text-pink-200"}`}>{copy.statuses[i]}</span></div>)}</div>
+        <div className="flex flex-col rounded-xl bg-white/[0.045] p-3"><p className="text-[9px] font-bold">{copy.analytics}</p><div className="mt-2 flex flex-1 items-end gap-1.5">{[45,72,58,88,67,96,76].map((h,i)=><div key={i} className="flex flex-1 flex-col items-center justify-end gap-1"><span className="clinic-chart-bar w-full rounded-t bg-gradient-to-t from-violet-500/40 via-cyan-400/70 to-cyan-200" style={{height:`${h}%`,animationDelay:`${i*.07}s`}} /><span className="text-[6px] text-white/30">{["D","S","C","P","J","S","Y"][i]}</span></div>)}</div></div>
       </div>
     </div>
   );

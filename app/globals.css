@@ -188,6 +188,42 @@
   }
 }
 
+/* ClinIQ ekotizimi: markazdan bo'limlarga uzluksiz klinik ma'lumot oqimi */
+.ecosystem-shell::before {
+  content: "";
+  position: absolute;
+  inset: 12%;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(34,211,238,.13), transparent 62%);
+  animation: ecosystem-aura 4s ease-in-out infinite;
+}
+.ecosystem-halo { animation: ecosystem-halo 12s linear infinite reverse; }
+.hub-radar { animation: hub-radar 2.4s ease-out infinite; }
+.ecosystem-particle {
+  left: 50%; top: 50%;
+  box-shadow: 0 0 14px currentColor;
+  offset-path: ellipse(43% 36% at 50% 50%);
+  animation: ecosystem-travel 7s linear infinite;
+}
+.ecosystem-particle-b { animation-delay: -3.5s; animation-duration: 9s; }
+@keyframes ecosystem-travel { from { offset-distance: 0%; } to { offset-distance: 100%; } }
+@keyframes ecosystem-aura { 0%,100% { opacity:.45; transform:scale(.92); } 50% { opacity:1; transform:scale(1.08); } }
+@keyframes ecosystem-halo { to { transform:rotate(360deg); } }
+@keyframes hub-radar { 0% { opacity:.8; transform:scale(.72); } 100% { opacity:0; transform:scale(1.55); } }
+
+/* Mahsulot oynalarining yumshoq kirishi va real-time yangilanishi */
+.dashboard-enter > *:not(.dashboard-scan) { animation: dashboard-rise .65s ease-out both; }
+.dashboard-scan { position:absolute; inset:0; pointer-events:none; background:linear-gradient(180deg,transparent 0%,rgba(34,211,238,.07) 48%,transparent 54%); animation:dashboard-scan 5s linear infinite; }
+.patient-chart-bar,.clinic-chart-bar { transform-origin:bottom; animation:chart-grow .7s cubic-bezier(.2,.8,.2,1) both; }
+.clinic-row { animation:dashboard-rise .5s ease-out both; }
+@keyframes dashboard-rise { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+@keyframes dashboard-scan { from { transform:translateY(-100%); } to { transform:translateY(100%); } }
+@keyframes chart-grow { from { transform:scaleY(.05); opacity:.2; } to { transform:scaleY(1); opacity:1; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .ecosystem-shell::before,.ecosystem-halo,.hub-radar,.ecosystem-particle,.dashboard-enter > *,.dashboard-scan,.patient-chart-bar,.clinic-chart-bar,.clinic-row { animation:none; }
+}
+
 /* --- Yurak zarbi (puls) chizig'i animatsiyasi - "ClinIQ haqida" bo'limi,
    uzluksiz chapga siljiydigan "yurak monitori" uslubida --- */
 @keyframes pulse-scroll {
