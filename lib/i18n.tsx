@@ -12,6 +12,28 @@ const translations = {
   nav_services: { uz: "Xizmatlar", ru: "Услуги", en: "Services" },
   nav_news: { uz: "Ta'sir va ishonch", ru: "Ценность и доверие", en: "Impact & trust" },
   nav_contact: { uz: "Aloqa", ru: "Контакты", en: "Contact" },
+  nav_platform: { uz: "Platforma", ru: "Платформа", en: "Platform" },
+  nav_security: { uz: "Xavfsizlik", ru: "Безопасность", en: "Security" },
+
+  enterprise_eyebrow: { uz: "Klinikalar uchun yagona operatsion platforma", ru: "Единая операционная платформа для клиник", en: "One operating platform for connected care" },
+  enterprise_title: { uz: "Klinik jarayonning har bir qismi — nihoyat bir-biriga bog'langan", ru: "Каждая часть клинического процесса — наконец связана", en: "Every part of the care journey, finally connected" },
+  enterprise_desc: {
+    uz: "ClinIQ qabul, tibbiy tarix, laboratoriya, radiologiya, elektron retsept, to'lov va tahlilni bitta xavfsiz muhitda birlashtiradi.",
+    ru: "ClinIQ объединяет запись, историю болезни, лабораторию, радиологию, электронные рецепты, платежи и аналитику в одной защищённой среде.",
+    en: "ClinIQ brings scheduling, longitudinal records, labs, radiology, e-prescribing, payments and analytics into one secure environment.",
+  },
+  enterprise_data_title: { uz: "Yagona tibbiy tarix", ru: "Единая история пациента", en: "Longitudinal patient record" },
+  enterprise_data_desc: { uz: "Klinika almashsa ham bemor tarixi uzluksiz qoladi.", ru: "История пациента остаётся непрерывной при смене клиники.", en: "A continuous record that follows the patient across care settings." },
+  enterprise_workflow_title: { uz: "Rolga mos ish jarayoni", ru: "Ролевые рабочие процессы", en: "Role-based workflows" },
+  enterprise_workflow_desc: { uz: "Qabulxona, shifokor, laboratoriya, radiologiya va boshqaruv bitta tizimda.", ru: "Регистратура, врачи, лаборатория, радиология и руководство — в одной системе.", en: "Purpose-built views for reception, clinicians, labs, radiology and management." },
+  enterprise_ai_title: { uz: "Shifokor nazoratidagi AI", ru: "ИИ под контролем врача", en: "Clinician-controlled AI" },
+  enterprise_ai_desc: { uz: "AI xulosa taklif qiladi; yakuniy qarorni faqat shifokor tasdiqlaydi.", ru: "ИИ предлагает вывод; окончательное решение подтверждает врач.", en: "AI surfaces insights while clinicians retain final decision authority." },
+  enterprise_security_title: { uz: "Xavfsizlik va audit", ru: "Безопасность и аудит", en: "Security and auditability" },
+  enterprise_security_desc: { uz: "Shifrlangan identifikatorlar, JWT himoyasi va muhim amallar uchun audit izi.", ru: "Зашифрованные идентификаторы, JWT-защита и аудит важных действий.", en: "Encrypted identifiers, protected access and traceable critical actions." },
+  trust_ai: { uz: "Shifokor nazoratidagi AI", ru: "ИИ под контролем врача", en: "Clinician-controlled AI" },
+  trust_security: { uz: "Shifrlangan maxfiy ma'lumot", ru: "Шифрование чувствительных данных", en: "Encrypted sensitive data" },
+  trust_audit: { uz: "Auditga tayyor jarayon", ru: "Готовность к аудиту", en: "Audit-ready workflows" },
+  trust_region: { uz: "Markaziy Osiyo uchun yaratilgan", ru: "Создано для Центральной Азии", en: "Built for Central Asia" },
 
   // --- Xizmatlar sahifasi ---
   services_eyebrow: { uz: "ClinIQ platformasi", ru: "Платформа ClinIQ", en: "The ClinIQ platform" },

@@ -61,6 +61,13 @@ const CLINIC_FEATURES: { icon: string; titleKey: TranslationKey; descKey: Transl
   { icon: "\uD83D\uDDC2\uFE0F", titleKey: "cf_6_title", descKey: "cf_6_desc" },
 ];
 
+const ENTERPRISE_PILLARS: { number: string; titleKey: TranslationKey; descKey: TranslationKey }[] = [
+  { number: "01", titleKey: "enterprise_data_title", descKey: "enterprise_data_desc" },
+  { number: "02", titleKey: "enterprise_workflow_title", descKey: "enterprise_workflow_desc" },
+  { number: "03", titleKey: "enterprise_ai_title", descKey: "enterprise_ai_desc" },
+  { number: "04", titleKey: "enterprise_security_title", descKey: "enterprise_security_desc" },
+];
+
 export default function LandingPage() {
   const { t } = useLang();
 
@@ -128,6 +135,17 @@ export default function LandingPage() {
         </div>
       </section>
 
+      <section aria-label="ClinIQ trust principles" className="border-y border-glass-borderLight bg-white/55 dark:border-glass-borderDark dark:bg-white/[0.025]">
+        <div className="mx-auto grid max-w-6xl grid-cols-2 gap-px px-5 sm:grid-cols-4">
+          {["trust_ai", "trust_security", "trust_audit", "trust_region"].map((key, index) => (
+            <div key={key} className="flex items-center gap-3 px-3 py-5 sm:px-5">
+              <span className="text-xs font-black text-glass-purple">0{index + 1}</span>
+              <span className="text-xs font-semibold leading-snug text-glass-textLight dark:text-glass-textDark">{t(key as TranslationKey)}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* --- ClinIQ haqida (to'liq) --- */}
       <section id="haqida" className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
         <div className="glass-card overflow-hidden p-7 sm:p-12">
@@ -146,6 +164,24 @@ export default function LandingPage() {
               <AboutMockup />
             </div>
           </div>
+        </div>
+      </section>
+
+      <section id="platforma" className="mx-auto max-w-6xl px-5 py-16 sm:py-24">
+        <div className="max-w-3xl">
+          <span className="text-xs font-bold uppercase tracking-[0.2em] text-glass-purple">{t("enterprise_eyebrow")}</span>
+          <h2 className="mt-4 text-3xl font-extrabold leading-tight text-glass-textLight dark:text-glass-textDark sm:text-4xl lg:text-5xl">{t("enterprise_title")}</h2>
+          <p className="glass-muted mt-5 max-w-2xl text-base leading-relaxed sm:text-lg">{t("enterprise_desc")}</p>
+        </div>
+        <div className="mt-10 grid overflow-hidden rounded-[2rem] border border-glass-borderLight bg-white/70 shadow-[0_25px_80px_rgba(29,43,91,0.10)] dark:border-glass-borderDark dark:bg-white/[0.035] sm:grid-cols-2 lg:grid-cols-4">
+          {ENTERPRISE_PILLARS.map((pillar) => (
+            <article key={pillar.number} className="group min-h-56 border-b border-glass-borderLight p-6 transition hover:bg-white dark:border-glass-borderDark dark:hover:bg-white/[0.05] sm:border-r lg:border-b-0">
+              <span className="text-xs font-black text-glass-purple">{pillar.number}</span>
+              <div className="mt-8 h-1 w-12 rounded-full bg-gradient-to-r from-glass-teal via-glass-purple to-glass-magenta transition-all group-hover:w-20" />
+              <h3 className="mt-5 text-base font-bold text-glass-textLight dark:text-glass-textDark">{t(pillar.titleKey)}</h3>
+              <p className="glass-muted mt-3 text-sm leading-relaxed">{t(pillar.descKey)}</p>
+            </article>
+          ))}
         </div>
       </section>
 
