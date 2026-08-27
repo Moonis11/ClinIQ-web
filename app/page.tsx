@@ -167,7 +167,7 @@ export default function LandingPage() {
               ))}
             </div>
           </div>
-          <div className="h-56 sm:h-64">
+          <div className="h-64 sm:h-72">
             <AiBrainMark />
           </div>
         </div>
