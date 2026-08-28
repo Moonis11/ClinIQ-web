@@ -224,7 +224,7 @@ export default function LandingPage() {
                 </div>
               ))}
             </div>
-            <a href={`${APP_URL}/patient/login`} className="consultation-theme-cta mt-8 inline-flex rounded-full px-6 py-3 text-sm font-extrabold shadow-[0_12px_35px_rgba(34,211,238,0.22)] transition">{t("hero_cta_patient")}</a>
+            <a href={`${APP_URL}/patient/login`} className="consultation-theme-cta mt-8 inline-flex rounded-full px-6 py-3 text-sm font-extrabold transition">{t("hero_cta_patient")}</a>
           </div>
           <OnlineConsultationShowcase />
         </div>
