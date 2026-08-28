@@ -18,12 +18,12 @@ export default function SiteHeader({ home = false }: { home?: boolean }) {
 
   return (
     <header className="sticky top-0 z-30 border-b border-glass-borderLight bg-glass-cardLight backdrop-blur-xl dark:border-glass-borderDark dark:bg-glass-cardDark">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3.5">
-        <a href="/" className="flex items-center gap-2 text-xl font-extrabold tracking-tight">
-          <span className="h-9 w-9 overflow-hidden rounded-xl border border-glass-purple/20 bg-white shadow-sm">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-2 px-3 py-3.5 sm:px-5">
+        <a href="/" className="flex shrink-0 items-center gap-2 text-xl font-extrabold tracking-tight">
+          <span className="h-9 w-9 shrink-0 overflow-hidden rounded-xl border border-glass-purple/20 bg-white shadow-sm">
             <Image src="/cliniq-logo.jpeg" alt="" width={36} height={36} className="h-full w-full object-cover" />
           </span>
-          <span>
+          <span className="hidden min-[390px]:inline">
             <span className="text-glass-textLight dark:text-glass-textDark">Clin</span>
             <span className="bg-gradient-to-r from-glass-teal via-glass-purple to-glass-magenta bg-clip-text text-transparent">IQ</span>
           </span>
@@ -38,10 +38,10 @@ export default function SiteHeader({ home = false }: { home?: boolean }) {
           <a href={`${base}#yangiliklar`} className="transition hover:text-glass-textLight dark:hover:text-glass-textDark">{t("nav_security")}</a>
           <a href={`${base}#narxlar`} className="transition hover:text-glass-textLight dark:hover:text-glass-textDark">{t("nav_pricing")}</a>
         </nav>
-        <div className="flex items-center gap-2">
-          <div className="hidden sm:block"><LangMenu /></div>
+        <div className="flex min-w-0 items-center gap-1.5 sm:gap-2">
+          <LangMenu />
           <ThemeToggle />
-          <a href={`${APP_URL}/patient/login`} className="glass-btn-primary text-xs sm:text-sm">
+          <a href={`${APP_URL}/patient/login`} className="glass-btn-primary whitespace-nowrap px-3 text-xs sm:px-5 sm:text-sm">
             {t("nav_login")}
           </a>
         </div>
