@@ -42,7 +42,7 @@ function Bar({ w, tone = "light" }: { w: string; tone?: "light" | "accent" | "fa
 
 export function HeroMockup() {
   return (
-    <div className="flex h-full w-full flex-col justify-between bg-glass-bgDark2 p-5">
+    <div className="flex h-full w-full flex-col justify-between bg-white p-5 dark:bg-glass-bgDark2">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           <span className="h-2.5 w-2.5 rounded-full bg-glass-teal" />
@@ -79,28 +79,31 @@ export function HeroMockup() {
 }
 
 export function AboutMockup() {
+  const { lang } = useLang();
+  const copy = {
+    uz: { eyebrow: "Tibbiy xizmat oqimi", title: "Bitta uzluksiz tibbiy yo'l", steps: ["Qabul", "Tahlil", "Davolash"], record: "Yagona tibbiy tarix", live: "Real vaqtda yangilanadi" },
+    ru: { eyebrow: "Путь лечения", title: "Единый путь пациента", steps: ["Приём", "Анализы", "Лечение"], record: "Единая история здоровья", live: "Обновляется в реальном времени" },
+    en: { eyebrow: "Care flow", title: "One continuous care journey", steps: ["Visit", "Diagnostics", "Treatment"], record: "Unified health record", live: "Updated in real time" },
+  }[lang];
   return (
-    <div className="flex h-full w-full flex-col items-center justify-center gap-6 bg-glass-bgDark3 p-8">
-      <div className="flex w-full items-center justify-between">
-        {[0, 1, 2].map((i) => (
+    <div className="about-visual product-visual flex h-full w-full flex-col justify-center gap-5 p-6 sm:p-8">
+      <div className="flex items-center justify-between"><div><p className="text-[9px] font-bold uppercase tracking-[.18em] text-cyan-600 dark:text-cyan-300">CLINIQ • {copy.eyebrow}</p><p className="product-text mt-1 text-sm font-extrabold">{copy.title}</p></div><span className="about-live-dot h-2.5 w-2.5 rounded-full bg-cyan-400" /></div>
+      <div className="relative flex w-full items-center justify-between">
+        <div className="about-flow-line absolute left-[12%] right-[12%] top-[22px] h-px" />
+        {copy.steps.map((step, i) => (
           <div key={i} className="flex flex-1 items-center">
-            <div className="flex flex-col items-center gap-2">
-              <div className="flex h-11 w-11 items-center justify-center rounded-full border border-glass-teal/40 bg-white/[0.05] text-[11px] font-bold text-glass-tealLight">
+            <div className="relative z-10 flex w-full flex-col items-center gap-2">
+              <div className="about-step flex h-11 w-11 items-center justify-center rounded-full border border-cyan-400/40 bg-white text-[11px] font-bold text-cyan-700 shadow-lg dark:bg-[#111a2d] dark:text-cyan-200" style={{animationDelay:`${i*.45}s`}}>
                 {i + 1}
               </div>
-              <Bar w="30px" tone="faint" />
+              <span className="product-text text-center text-[9px] font-bold">{step}</span>
             </div>
-            {i < 2 && <div className="mx-2 h-px flex-1 bg-gradient-to-r from-glass-teal/60 to-glass-teal/10" />}
           </div>
         ))}
       </div>
-      <div className="w-full rounded-xl bg-white/[0.05] p-4">
-        <div className="mb-2 h-1.5 w-16 rounded-full bg-glass-teal" />
-        <div className="space-y-1.5">
-          <Bar w="100%" tone="faint" />
-          <Bar w="80%" tone="faint" />
-          <Bar w="60%" tone="faint" />
-        </div>
+      <div className="product-panel flex w-full items-center justify-between rounded-xl p-4">
+        <div><p className="product-text text-[11px] font-bold">{copy.record}</p><p className="product-muted mt-1 text-[9px]">{copy.live}</p></div>
+        <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-300 to-violet-500 text-xs font-black text-[#061225]">✓</div>
       </div>
     </div>
   );
@@ -108,16 +111,17 @@ export function AboutMockup() {
 
 export function PatientDashboardMockup() {
   const { lang } = useLang();
+  const mode = { uz: "BEMOR", ru: "ПАЦИЕНТ", en: "PATIENT" }[lang];
   const copy = {
     uz: { hello: "Xayrli kun, Munisa", record: "Sog'liq markazi", next: "Keyingi konsultatsiya", doctor: "Dr. Dilnoza Karimova", time: "Bugun · 16:30", join: "Video xonaga kirish", meds: "Dori rejasi", med: "Vitamin D · 1 kapsula", result: "Yangi natija", lab: "Umumiy qon tahlili", ready: "Tayyor", history: "Tibbiy tarix" },
     ru: { hello: "Добрый день, Муниса", record: "Центр здоровья", next: "Следующая консультация", doctor: "Д-р Дилноза Каримова", time: "Сегодня · 16:30", join: "Войти в видеочат", meds: "План лечения", med: "Витамин D · 1 капсула", result: "Новый результат", lab: "Общий анализ крови", ready: "Готов", history: "История здоровья" },
     en: { hello: "Good afternoon, Munisa", record: "Health center", next: "Next consultation", doctor: "Dr Dilnoza Karimova", time: "Today · 16:30", join: "Join video room", meds: "Medication plan", med: "Vitamin D · 1 capsule", result: "New result", lab: "Complete blood count", ready: "Ready", history: "Health timeline" },
   }[lang];
   return (
-    <div className="dashboard-enter relative flex h-full w-full flex-col gap-3 overflow-hidden bg-[#08111f] p-4 text-white sm:p-5">
+    <div className="dashboard-enter product-visual relative flex h-full w-full flex-col gap-3 overflow-hidden p-4 sm:p-5">
       <div className="dashboard-scan" aria-hidden="true" />
       <div className="flex items-center justify-between">
-        <div><p className="text-[9px] text-cyan-200/60">CLINIQ • PATIENT</p><p className="mt-0.5 text-sm font-bold">{copy.hello}</p></div>
+        <div><p className="text-[9px] text-cyan-700/60 dark:text-cyan-200/60">CLINIQ • {mode}</p><p className="product-text mt-0.5 text-sm font-bold">{copy.hello}</p></div>
         <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-cyan-300 to-violet-500 text-[10px] font-black">MN</div>
       </div>
       <div className="grid flex-1 grid-cols-[1.2fr_.8fr] gap-2.5">
@@ -140,6 +144,7 @@ export function PatientDashboardMockup() {
 
 export function ClinicDashboardMockup() {
   const { lang } = useLang();
+  const mode = { uz: "BOSHQARUV", ru: "УПРАВЛЕНИЕ", en: "OPERATIONS" }[lang];
   const copy = {
     uz: { title: "Klinika boshqaruvi", live: "Jonli", patients: "Bugungi bemorlar", doctors: "Shifokorlar", revenue: "Oylik tushum", queue: "Qabul navbati", analytics: "Haftalik qabul", statuses: ["Qabulda", "Kutilmoqda", "Tahlilda"] },
     ru: { title: "Управление клиникой", live: "Онлайн", patients: "Пациенты сегодня", doctors: "Врачи", revenue: "Доход за месяц", queue: "Очередь приёма", analytics: "Приёмы за неделю", statuses: ["На приёме", "Ожидает", "Анализы"] },
@@ -147,9 +152,9 @@ export function ClinicDashboardMockup() {
   }[lang];
   const patients = ["M. Abdukarimova", "A. Yusupov", "D. Rasulova"];
   return (
-    <div className="dashboard-enter relative flex h-full w-full flex-col overflow-hidden bg-[#08111f] p-4 text-white sm:p-5">
+    <div className="dashboard-enter product-visual relative flex h-full w-full flex-col overflow-hidden p-4 sm:p-5">
       <div className="dashboard-scan" aria-hidden="true" />
-      <div className="flex items-center justify-between"><div><p className="text-[9px] text-cyan-200/60">CLINIQ • OPERATIONS</p><p className="mt-0.5 text-sm font-bold">{copy.title}</p></div><span className="flex items-center gap-1.5 rounded-full bg-cyan-300/10 px-2.5 py-1 text-[9px] font-bold text-cyan-200"><i className="h-1.5 w-1.5 animate-pulse rounded-full bg-cyan-300" />{copy.live}</span></div>
+      <div className="flex items-center justify-between"><div><p className="text-[9px] text-cyan-700/60 dark:text-cyan-200/60">CLINIQ • {mode}</p><p className="mt-0.5 text-sm font-bold">{copy.title}</p></div><span className="flex items-center gap-1.5 rounded-full bg-cyan-300/10 px-2.5 py-1 text-[9px] font-bold text-cyan-700 dark:text-cyan-200"><i className="h-1.5 w-1.5 animate-pulse rounded-full bg-cyan-300" />{copy.live}</span></div>
       <div className="mt-3 grid grid-cols-3 gap-2">
         {[["48",copy.patients],["12",copy.doctors],["186M",copy.revenue]].map(([value,label],i)=><div key={label} className="rounded-xl border border-white/[0.06] bg-white/[0.045] p-2.5"><p className="text-sm font-black text-white">{value}</p><p className="mt-0.5 truncate text-[8px] text-white/45">{label}</p><div className="mt-2 h-0.5 rounded-full bg-white/10"><div className="h-full rounded-full bg-gradient-to-r from-cyan-300 to-violet-400" style={{width:["78%","60%","86%"][i]}} /></div></div>)}
       </div>

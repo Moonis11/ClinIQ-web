@@ -107,17 +107,17 @@ export default function LandingPage() {
 
         <div className="relative mx-auto w-full max-w-md">
           <div className="glass-card hero-brand-frame aspect-[4/5] overflow-hidden p-6 sm:p-10">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_20%,rgba(34,211,238,0.28),transparent_38%),radial-gradient(circle_at_80%_78%,rgba(236,72,153,0.23),transparent_42%),linear-gradient(145deg,#081124,#11183b_52%,#250e36)]" />
+            <div className="hero-visual-bg absolute inset-0" />
             <div className="relative flex h-full flex-col justify-between">
-              <div className="flex items-center justify-between text-[10px] font-semibold uppercase tracking-[0.18em] text-white/65">
-                <span>Clinical intelligence</span><span>UZ • RU • EN</span>
+              <div className="flex items-center justify-between text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-600 dark:text-white/65">
+                <span>{t("visual_clinical_intelligence")}</span><span>UZ • RU • EN</span>
               </div>
               <div className="mx-auto w-full max-w-[300px] overflow-hidden rounded-[2rem] bg-white p-5 shadow-[0_30px_80px_rgba(0,0,0,0.4)] sm:p-7">
                 <Image src="/cliniq-logo.jpeg" alt="ClinIQ logo" width={512} height={512} priority className="aspect-square w-full object-cover" />
               </div>
-              <div className="flex items-center gap-3 text-xs font-medium text-white/75">
+              <div className="flex items-center gap-3 text-xs font-medium text-slate-600 dark:text-white/75">
                 <span className="h-2 w-2 rounded-full bg-glass-teal shadow-[0_0_18px_rgba(34,211,238,0.9)]" />
-                <span>One continuous record. Every step of care.</span>
+                <span>{t("visual_continuous_record")}</span>
               </div>
             </div>
           </div>
@@ -239,7 +239,7 @@ export default function LandingPage() {
         </div>
         <div className="mt-8 grid items-center gap-10 lg:grid-cols-[1fr_1.05fr]">
           <p className="glass-muted text-sm leading-relaxed sm:text-base">{t("why_body")}</p>
-          <div className="ecosystem-shell relative mx-auto flex aspect-[4/3] w-full max-w-sm items-center justify-center">
+          <div className="ecosystem-shell relative mx-auto flex aspect-[4/3] w-full max-w-sm -translate-y-5 items-center justify-center sm:-translate-y-7">
             <svg className="pointer-events-none absolute inset-0 h-full w-full" viewBox="0 0 100 75" preserveAspectRatio="none">
               <defs>
                 <linearGradient id="connector-grad" x1="0" y1="0" x2="1" y2="1">
@@ -391,16 +391,16 @@ export default function LandingPage() {
         <div className="glass-card mt-8 overflow-hidden p-7 sm:p-10">
           <div className="grid gap-8 lg:grid-cols-[1.15fr_1fr] lg:items-center">
             <div>
-              <span className="glass-pill-track"><span className="glass-pill-item-active">Human-in-the-loop AI</span></span>
+              <span className="glass-pill-track"><span className="glass-pill-item-active">{t("visual_human_ai")}</span></span>
               <p className="mt-5 text-xl font-bold text-glass-textLight dark:text-glass-textDark sm:text-2xl">{t("news_empty_title")}</p>
               <p className="glass-muted mt-3 max-w-2xl text-sm leading-relaxed sm:text-base">{t("news_empty_desc")}</p>
             </div>
             <div className="grid grid-cols-2 gap-3">
               {[
-                ["01", "Clinical oversight"],
-                ["02", "Encrypted identity"],
-                ["03", "Role-based access"],
-                ["04", "Audit trail"],
+                ["01", t("visual_oversight")],
+                ["02", t("visual_identity")],
+                ["03", t("visual_access")],
+                ["04", t("visual_audit")],
               ].map(([number, label]) => (
                 <div key={number} className="rounded-2xl border border-glass-borderLight bg-white/40 p-4 dark:border-glass-borderDark dark:bg-white/[0.04]">
                   <span className="text-xs font-bold text-glass-teal">{number}</span>
