@@ -89,7 +89,7 @@ export function AboutMockup() {
     <div className="about-cinema product-visual relative flex h-full w-full flex-col overflow-hidden p-5 sm:p-6">
       <div className="about-cinema-glow absolute -right-12 -top-16 h-44 w-44 rounded-full bg-gradient-to-br from-cyan-300/25 via-violet-400/20 to-pink-400/25 blur-3xl" />
       <div className="relative flex items-center justify-between border-b border-slate-200 pb-3 dark:border-white/10">
-        <div className="flex items-center gap-2"><span className="about-record-dot h-2 w-2 rounded-full bg-pink-500" /><p className="product-text text-[10px] font-extrabold uppercase tracking-[.14em]">{copy.live}</p></div>
+        <div className="flex items-center gap-2"><span className="about-record-dot h-2.5 w-2.5 rounded-full bg-gradient-to-br from-cyan-300 via-violet-500 to-pink-500" /><p className="product-text text-[10px] font-extrabold uppercase tracking-[.14em]">{copy.live}</p></div>
         <span className="rounded-full bg-cyan-400/10 px-2 py-1 text-[8px] font-bold text-cyan-700 dark:text-cyan-200">● {copy.secure}</span>
       </div>
 
@@ -105,7 +105,7 @@ export function AboutMockup() {
           <div className="about-timeline absolute bottom-2 left-[11px] top-2 w-px bg-gradient-to-b from-cyan-300 via-violet-400 to-pink-400" />
           {copy.events.map((event, i) => (
             <div key={event} className="about-event product-panel relative flex items-center gap-2 rounded-xl py-2 pl-2 pr-3" style={{animationDelay:`${i * 1.1}s`}}>
-              <span className={`relative z-10 flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[8px] font-black text-[#061225] ${i === 0 ? "bg-cyan-300" : i === 1 ? "bg-violet-300" : "bg-pink-300"}`}>✓</span>
+              <span className="about-event-check relative z-10 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-cyan-300 via-violet-400 to-pink-400 text-[8px] font-black text-[#061225]">✓</span>
               <div className="min-w-0"><p className="product-text truncate text-[9px] font-bold">{event}</p><p className="product-muted mt-0.5 text-[7px]">{copy.updated}</p></div>
             </div>
           ))}
@@ -122,16 +122,16 @@ export function PatientDashboardMockup() {
   const { lang } = useLang();
   const mode = { uz: "BEMOR", ru: "ПАЦИЕНТ", en: "PATIENT" }[lang];
   const copy = {
-    uz: { hello: "Xayrli kun, Munisa", record: "Sog'liq markazi", next: "Keyingi konsultatsiya", doctor: "Dr. Dilnoza Karimova", time: "Bugun · 16:30", join: "Video xonaga kirish", meds: "Dori rejasi", med: "Vitamin D · 1 kapsula", result: "Yangi natija", lab: "Umumiy qon tahlili", ready: "Tayyor", history: "Tibbiy tarix" },
-    ru: { hello: "Добрый день, Муниса", record: "Центр здоровья", next: "Следующая консультация", doctor: "Д-р Дилноза Каримова", time: "Сегодня · 16:30", join: "Войти в видеочат", meds: "План лечения", med: "Витамин D · 1 капсула", result: "Новый результат", lab: "Общий анализ крови", ready: "Готов", history: "История здоровья" },
-    en: { hello: "Good afternoon, Munisa", record: "Health center", next: "Next consultation", doctor: "Dr Dilnoza Karimova", time: "Today · 16:30", join: "Join video room", meds: "Medication plan", med: "Vitamin D · 1 capsule", result: "New result", lab: "Complete blood count", ready: "Ready", history: "Health timeline" },
+    uz: { hello: "Xayrli kun, Madina", record: "Sog'liq markazi", next: "Keyingi konsultatsiya", doctor: "Dr. Dilnoza Karimova", time: "Bugun · 16:30", join: "Video xonaga kirish", meds: "Dori rejasi", med: "Vitamin D · 1 kapsula", result: "Yangi natija", lab: "Umumiy qon tahlili", ready: "Tayyor", history: "Tibbiy tarix" },
+    ru: { hello: "Добрый день, Мадина", record: "Центр здоровья", next: "Следующая консультация", doctor: "Д-р Дилноза Каримова", time: "Сегодня · 16:30", join: "Войти в видеочат", meds: "План лечения", med: "Витамин D · 1 капсула", result: "Новый результат", lab: "Общий анализ крови", ready: "Готов", history: "История здоровья" },
+    en: { hello: "Good afternoon, Madina", record: "Health center", next: "Next consultation", doctor: "Dr Dilnoza Karimova", time: "Today · 16:30", join: "Join video room", meds: "Medication plan", med: "Vitamin D · 1 capsule", result: "New result", lab: "Complete blood count", ready: "Ready", history: "Health timeline" },
   }[lang];
   return (
     <div className="dashboard-enter product-visual relative flex h-full w-full flex-col gap-3 overflow-hidden p-4 sm:p-5">
       <div className="dashboard-scan" aria-hidden="true" />
       <div className="flex items-center justify-between">
         <div><p className="text-[9px] text-cyan-700/60 dark:text-cyan-200/60">CLINIQ • {mode}</p><p className="product-text mt-0.5 text-sm font-bold">{copy.hello}</p></div>
-        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-cyan-300 to-violet-500 text-[10px] font-black">MN</div>
+        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-cyan-300 via-violet-400 to-pink-400 text-[10px] font-black">MD</div>
       </div>
       <div className="grid flex-1 grid-cols-[1.2fr_.8fr] gap-2.5">
         <div className="space-y-2.5">

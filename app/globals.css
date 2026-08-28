@@ -201,6 +201,16 @@
 .about-data-pulse { animation:about-data-travel 4.8s linear infinite; }
 .about-video-progress { transform-origin:left; animation:about-video-progress 4.8s linear infinite; }
 .about-cinema-glow { animation:about-cinema-glow 4s ease-in-out infinite; }
+.about-cinema {
+  background-image:radial-gradient(circle at 8% 18%,rgba(34,211,238,.16),transparent 30%),radial-gradient(circle at 55% 8%,rgba(139,92,246,.13),transparent 32%),radial-gradient(circle at 92% 80%,rgba(236,72,153,.14),transparent 34%);
+}
+.dark .about-cinema {
+  background-image:radial-gradient(circle at 8% 18%,rgba(34,211,238,.12),transparent 30%),radial-gradient(circle at 55% 8%,rgba(139,92,246,.12),transparent 32%),radial-gradient(circle at 92% 80%,rgba(236,72,153,.11),transparent 34%);
+}
+.about-cinema::after {
+  content:"";position:absolute;left:0;right:0;top:0;height:3px;
+  background:linear-gradient(90deg,#22d3ee 0%,#8b5cf6 50%,#ec4899 100%);
+}
 @keyframes about-record { 0%,100%{opacity:.4;transform:scale(.78)} 50%{opacity:1;transform:scale(1.15);box-shadow:0 0 14px #ec4899} }
 @keyframes about-avatar-float { 0%,100%{transform:translateY(0) rotate(-2deg)} 50%{transform:translateY(-6px) rotate(2deg)} }
 @keyframes about-progress { 0%{width:10%} 45%{width:65%} 100%{width:100%} }
