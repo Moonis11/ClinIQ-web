@@ -87,7 +87,7 @@ export function AboutMockup() {
   }[lang];
   return (
     <div className="about-cinema product-visual relative flex h-full w-full flex-col overflow-hidden p-5 sm:p-6">
-      <div className="about-cinema-glow absolute -right-12 -top-16 h-44 w-44 rounded-full bg-cyan-300/20 blur-3xl" />
+      <div className="about-cinema-glow absolute -right-12 -top-16 h-44 w-44 rounded-full bg-gradient-to-br from-cyan-300/25 via-violet-400/20 to-pink-400/25 blur-3xl" />
       <div className="relative flex items-center justify-between border-b border-slate-200 pb-3 dark:border-white/10">
         <div className="flex items-center gap-2"><span className="about-record-dot h-2 w-2 rounded-full bg-pink-500" /><p className="product-text text-[10px] font-extrabold uppercase tracking-[.14em]">{copy.live}</p></div>
         <span className="rounded-full bg-cyan-400/10 px-2 py-1 text-[8px] font-bold text-cyan-700 dark:text-cyan-200">● {copy.secure}</span>
@@ -98,7 +98,7 @@ export function AboutMockup() {
           <div className="about-avatar flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-cyan-300 via-violet-400 to-pink-400 text-xs font-black text-[#061225]">MN</div>
           <p className="product-text mt-2 text-[10px] font-extrabold">{copy.patient}</p>
           <p className="product-muted mt-1 text-[8px]">CLQ-2048</p>
-          <div className="mt-3 h-1 w-full overflow-hidden rounded-full bg-slate-200 dark:bg-white/10"><div className="about-progress h-full rounded-full bg-gradient-to-r from-cyan-300 to-violet-500" /></div>
+          <div className="mt-3 h-1 w-full overflow-hidden rounded-full bg-slate-200 dark:bg-white/10"><div className="about-progress h-full rounded-full bg-gradient-to-r from-cyan-300 via-violet-400 to-pink-400" /></div>
         </div>
 
         <div className="relative min-w-0 flex-1 space-y-2">
@@ -109,7 +109,7 @@ export function AboutMockup() {
               <div className="min-w-0"><p className="product-text truncate text-[9px] font-bold">{event}</p><p className="product-muted mt-0.5 text-[7px]">{copy.updated}</p></div>
             </div>
           ))}
-          <span className="about-data-pulse absolute left-[7px] top-0 z-20 h-2 w-2 rounded-full bg-white shadow-[0_0_14px_var(--motion-cyan)] dark:bg-cyan-100" />
+          <span className="about-data-pulse absolute left-[7px] top-0 z-20 h-2 w-2 rounded-full bg-gradient-to-br from-cyan-200 via-violet-300 to-pink-300 shadow-[0_0_14px_var(--motion-cyan)]" />
         </div>
       </div>
 
