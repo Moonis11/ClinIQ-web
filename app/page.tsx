@@ -220,11 +220,11 @@ export default function LandingPage() {
               {["consultation_point_1", "consultation_point_2", "consultation_point_3"].map((key) => (
                 <div key={key} className="flex items-start gap-3">
                   <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-cyan-400 text-[10px] font-black text-[#061225]">✓</span>
-                  <span className="text-sm font-medium text-glass-textLight dark:text-glass-textDark">{t(key as TranslationKey)}</span>
+                  <span className="text-sm font-semibold text-cyan-700 dark:text-cyan-300">{t(key as TranslationKey)}</span>
                 </div>
               ))}
             </div>
-            <a href={`${APP_URL}/patient/login`} className="mt-8 inline-flex rounded-full bg-cyan-400 px-6 py-3 text-sm font-extrabold text-[#061225] shadow-[0_12px_35px_rgba(34,211,238,0.35)] transition hover:bg-cyan-300">{t("hero_cta_patient")}</a>
+            <a href={`${APP_URL}/patient/login`} className="consultation-theme-cta mt-8 inline-flex rounded-full px-6 py-3 text-sm font-extrabold shadow-[0_12px_35px_rgba(34,211,238,0.22)] transition">{t("hero_cta_patient")}</a>
           </div>
           <OnlineConsultationShowcase />
         </div>

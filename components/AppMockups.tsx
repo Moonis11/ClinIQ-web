@@ -81,30 +81,39 @@ export function HeroMockup() {
 export function AboutMockup() {
   const { lang } = useLang();
   const copy = {
-    uz: { eyebrow: "Tibbiy xizmat oqimi", title: "Bitta uzluksiz tibbiy yo'l", steps: ["Qabul", "Tahlil", "Davolash"], record: "Yagona tibbiy tarix", live: "Real vaqtda yangilanadi" },
-    ru: { eyebrow: "Путь лечения", title: "Единый путь пациента", steps: ["Приём", "Анализы", "Лечение"], record: "Единая история здоровья", live: "Обновляется в реальном времени" },
-    en: { eyebrow: "Care flow", title: "One continuous care journey", steps: ["Visit", "Diagnostics", "Treatment"], record: "Unified health record", live: "Updated in real time" },
+    uz: { live: "Jonli tibbiy tarix", patient: "Bemor profili", events: ["Qabul band qilindi", "Tahlil natijasi tayyor", "Shifokor xulosasi saqlandi"], secure: "Himoyalangan", updated: "Hozirgina yangilandi" },
+    ru: { live: "Живая история здоровья", patient: "Профиль пациента", events: ["Приём забронирован", "Результат анализа готов", "Заключение врача сохранено"], secure: "Защищено", updated: "Обновлено сейчас" },
+    en: { live: "Live health record", patient: "Patient profile", events: ["Visit booked", "Lab result ready", "Clinician note saved"], secure: "Protected", updated: "Updated just now" },
   }[lang];
   return (
-    <div className="about-visual product-visual flex h-full w-full flex-col justify-center gap-5 p-6 sm:p-8">
-      <div className="flex items-center justify-between"><div><p className="text-[9px] font-bold uppercase tracking-[.18em] text-cyan-600 dark:text-cyan-300">CLINIQ • {copy.eyebrow}</p><p className="product-text mt-1 text-sm font-extrabold">{copy.title}</p></div><span className="about-live-dot h-2.5 w-2.5 rounded-full bg-cyan-400" /></div>
-      <div className="relative flex w-full items-center justify-between">
-        <div className="about-flow-line absolute left-[12%] right-[12%] top-[22px] h-px" />
-        {copy.steps.map((step, i) => (
-          <div key={i} className="flex flex-1 items-center">
-            <div className="relative z-10 flex w-full flex-col items-center gap-2">
-              <div className="about-step flex h-11 w-11 items-center justify-center rounded-full border border-cyan-400/40 bg-white text-[11px] font-bold text-cyan-700 shadow-lg dark:bg-[#111a2d] dark:text-cyan-200" style={{animationDelay:`${i*.45}s`}}>
-                {i + 1}
-              </div>
-              <span className="product-text text-center text-[9px] font-bold">{step}</span>
+    <div className="about-cinema product-visual relative flex h-full w-full flex-col overflow-hidden p-5 sm:p-6">
+      <div className="about-cinema-glow absolute -right-12 -top-16 h-44 w-44 rounded-full bg-cyan-300/20 blur-3xl" />
+      <div className="relative flex items-center justify-between border-b border-slate-200 pb-3 dark:border-white/10">
+        <div className="flex items-center gap-2"><span className="about-record-dot h-2 w-2 rounded-full bg-pink-500" /><p className="product-text text-[10px] font-extrabold uppercase tracking-[.14em]">{copy.live}</p></div>
+        <span className="rounded-full bg-cyan-400/10 px-2 py-1 text-[8px] font-bold text-cyan-700 dark:text-cyan-200">● {copy.secure}</span>
+      </div>
+
+      <div className="relative mt-4 flex flex-1 items-center gap-3">
+        <div className="about-profile product-panel flex w-[34%] shrink-0 flex-col items-center rounded-2xl p-3 text-center">
+          <div className="about-avatar flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-cyan-300 via-violet-400 to-pink-400 text-xs font-black text-[#061225]">MN</div>
+          <p className="product-text mt-2 text-[10px] font-extrabold">{copy.patient}</p>
+          <p className="product-muted mt-1 text-[8px]">CLQ-2048</p>
+          <div className="mt-3 h-1 w-full overflow-hidden rounded-full bg-slate-200 dark:bg-white/10"><div className="about-progress h-full rounded-full bg-gradient-to-r from-cyan-300 to-violet-500" /></div>
+        </div>
+
+        <div className="relative min-w-0 flex-1 space-y-2">
+          <div className="about-timeline absolute bottom-2 left-[11px] top-2 w-px bg-gradient-to-b from-cyan-300 via-violet-400 to-pink-400" />
+          {copy.events.map((event, i) => (
+            <div key={event} className="about-event product-panel relative flex items-center gap-2 rounded-xl py-2 pl-2 pr-3" style={{animationDelay:`${i * 1.1}s`}}>
+              <span className={`relative z-10 flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[8px] font-black text-[#061225] ${i === 0 ? "bg-cyan-300" : i === 1 ? "bg-violet-300" : "bg-pink-300"}`}>✓</span>
+              <div className="min-w-0"><p className="product-text truncate text-[9px] font-bold">{event}</p><p className="product-muted mt-0.5 text-[7px]">{copy.updated}</p></div>
             </div>
-          </div>
-        ))}
+          ))}
+          <span className="about-data-pulse absolute left-[7px] top-0 z-20 h-2 w-2 rounded-full bg-white shadow-[0_0_14px_var(--motion-cyan)] dark:bg-cyan-100" />
+        </div>
       </div>
-      <div className="product-panel flex w-full items-center justify-between rounded-xl p-4">
-        <div><p className="product-text text-[11px] font-bold">{copy.record}</p><p className="product-muted mt-1 text-[9px]">{copy.live}</p></div>
-        <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-300 to-violet-500 text-xs font-black text-[#061225]">✓</div>
-      </div>
+
+      <div className="relative mt-3 h-1 overflow-hidden rounded-full bg-slate-200 dark:bg-white/10"><div className="about-video-progress h-full bg-gradient-to-r from-cyan-300 via-violet-400 to-pink-400" /></div>
     </div>
   );
 }

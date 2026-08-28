@@ -154,6 +154,11 @@
   .theme-select-option { @apply hover:bg-black/10 dark:hover:bg-white/10; }
   .theme-select-option-active { @apply bg-black text-white dark:bg-white dark:text-black; }
 
+  .consultation-theme-cta {
+    @apply bg-black text-cyan-300 hover:bg-slate-900;
+    @apply dark:bg-white dark:text-cyan-600 dark:hover:bg-slate-100;
+  }
+
   .glass-muted {
     @apply text-glass-mutedLight dark:text-glass-mutedDark;
   }
@@ -188,6 +193,22 @@
 .about-flow-line { background:repeating-linear-gradient(90deg,var(--motion-cyan) 0 9px,transparent 9px 16px); background-size:32px 1px; animation:about-flow 1.5s linear infinite; }
 .about-live-dot { animation:about-live 2s ease-in-out infinite; }
 
+/* ClinIQ haqida: video-uslubdagi jonli tibbiy tarix */
+.about-record-dot { animation:about-record 1.35s ease-in-out infinite; }
+.about-avatar { animation:about-avatar-float 3.2s ease-in-out infinite; }
+.about-progress { animation:about-progress 4.8s ease-in-out infinite; }
+.about-event { opacity:.3; animation:about-event-focus 4.8s ease-in-out infinite; }
+.about-data-pulse { animation:about-data-travel 4.8s linear infinite; }
+.about-video-progress { transform-origin:left; animation:about-video-progress 4.8s linear infinite; }
+.about-cinema-glow { animation:about-cinema-glow 4s ease-in-out infinite; }
+@keyframes about-record { 0%,100%{opacity:.4;transform:scale(.78)} 50%{opacity:1;transform:scale(1.15);box-shadow:0 0 14px #ec4899} }
+@keyframes about-avatar-float { 0%,100%{transform:translateY(0) rotate(-2deg)} 50%{transform:translateY(-6px) rotate(2deg)} }
+@keyframes about-progress { 0%{width:10%} 45%{width:65%} 100%{width:100%} }
+@keyframes about-event-focus { 0%,100%{opacity:.35;transform:translateX(0)} 18%,38%{opacity:1;transform:translateX(4px);box-shadow:0 10px 26px rgba(8,145,178,.16)} }
+@keyframes about-data-travel { 0%{transform:translateY(0)} 100%{transform:translateY(92px)} }
+@keyframes about-video-progress { from{transform:scaleX(0)} to{transform:scaleX(1)} }
+@keyframes about-cinema-glow { 0%,100%{opacity:.45;transform:scale(.9)} 50%{opacity:1;transform:scale(1.12)} }
+
 /* --- Bemor yo'li aylanma diagrammasi --- */
 @keyframes clinIQ-orbit-spin {
   from { transform: rotate(0deg); }
@@ -208,6 +229,7 @@
   .clinIQ-orbit-ring, .clinIQ-orbit-dot {
     animation: none;
   }
+  .about-record-dot,.about-avatar,.about-progress,.about-event,.about-data-pulse,.about-video-progress,.about-cinema-glow { animation:none; }
 }
 
 /* --- Ekotizim diagrammasi - chiziqlar bo'ylab "ma'lumot oqimi" va
