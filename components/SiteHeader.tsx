@@ -18,14 +18,8 @@ export default function SiteHeader({ home = false }: { home?: boolean }) {
           <span className="relative h-9 w-9 shrink-0 overflow-hidden rounded-xl border border-teal-900/10 bg-white p-0.5 shadow-sm ring-1 ring-black/[0.02] dark:border-white/15 dark:ring-white/5">
             <Image src="/cliniq-logo.jpeg" alt="ClinIQ" width={36} height={36} className="h-full w-full rounded-[10px] object-cover" />
           </span>
-          <span className="hidden min-[390px]:flex flex-col leading-none">
-            <span className="text-xl font-extrabold tracking-tight">
-              <span className="text-slate-950 transition-colors dark:text-white">Clin</span>
-              <span className="bg-gradient-to-r from-[#087F7A] via-[#0F9D9A] to-[#35BFB2] bg-clip-text text-transparent">IQ</span>
-            </span>
-            <span className="mt-1 hidden text-[8px] font-semibold tracking-[0.08em] text-slate-500 dark:text-white/55 sm:block">
-              One continuous record. Every step of care.
-            </span>
+          <span className="hidden text-xl font-extrabold tracking-tight text-slate-950 transition-colors min-[390px]:inline dark:text-white">
+            ClinIQ
           </span>
         </a>
 
