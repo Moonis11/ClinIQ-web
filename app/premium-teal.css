@@ -1,137 +1,15 @@
 /* ClinIQ premium medical teal identity — website visual layer */
-:root {
-  --cliniq-deep-teal:#073B3A;
-  --cliniq-deep-teal-2:#052F2E;
-  --cliniq-premium-teal:#087F7A;
-  --cliniq-teal:#0F9D9A;
-  --cliniq-aqua:#22D3C5;
-  --cliniq-aqua-soft:#8BE7DE;
-  --cliniq-ivory:#F7F8F3;
-  --cliniq-ink:#101C1D;
-}
-
-body {
-  --motion-cyan:#0F9D9A !important;
-  --motion-purple:#087F7A !important;
-  --motion-pink:#22D3C5 !important;
-  --motion-aura:rgba(34,211,197,.15) !important;
-  --motion-scan:rgba(15,157,154,.09) !important;
-  background-color:var(--cliniq-ivory) !important;
-  background-image:radial-gradient(circle at 12% 18%,rgba(34,211,197,.08),transparent 38%),radial-gradient(circle at 88% 10%,rgba(8,127,122,.06),transparent 38%) !important;
-}
-.dark body { background-color:#041F1F !important; }
-
-/* Website hero — match the approved dark-teal concept. */
-#top {
-  max-width:none !important;
-  margin:0 !important;
-  padding-left:max(5vw,20px) !important;
-  padding-right:max(5vw,20px) !important;
-  background:
-    radial-gradient(circle at 76% 30%,rgba(34,211,197,.14),transparent 24%),
-    radial-gradient(circle at 58% 85%,rgba(15,157,154,.12),transparent 28%),
-    linear-gradient(135deg,#032B2B 0%,#073B3A 48%,#064F4C 100%) !important;
-  border-bottom:1px solid rgba(139,231,222,.10);
-}
-#top > div:first-child { max-width:620px; }
-#top h1,
-#top h1 span { color:#fff !important; background:none !important; -webkit-text-fill-color:initial !important; }
-#top h1 { font-family:Inter,-apple-system,sans-serif !important; font-style:normal !important; font-weight:800 !important; letter-spacing:-.045em !important; }
-#top h1 span { color:#63E0D5 !important; }
-#top .glass-muted { color:rgba(247,248,243,.72) !important; }
-#top .glass-pill-track { background:rgba(34,211,197,.10) !important; border-color:rgba(139,231,222,.18) !important; }
-#top .glass-pill-item-active { background:rgba(34,211,197,.12) !important; color:#8BE7DE !important; box-shadow:none !important; }
-#top .glass-btn-primary { background:#0F9D9A !important; color:#fff !important; border-radius:12px !important; padding:13px 22px !important; }
-#top .glass-btn-outline { color:#fff !important; border:1px solid rgba(139,231,222,.36) !important; background:rgba(255,255,255,.035) !important; border-radius:12px !important; padding:12px 22px !important; }
-#top .text-glass-textLight,#top .dark\:text-glass-textDark { color:#fff !important; }
-
-/* Turn existing hero visual into a product-photo/mockup block using the real project OG image. */
-#top .hero-brand-frame {
-  aspect-ratio: 4 / 3.55 !important;
-  border-radius:32px !important;
-  background:#052F2E !important;
-  border:1px solid rgba(139,231,222,.16) !important;
-  box-shadow:0 34px 90px rgba(0,0,0,.28) !important;
-  transform:perspective(1100px) rotateY(-5deg) rotateX(2deg);
-}
-#top .hero-brand-frame::before {
-  content:"" !important;
-  position:absolute !important;
-  inset:20px !important;
-  border-radius:24px !important;
-  padding:0 !important;
-  background:url('/og.png') center/cover no-repeat !important;
-  -webkit-mask:none !important;
-  mask:none !important;
-  opacity:.96;
-  box-shadow:0 24px 60px rgba(0,0,0,.28);
-}
-#top .hero-brand-frame > .hero-visual-bg,
-#top .hero-brand-frame > .relative { opacity:0 !important; }
-#top .absolute.-top-5 { border:1px solid rgba(139,231,222,.14) !important; background:#F7F8F3 !important; }
-#top .absolute.-bottom-5 { background:rgba(247,248,243,.96) !important; backdrop-filter:blur(18px); }
-
-/* Trust strip beneath hero, dark like the reference. */
-#top + section {
-  background:#063F3D !important;
-  border-color:rgba(139,231,222,.12) !important;
-  color:#fff !important;
-}
-#top + section span:not(.text-xs) { color:#fff !important; }
-#top + section .text-glass-textLight { color:#fff !important; }
-
-.hero-visual-bg { background:linear-gradient(145deg,#fff,#F4FBF9 52%,#EEF8F6) !important; }
-.dark .hero-visual-bg { background:linear-gradient(145deg,#041F1F,#073B3A 52%,#052F2E) !important; }
-
-.glass-card {
-  border-color:rgba(8,127,122,.14) !important;
-  box-shadow:0 14px 36px rgba(7,59,58,.09),inset 0 1px 0 rgba(255,255,255,.72) !important;
-}
-.glass-card::before { background:linear-gradient(135deg,rgba(34,211,197,.32),rgba(15,157,154,.12),transparent) !important; }
-.dark .glass-card { box-shadow:0 12px 38px rgba(0,0,0,.42),0 0 30px -12px rgba(34,211,197,.18) !important; }
-
-/* Clean white service cards like the target screenshot. */
-section:not(#top) .glass-card { border-radius:26px !important; }
-section:not(#top) article,
-section:not(#top) .product-panel {
-  border-color:rgba(8,127,122,.12) !important;
-}
-
-.glass-btn-primary,.glass-btn-secondary,.consultation-theme-cta {
-  color:#fff !important;
-  background-image:linear-gradient(135deg,#073B3A,#087F7A 58%,#22D3C5) !important;
-  box-shadow:0 10px 28px -10px rgba(7,59,58,.50) !important;
-}
-.consultation-theme-cta::after { background:linear-gradient(110deg,transparent 22%,rgba(255,255,255,.26) 48%,transparent 72%) !important; }
-.glass-toggle-thumb { background-image:linear-gradient(135deg,#087F7A,#22D3C5) !important; }
-.theme-select-button { background:#073B3A !important;border-color:#073B3A !important;color:#fff !important; }
-.theme-select-option-active { background:#073B3A !important;color:#fff !important; }
-
-.from-violet-400,.from-violet-500,.from-violet-600,.from-purple-400,.from-purple-500,.from-purple-600,.from-pink-400,.from-pink-500,.from-pink-600 {
-  --tw-gradient-from:#087F7A var(--tw-gradient-from-position) !important;
-  --tw-gradient-to:rgb(8 127 122 / 0) var(--tw-gradient-to-position) !important;
-}
-.via-violet-400,.via-violet-500,.via-violet-600,.via-purple-400,.via-purple-500,.via-purple-600,.via-pink-400,.via-pink-500,.via-pink-600 {
-  --tw-gradient-to:rgb(15 157 154 / 0) var(--tw-gradient-to-position) !important;
-  --tw-gradient-stops:var(--tw-gradient-from),#0F9D9A var(--tw-gradient-via-position),var(--tw-gradient-to) !important;
-}
-.to-violet-400,.to-violet-500,.to-violet-600,.to-purple-400,.to-purple-500,.to-purple-600,.to-pink-400,.to-pink-500,.to-pink-600 { --tw-gradient-to:#22D3C5 var(--tw-gradient-to-position) !important; }
-.text-violet-500,.text-violet-600,.text-purple-500,.text-purple-600,.text-pink-500,.text-pink-600 { color:#087F7A !important; }
-.bg-violet-500,.bg-violet-600,.bg-purple-500,.bg-purple-600,.bg-pink-500,.bg-pink-600 { background-color:#087F7A !important; }
-.border-violet-400,.border-violet-500,.border-purple-400,.border-purple-500,.border-pink-400,.border-pink-500 { border-color:rgba(8,127,122,.34) !important; }
-
-.about-cinema { background-image:radial-gradient(circle at 8% 18%,rgba(34,211,197,.16),transparent 30%),radial-gradient(circle at 55% 8%,rgba(15,157,154,.12),transparent 32%),radial-gradient(circle at 92% 80%,rgba(7,59,58,.10),transparent 34%) !important; }
-.about-cinema::after { background:linear-gradient(90deg,#22D3C5 0%,#0F9D9A 50%,#073B3A 100%) !important; }
-
-/* Footer / lower brand areas get the same dark teal identity. */
-footer { background:linear-gradient(180deg,#063F3D,#032B2B) !important; color:#fff !important; }
-footer .glass-muted, footer p, footer a { color:rgba(247,248,243,.72) !important; }
-footer h2, footer h3, footer strong { color:#fff !important; }
-
-@media (max-width:1023px) {
-  #top { text-align:center; }
-  #top > div:first-child { margin-inline:auto; }
-  #top .glass-muted,#top > div:first-child p { margin-left:auto; margin-right:auto; }
-  #top > div:first-child > div { justify-content:center; }
-  #top .hero-brand-frame { transform:none; }
-}
+:root{--cliniq-deep-teal:#073B3A;--cliniq-deep-teal-2:#052F2E;--cliniq-premium-teal:#087F7A;--cliniq-teal:#0F9D9A;--cliniq-aqua:#22D3C5;--cliniq-aqua-soft:#8BE7DE;--cliniq-ivory:#F7F8F3;--cliniq-ink:#101C1D}
+body{--motion-cyan:#22D3C5!important;--motion-purple:#0F9D9A!important;--motion-pink:#087F7A!important;--motion-aura:rgba(34,211,197,.15)!important;--motion-scan:rgba(15,157,154,.09)!important;background-color:var(--cliniq-ivory)!important;background-image:radial-gradient(circle at 12% 18%,rgba(34,211,197,.08),transparent 38%),radial-gradient(circle at 88% 10%,rgba(8,127,122,.06),transparent 38%)!important}.dark body{background-color:#041F1F!important}
+#top{max-width:none!important;margin:0!important;padding-left:max(5vw,20px)!important;padding-right:max(5vw,20px)!important;background:radial-gradient(circle at 76% 30%,rgba(34,211,197,.14),transparent 24%),radial-gradient(circle at 58% 85%,rgba(15,157,154,.12),transparent 28%),linear-gradient(135deg,#032B2B 0%,#073B3A 48%,#064F4C 100%)!important;border-bottom:1px solid rgba(139,231,222,.10)}#top>div:first-child{max-width:620px}#top h1,#top h1 span{color:#fff!important;background:none!important;-webkit-text-fill-color:initial!important}#top h1{font-family:Inter,-apple-system,sans-serif!important;font-style:normal!important;font-weight:800!important;letter-spacing:-.045em!important}#top h1 span{color:#63E0D5!important}#top .glass-muted{color:rgba(247,248,243,.72)!important}#top .glass-pill-track{background:rgba(34,211,197,.10)!important;border-color:rgba(139,231,222,.18)!important}#top .glass-pill-item-active{background:rgba(34,211,197,.12)!important;color:#8BE7DE!important;box-shadow:none!important}#top .glass-btn-primary{background:#0F9D9A!important;color:#fff!important;border-radius:12px!important;padding:13px 22px!important}#top .glass-btn-outline{color:#fff!important;border:1px solid rgba(139,231,222,.36)!important;background:rgba(255,255,255,.035)!important;border-radius:12px!important;padding:12px 22px!important}#top .text-glass-textLight,#top .dark\:text-glass-textDark{color:#fff!important}
+/* Full CQ artwork: no crop. */
+#top .hero-brand-frame{aspect-ratio:4/3.55!important;border-radius:32px!important;background:#052F2E!important;border:1px solid rgba(139,231,222,.16)!important;box-shadow:0 34px 90px rgba(0,0,0,.28)!important;transform:perspective(1100px) rotateY(-5deg) rotateX(2deg);overflow:hidden!important}#top .hero-brand-frame::before{content:""!important;position:absolute!important;inset:18px!important;border-radius:24px!important;padding:0!important;background-color:#052F2E!important;background-image:url('/og.png')!important;background-position:center!important;background-size:contain!important;background-repeat:no-repeat!important;-webkit-mask:none!important;mask:none!important;opacity:1;box-shadow:0 24px 60px rgba(0,0,0,.28)}#top .hero-brand-frame>.hero-visual-bg,#top .hero-brand-frame>.relative{opacity:0!important}#top .absolute.-top-5{border:1px solid rgba(139,231,222,.14)!important;background:#F7F8F3!important}#top .absolute.-bottom-5{background:rgba(247,248,243,.96)!important;backdrop-filter:blur(18px)}
+#top+section{background:#063F3D!important;border-color:rgba(139,231,222,.12)!important;color:#fff!important}#top+section span:not(.text-xs){color:#fff!important}#top+section .text-glass-textLight{color:#fff!important}.hero-visual-bg{background:linear-gradient(145deg,#fff,#F4FBF9 52%,#EEF8F6)!important}.dark .hero-visual-bg{background:linear-gradient(145deg,#041F1F,#073B3A 52%,#052F2E)!important}
+.glass-card{border-color:rgba(8,127,122,.14)!important;box-shadow:0 14px 36px rgba(7,59,58,.09),inset 0 1px 0 rgba(255,255,255,.72)!important}.glass-card::before{background:linear-gradient(135deg,rgba(34,211,197,.32),rgba(15,157,154,.12),transparent)!important}.dark .glass-card{box-shadow:0 12px 38px rgba(0,0,0,.42),0 0 30px -12px rgba(34,211,197,.18)!important}section:not(#top) .glass-card{border-radius:26px!important}section:not(#top) article,section:not(#top) .product-panel{border-color:rgba(8,127,122,.12)!important}.glass-btn-primary,.glass-btn-secondary,.consultation-theme-cta{color:#fff!important;background-image:linear-gradient(135deg,#073B3A,#087F7A 58%,#22D3C5)!important;box-shadow:0 10px 28px -10px rgba(7,59,58,.50)!important}.consultation-theme-cta::after{background:linear-gradient(110deg,transparent 22%,rgba(255,255,255,.26) 48%,transparent 72%)!important}.glass-toggle-thumb{background-image:linear-gradient(135deg,#087F7A,#22D3C5)!important}.theme-select-button{background:#073B3A!important;border-color:#073B3A!important;color:#fff!important}.theme-select-option-active{background:#073B3A!important;color:#fff!important}
+/* Replace ALL old cyan / purple / pink utility colors with ClinIQ brand colors. */
+.from-cyan-300,.from-cyan-400,.from-cyan-500,.from-violet-400,.from-violet-500,.from-violet-600,.from-purple-400,.from-purple-500,.from-purple-600,.from-pink-400,.from-pink-500,.from-pink-600,.from-glass-purple,.from-glass-magenta{--tw-gradient-from:#073B3A var(--tw-gradient-from-position)!important;--tw-gradient-to:rgb(7 59 58/0) var(--tw-gradient-to-position)!important}.via-cyan-300,.via-cyan-400,.via-cyan-500,.via-violet-400,.via-violet-500,.via-violet-600,.via-purple-400,.via-purple-500,.via-purple-600,.via-pink-400,.via-pink-500,.via-pink-600,.via-glass-purple,.via-glass-magenta{--tw-gradient-to:rgb(15 157 154/0) var(--tw-gradient-to-position)!important;--tw-gradient-stops:var(--tw-gradient-from),#087F7A var(--tw-gradient-via-position),var(--tw-gradient-to)!important}.to-cyan-300,.to-cyan-400,.to-cyan-500,.to-violet-400,.to-violet-500,.to-violet-600,.to-purple-400,.to-purple-500,.to-purple-600,.to-pink-400,.to-pink-500,.to-pink-600,.to-glass-purple,.to-glass-magenta{--tw-gradient-to:#22D3C5 var(--tw-gradient-to-position)!important}.text-cyan-400,.text-cyan-500,.text-cyan-600,.text-violet-400,.text-violet-500,.text-violet-600,.text-purple-400,.text-purple-500,.text-purple-600,.text-pink-400,.text-pink-500,.text-pink-600,.text-glass-purple,.text-glass-magenta{color:#087F7A!important}.bg-cyan-400,.bg-cyan-500,.bg-cyan-600,.bg-violet-400,.bg-violet-500,.bg-violet-600,.bg-purple-400,.bg-purple-500,.bg-purple-600,.bg-pink-400,.bg-pink-500,.bg-pink-600,.bg-glass-purple,.bg-glass-magenta{background-color:#087F7A!important}.border-cyan-400,.border-cyan-500,.border-violet-400,.border-violet-500,.border-purple-400,.border-purple-500,.border-pink-400,.border-pink-500{border-color:rgba(8,127,122,.34)!important}
+.about-cinema{background-image:radial-gradient(circle at 8% 18%,rgba(34,211,197,.16),transparent 30%),radial-gradient(circle at 55% 8%,rgba(15,157,154,.12),transparent 32%),radial-gradient(circle at 92% 80%,rgba(7,59,58,.10),transparent 34%)!important}.about-cinema::after{background:linear-gradient(90deg,#22D3C5 0%,#0F9D9A 50%,#073B3A 100%)!important}
+/* Light sections: previously white copy was disappearing; make it dark. Intentional dark hero/footer/CTA remain white. */
+html:not(.dark) section:not(#top) [class*="text-white"]:not(.force-white):not(.glass-btn-primary):not(.glass-btn-secondary):not(.consultation-theme-cta),html:not(.dark) main [class*="text-white"]:not(.force-white){color:#101C1D!important}html:not(.dark) section:not(#top) [class*="text-white/"]:not(.force-white){color:#405758!important}
+footer{background:linear-gradient(180deg,#063F3D,#032B2B)!important;color:#fff!important}footer .glass-muted,footer p,footer a{color:rgba(247,248,243,.72)!important}footer h2,footer h3,footer strong{color:#fff!important}
+@media(max-width:1023px){#top{text-align:center}#top>div:first-child{margin-inline:auto}#top .glass-muted,#top>div:first-child p{margin-left:auto;margin-right:auto}#top>div:first-child>div{justify-content:center}#top .hero-brand-frame{transform:none}}
