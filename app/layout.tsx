@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "./premium-teal.css";
 import { ThemeProvider } from "@/lib/theme";
 import { LangProvider } from "@/lib/i18n";
 
@@ -31,6 +32,8 @@ export const metadata: Metadata = {
   },
   robots: { index: true, follow: true },
 };
+
+export const viewport = { themeColor: "#073B3A" };
 
 const THEME_INIT_SCRIPT = `
 (function() {
