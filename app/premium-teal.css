@@ -17,51 +17,96 @@ body {
   --motion-aura:rgba(34,211,197,.15) !important;
   --motion-scan:rgba(15,157,154,.09) !important;
   background-color:var(--cliniq-ivory) !important;
-  background-image:
-    radial-gradient(circle at 12% 18%,rgba(34,211,197,.12),transparent 38%),
-    radial-gradient(circle at 88% 10%,rgba(8,127,122,.08),transparent 38%),
-    radial-gradient(circle at 55% 96%,rgba(7,59,58,.05),transparent 44%) !important;
+  background-image:radial-gradient(circle at 12% 18%,rgba(34,211,197,.08),transparent 38%),radial-gradient(circle at 88% 10%,rgba(8,127,122,.06),transparent 38%) !important;
 }
-.dark body {
-  --motion-cyan:#22D3C5 !important;
-  --motion-purple:#0F9D9A !important;
-  --motion-pink:#8BE7DE !important;
-  background-color:#041F1F !important;
-  background-image:
-    radial-gradient(circle at 15% 20%,rgba(34,211,197,.10),transparent 40%),
-    radial-gradient(circle at 85% 15%,rgba(8,127,122,.14),transparent 40%),
-    radial-gradient(circle at 50% 90%,rgba(15,157,154,.08),transparent 45%) !important;
-}
+.dark body { background-color:#041F1F !important; }
 
-.hero-visual-bg {
-  background:radial-gradient(circle at 25% 20%,rgba(34,211,197,.22),transparent 38%),radial-gradient(circle at 80% 78%,rgba(8,127,122,.10),transparent 42%),linear-gradient(145deg,#fff,#F4FBF9 52%,#EEF8F6) !important;
+/* Website hero — match the approved dark-teal concept. */
+#top {
+  max-width:none !important;
+  margin:0 !important;
+  padding-left:max(5vw,20px) !important;
+  padding-right:max(5vw,20px) !important;
+  background:
+    radial-gradient(circle at 76% 30%,rgba(34,211,197,.14),transparent 24%),
+    radial-gradient(circle at 58% 85%,rgba(15,157,154,.12),transparent 28%),
+    linear-gradient(135deg,#032B2B 0%,#073B3A 48%,#064F4C 100%) !important;
+  border-bottom:1px solid rgba(139,231,222,.10);
 }
-.dark .hero-visual-bg {
-  background:radial-gradient(circle at 25% 20%,rgba(34,211,197,.22),transparent 38%),radial-gradient(circle at 80% 78%,rgba(15,157,154,.16),transparent 42%),linear-gradient(145deg,#041F1F,#073B3A 52%,#052F2E) !important;
+#top > div:first-child { max-width:620px; }
+#top h1,
+#top h1 span { color:#fff !important; background:none !important; -webkit-text-fill-color:initial !important; }
+#top h1 { font-family:Inter,-apple-system,sans-serif !important; font-style:normal !important; font-weight:800 !important; letter-spacing:-.045em !important; }
+#top h1 span { color:#63E0D5 !important; }
+#top .glass-muted { color:rgba(247,248,243,.72) !important; }
+#top .glass-pill-track { background:rgba(34,211,197,.10) !important; border-color:rgba(139,231,222,.18) !important; }
+#top .glass-pill-item-active { background:rgba(34,211,197,.12) !important; color:#8BE7DE !important; box-shadow:none !important; }
+#top .glass-btn-primary { background:#0F9D9A !important; color:#fff !important; border-radius:12px !important; padding:13px 22px !important; }
+#top .glass-btn-outline { color:#fff !important; border:1px solid rgba(139,231,222,.36) !important; background:rgba(255,255,255,.035) !important; border-radius:12px !important; padding:12px 22px !important; }
+#top .text-glass-textLight,#top .dark\:text-glass-textDark { color:#fff !important; }
+
+/* Turn existing hero visual into a product-photo/mockup block using the real project OG image. */
+#top .hero-brand-frame {
+  aspect-ratio: 4 / 3.55 !important;
+  border-radius:32px !important;
+  background:#052F2E !important;
+  border:1px solid rgba(139,231,222,.16) !important;
+  box-shadow:0 34px 90px rgba(0,0,0,.28) !important;
+  transform:perspective(1100px) rotateY(-5deg) rotateX(2deg);
 }
+#top .hero-brand-frame::before {
+  content:"" !important;
+  position:absolute !important;
+  inset:20px !important;
+  border-radius:24px !important;
+  padding:0 !important;
+  background:url('/og.png') center/cover no-repeat !important;
+  -webkit-mask:none !important;
+  mask:none !important;
+  opacity:.96;
+  box-shadow:0 24px 60px rgba(0,0,0,.28);
+}
+#top .hero-brand-frame > .hero-visual-bg,
+#top .hero-brand-frame > .relative { opacity:0 !important; }
+#top .absolute.-top-5 { border:1px solid rgba(139,231,222,.14) !important; background:#F7F8F3 !important; }
+#top .absolute.-bottom-5 { background:rgba(247,248,243,.96) !important; backdrop-filter:blur(18px); }
+
+/* Trust strip beneath hero, dark like the reference. */
+#top + section {
+  background:#063F3D !important;
+  border-color:rgba(139,231,222,.12) !important;
+  color:#fff !important;
+}
+#top + section span:not(.text-xs) { color:#fff !important; }
+#top + section .text-glass-textLight { color:#fff !important; }
+
+.hero-visual-bg { background:linear-gradient(145deg,#fff,#F4FBF9 52%,#EEF8F6) !important; }
+.dark .hero-visual-bg { background:linear-gradient(145deg,#041F1F,#073B3A 52%,#052F2E) !important; }
 
 .glass-card {
-  border-color:rgba(8,127,122,.18) !important;
-  box-shadow:0 12px 36px rgba(7,59,58,.10),inset 0 1px 0 rgba(255,255,255,.7),0 0 28px -12px rgba(34,211,197,.28) !important;
+  border-color:rgba(8,127,122,.14) !important;
+  box-shadow:0 14px 36px rgba(7,59,58,.09),inset 0 1px 0 rgba(255,255,255,.72) !important;
 }
-.glass-card::before {
-  background:linear-gradient(135deg,rgba(34,211,197,.78),rgba(15,157,154,.50),rgba(7,59,58,.26)) !important;
-}
-.dark .glass-card {
-  box-shadow:0 12px 38px rgba(0,0,0,.42),inset 0 1px 0 rgba(255,255,255,.06),0 0 30px -10px rgba(34,211,197,.22) !important;
+.glass-card::before { background:linear-gradient(135deg,rgba(34,211,197,.32),rgba(15,157,154,.12),transparent) !important; }
+.dark .glass-card { box-shadow:0 12px 38px rgba(0,0,0,.42),0 0 30px -12px rgba(34,211,197,.18) !important; }
+
+/* Clean white service cards like the target screenshot. */
+section:not(#top) .glass-card { border-radius:26px !important; }
+section:not(#top) article,
+section:not(#top) .product-panel {
+  border-color:rgba(8,127,122,.12) !important;
 }
 
 .glass-btn-primary,.glass-btn-secondary,.consultation-theme-cta {
   color:#fff !important;
   background-image:linear-gradient(135deg,#073B3A,#087F7A 58%,#22D3C5) !important;
-  box-shadow:0 10px 28px -10px rgba(7,59,58,.58),0 0 20px -8px rgba(34,211,197,.48) !important;
+  box-shadow:0 10px 28px -10px rgba(7,59,58,.50) !important;
 }
 .consultation-theme-cta::after { background:linear-gradient(110deg,transparent 22%,rgba(255,255,255,.26) 48%,transparent 72%) !important; }
 .glass-toggle-thumb { background-image:linear-gradient(135deg,#087F7A,#22D3C5) !important; }
 .theme-select-button { background:#073B3A !important;border-color:#073B3A !important;color:#fff !important; }
 .theme-select-option-active { background:#073B3A !important;color:#fff !important; }
 
-/* Convert legacy cyan/violet/pink gradients into one recognizable ClinIQ teal family. */
 .from-violet-400,.from-violet-500,.from-violet-600,.from-purple-400,.from-purple-500,.from-purple-600,.from-pink-400,.from-pink-500,.from-pink-600 {
   --tw-gradient-from:#087F7A var(--tw-gradient-from-position) !important;
   --tw-gradient-to:rgb(8 127 122 / 0) var(--tw-gradient-to-position) !important;
@@ -70,14 +115,23 @@ body {
   --tw-gradient-to:rgb(15 157 154 / 0) var(--tw-gradient-to-position) !important;
   --tw-gradient-stops:var(--tw-gradient-from),#0F9D9A var(--tw-gradient-via-position),var(--tw-gradient-to) !important;
 }
-.to-violet-400,.to-violet-500,.to-violet-600,.to-purple-400,.to-purple-500,.to-purple-600,.to-pink-400,.to-pink-500,.to-pink-600 {
-  --tw-gradient-to:#22D3C5 var(--tw-gradient-to-position) !important;
-}
+.to-violet-400,.to-violet-500,.to-violet-600,.to-purple-400,.to-purple-500,.to-purple-600,.to-pink-400,.to-pink-500,.to-pink-600 { --tw-gradient-to:#22D3C5 var(--tw-gradient-to-position) !important; }
 .text-violet-500,.text-violet-600,.text-purple-500,.text-purple-600,.text-pink-500,.text-pink-600 { color:#087F7A !important; }
 .bg-violet-500,.bg-violet-600,.bg-purple-500,.bg-purple-600,.bg-pink-500,.bg-pink-600 { background-color:#087F7A !important; }
 .border-violet-400,.border-violet-500,.border-purple-400,.border-purple-500,.border-pink-400,.border-pink-500 { border-color:rgba(8,127,122,.34) !important; }
 
-.about-cinema {
-  background-image:radial-gradient(circle at 8% 18%,rgba(34,211,197,.16),transparent 30%),radial-gradient(circle at 55% 8%,rgba(15,157,154,.12),transparent 32%),radial-gradient(circle at 92% 80%,rgba(7,59,58,.10),transparent 34%) !important;
-}
+.about-cinema { background-image:radial-gradient(circle at 8% 18%,rgba(34,211,197,.16),transparent 30%),radial-gradient(circle at 55% 8%,rgba(15,157,154,.12),transparent 32%),radial-gradient(circle at 92% 80%,rgba(7,59,58,.10),transparent 34%) !important; }
 .about-cinema::after { background:linear-gradient(90deg,#22D3C5 0%,#0F9D9A 50%,#073B3A 100%) !important; }
+
+/* Footer / lower brand areas get the same dark teal identity. */
+footer { background:linear-gradient(180deg,#063F3D,#032B2B) !important; color:#fff !important; }
+footer .glass-muted, footer p, footer a { color:rgba(247,248,243,.72) !important; }
+footer h2, footer h3, footer strong { color:#fff !important; }
+
+@media (max-width:1023px) {
+  #top { text-align:center; }
+  #top > div:first-child { margin-inline:auto; }
+  #top .glass-muted,#top > div:first-child p { margin-left:auto; margin-right:auto; }
+  #top > div:first-child > div { justify-content:center; }
+  #top .hero-brand-frame { transform:none; }
+}
