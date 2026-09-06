@@ -3,6 +3,8 @@ import "./globals.css";
 import "./premium-teal.css";
 import { ThemeProvider } from "@/lib/theme";
 import { LangProvider } from "@/lib/i18n";
+import SiteLanguageSync from "@/components/SiteLanguageSync";
+import { SiteLanguageProvider } from "@/lib/site-language";
 
 export const metadata: Metadata = {
   title: "ClinIQ — Kerakli shifokor. Sizga qulay vaqtda.",
@@ -55,7 +57,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body suppressHydrationWarning>
         <ThemeProvider>
-          <LangProvider>{children}</LangProvider>
+          <LangProvider><SiteLanguageProvider><SiteLanguageSync />{children}</SiteLanguageProvider></LangProvider>
         </ThemeProvider>
       </body>
     </html>
