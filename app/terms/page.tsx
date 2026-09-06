@@ -53,7 +53,7 @@ export default function TermsPage() {
         <section>
           <h2 className="font-bold text-glass-textLight dark:text-glass-textDark">5. Aloqa</h2>
           <p className="glass-muted mt-1.5">
-            Savollaringiz bo'lsa: <a href="mailto:munisanematova2023@gmail.com" className="underline">munisanematova2023@gmail.com</a> yoki{" "}
+            Savollaringiz bo'lsa: <a href="mailto:cliniq.uz@gmail.com" className="underline">cliniq.uz@gmail.com</a> yoki{" "}
             <a href="tel:+998974646665" className="underline">+998 97 464 66 65</a>
           </p>
         </section>

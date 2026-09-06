@@ -5,9 +5,9 @@ import { ThemeProvider } from "@/lib/theme";
 import { LangProvider } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: "ClinIQ — One continuous record. Every step of care.",
+  title: "ClinIQ — Kerakli shifokor. Sizga qulay vaqtda.",
   description:
-    "ClinIQ connects patients, clinicians and clinics through a secure, clinician-controlled clinical intelligence platform built in Uzbekistan.",
+    "Onlayn ko‘rikdan uzluksiz raqamli tibbiy tarixgacha — bemor va shifokorni birlashtiruvchi O‘zbekiston raqamli sog‘liq platformasi.",
   icons: {
     icon: [
       { url: "/cliniq-logo.jpeg?v=20260828", type: "image/jpeg", sizes: "640x640" },
@@ -17,8 +17,8 @@ export const metadata: Metadata = {
     apple: "/cliniq-logo.jpeg?v=20260828",
   },
   openGraph: {
-    title: "ClinIQ — One continuous record. Every step of care.",
-    description: "Secure clinical intelligence connecting patients, clinicians and clinics.",
+    title: "ClinIQ — Kerakli shifokor. Sizga qulay vaqtda.",
+    description: "Onlayn ko‘rik va uzluksiz raqamli tibbiy tarix bitta platformada.",
     siteName: "ClinIQ",
     locale: "uz_UZ",
     type: "website",
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ClinIQ — One continuous record. Every step of care.",
-    description: "Secure clinical intelligence connecting patients, clinicians and clinics.",
+    title: "ClinIQ — Kerakli shifokor. Sizga qulay vaqtda.",
+    description: "Onlayn ko‘rik va uzluksiz raqamli tibbiy tarix bitta platformada.",
     images: ["https://cliniq-medica.munisanematova2021.chatgpt.site/og.png"],
   },
   robots: { index: true, follow: true },
