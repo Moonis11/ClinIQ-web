@@ -6,8 +6,6 @@ import { useLang, TranslationKey } from "@/lib/i18n";
 const FAQ_ITEMS: { qKey: TranslationKey; aKey: TranslationKey }[] = [
   { qKey: "faq_1_q", aKey: "faq_1_a" },
   { qKey: "faq_2_q", aKey: "faq_2_a" },
-  { qKey: "faq_3_q", aKey: "faq_3_a" },
-  { qKey: "faq_4_q", aKey: "faq_4_a" },
   { qKey: "faq_5_q", aKey: "faq_5_a" },
   { qKey: "faq_6_q", aKey: "faq_6_a" },
 ];

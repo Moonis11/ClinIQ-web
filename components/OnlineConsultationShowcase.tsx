@@ -8,7 +8,7 @@ export default function OnlineConsultationShowcase() {
     uz: { specialty: "Kardiolog • 12 yil tajriba", verified: "Tasdiqlangan", languages: "Tillar", available: "Bugun bo'sh vaqtlar", book: "Xavfsiz konsultatsiyani band qilish", secure: "Himoyalangan video konsultatsiya", connected: "Shifokor ulandi", workflow: "Uzluksiz tibbiy xizmat", controls: ["Mikrofon", "Kamera", "Chat"], end: "Yakunlash" },
     ru: { specialty: "Кардиолог • 12 лет опыта", verified: "Проверено", languages: "Языки", available: "Свободно сегодня", book: "Записаться на защищённую консультацию", secure: "Защищённая видеоконсультация", connected: "Врач подключён", workflow: "Непрерывный процесс лечения", controls: ["Микрофон", "Камера", "Чат"], end: "Завершить" },
     en: { specialty: "Cardiology • 12 years", verified: "Verified", languages: "Languages", available: "Available today", book: "Book secure consultation", secure: "Secure video consultation", connected: "Doctor connected", workflow: "End-to-end care workflow", controls: ["Mic", "Cam", "Chat"], end: "End" },
-  }[lang];
+  }[lang === "uzc" ? "uz" : lang];
   return (
     <div className="product-visual relative min-h-[390px] overflow-hidden rounded-[2rem] p-4 sm:p-6">
       <div className="pointer-events-none absolute -left-24 -top-24 h-72 w-72 rounded-full bg-cyan-400/25 blur-3xl" />

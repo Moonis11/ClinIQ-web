@@ -84,7 +84,7 @@ export function AboutMockup() {
     uz: { live: "Jonli tibbiy tarix", patient: "Bemor profili", events: ["Qabul band qilindi", "Tahlil natijasi tayyor", "Shifokor xulosasi saqlandi"], secure: "Himoyalangan", updated: "Hozirgina yangilandi" },
     ru: { live: "Живая история здоровья", patient: "Профиль пациента", events: ["Приём забронирован", "Результат анализа готов", "Заключение врача сохранено"], secure: "Защищено", updated: "Обновлено сейчас" },
     en: { live: "Live health record", patient: "Patient profile", events: ["Visit booked", "Lab result ready", "Clinician note saved"], secure: "Protected", updated: "Updated just now" },
-  }[lang];
+  }[lang === "uzc" ? "uz" : lang];
   return (
     <div className="about-cinema product-visual relative flex h-full w-full flex-col overflow-hidden p-5 sm:p-6">
       <div className="about-cinema-glow absolute -right-12 -top-16 h-44 w-44 rounded-full bg-gradient-to-br from-cyan-300/25 via-violet-400/20 to-pink-400/25 blur-3xl" />
@@ -120,12 +120,12 @@ export function AboutMockup() {
 
 export function PatientDashboardMockup() {
   const { lang } = useLang();
-  const mode = { uz: "BEMOR", ru: "ПАЦИЕНТ", en: "PATIENT" }[lang];
+  const mode = { uz: "BEMOR", ru: "ПАЦИЕНТ", en: "PATIENT" }[lang === "uzc" ? "uz" : lang];
   const copy = {
     uz: { hello: "Xayrli kun, Madina", record: "Sog'liq markazi", next: "Keyingi konsultatsiya", doctor: "Dr. Dilnoza Karimova", time: "Bugun · 16:30", join: "Video xonaga kirish", meds: "Dori rejasi", med: "Vitamin D · 1 kapsula", result: "Yangi natija", lab: "Umumiy qon tahlili", ready: "Tayyor", history: "Tibbiy tarix" },
     ru: { hello: "Добрый день, Мадина", record: "Центр здоровья", next: "Следующая консультация", doctor: "Д-р Дилноза Каримова", time: "Сегодня · 16:30", join: "Войти в видеочат", meds: "План лечения", med: "Витамин D · 1 капсула", result: "Новый результат", lab: "Общий анализ крови", ready: "Готов", history: "История здоровья" },
     en: { hello: "Good afternoon, Madina", record: "Health center", next: "Next consultation", doctor: "Dr Dilnoza Karimova", time: "Today · 16:30", join: "Join video room", meds: "Medication plan", med: "Vitamin D · 1 capsule", result: "New result", lab: "Complete blood count", ready: "Ready", history: "Health timeline" },
-  }[lang];
+  }[lang === "uzc" ? "uz" : lang];
   return (
     <div className="dashboard-enter product-visual relative flex h-full w-full flex-col gap-3 overflow-hidden p-4 sm:p-5">
       <div className="dashboard-scan" aria-hidden="true" />
@@ -153,12 +153,12 @@ export function PatientDashboardMockup() {
 
 export function ClinicDashboardMockup() {
   const { lang } = useLang();
-  const mode = { uz: "BOSHQARUV", ru: "УПРАВЛЕНИЕ", en: "OPERATIONS" }[lang];
+  const mode = { uz: "BOSHQARUV", ru: "УПРАВЛЕНИЕ", en: "OPERATIONS" }[lang === "uzc" ? "uz" : lang];
   const copy = {
     uz: { title: "Klinika boshqaruvi", live: "Jonli", patients: "Bugungi bemorlar", doctors: "Shifokorlar", revenue: "Oylik tushum", queue: "Qabul navbati", analytics: "Haftalik qabul", statuses: ["Qabulda", "Kutilmoqda", "Tahlilda"] },
     ru: { title: "Управление клиникой", live: "Онлайн", patients: "Пациенты сегодня", doctors: "Врачи", revenue: "Доход за месяц", queue: "Очередь приёма", analytics: "Приёмы за неделю", statuses: ["На приёме", "Ожидает", "Анализы"] },
     en: { title: "Clinic operations", live: "Live", patients: "Patients today", doctors: "Clinicians", revenue: "Monthly revenue", queue: "Appointment queue", analytics: "Weekly visits", statuses: ["In consultation", "Waiting", "In lab"] },
-  }[lang];
+  }[lang === "uzc" ? "uz" : lang];
   const patients = ["M. Abdukarimova", "A. Yusupov", "D. Rasulova"];
   return (
     <div className="dashboard-enter product-visual relative flex h-full w-full flex-col overflow-hidden p-4 sm:p-5">

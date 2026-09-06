@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useEffect, useState, ReactNode } from "react";
 
-export type Lang = "uz" | "ru" | "en";
+export type Lang = "uz" | "uzc" | "ru" | "en";
 
 const translations = {
   nav_features: { uz: "Xususiyatlar", ru: "Возможности", en: "Features" },
@@ -65,7 +65,6 @@ const translations = {
   },
   nav_about: { uz: "ClinIQ haqida", ru: "О ClinIQ", en: "About ClinIQ" },
   nav_patients: { uz: "Bemorlar uchun", ru: "Для пациентов", en: "For patients" },
-  nav_pricing: { uz: "Narxlar", ru: "Цены", en: "Pricing" },
   nav_clinics: { uz: "Klinikalar uchun", ru: "Для клиник", en: "For clinics" },
   nav_login: { uz: "Kirish", ru: "Войти", en: "Sign in" },
   hero_eyebrow: { uz: "O'zbekistonda yaratilgan klinik intellekt platformasi", ru: "Платформа клинического интеллекта из Узбекистана", en: "Clinical intelligence, built in Uzbekistan" },
@@ -166,7 +165,7 @@ const translations = {
   pf_3_title: { uz: "Shifokor reytingi", ru: "Рейтинг врача", en: "Doctor ratings" },
   pf_3_desc: { uz: "Har bir shifokorning boshqa bemorlar bergan bahosi va sharhlarini ko'rib, ongli tanlov qiling.", ru: "Смотрите оценки и отзывы других пациентов о враче и выбирайте осознанно.", en: "See ratings and reviews from other patients before you choose a doctor." },
   pf_4_title: { uz: "Klinikalarni solishtirish", ru: "Сравнение клиник", en: "Compare clinics" },
-  pf_4_desc: { uz: "Narx, navbat uzunligi va reyting bo'yicha eng yaqin klinikalarni solishtiring.", ru: "Сравнивайте ближайшие клиники по цене, длине очереди и рейтингу.", en: "Compare nearby clinics by price, queue length, and rating." },
+  pf_4_desc: { uz: "Joylashuv, navbat uzunligi va reyting bo'yicha eng yaqin klinikalarni solishtiring.", ru: "Сравнивайте ближайшие клиники по расположению, длине очереди и рейтингу.", en: "Compare nearby clinics by location, queue length, and rating." },
   pf_5_title: { uz: "AI sog'liq maslahati", ru: "Консультация ИИ по здоровью", en: "AI health consultation" },
   pf_5_desc: { uz: "Shaxsiy tibbiy tarixingiz asosida javob beradigan AI yordamchidan maslahat oling.", ru: "Получите совет от ИИ-помощника, который учитывает вашу личную медицинскую историю.", en: "Get advice from an AI assistant that considers your personal medical history." },
   pf_6_title: { uz: "Tahlil va radiologiya natijalari", ru: "Результаты анализов и радиологии", en: "Lab and radiology results" },
@@ -199,24 +198,6 @@ const translations = {
   cf_6_desc: { uz: "Bemor tarixi raqamli saqlanadi, qayta kiritish shart emas — vaqt tejaladi.", ru: "История пациента хранится в цифровом виде, повторный ввод не нужен - экономия времени.", en: "Patient history is stored digitally, no re-entry needed — saving time." },
 
   footer_tagline: { uz: "O'zbekistonda AI asosidagi klinik intellekt platformasi.", ru: "Платформа клинического интеллекта на основе ИИ в Узбекистане.", en: "AI-powered clinical intelligence platform in Uzbekistan." },
-
-  // --- B2B narxlar ---
-  pricing_title: { uz: "Klinikalar uchun narxlar", ru: "Цены для клиник", en: "Pricing for clinics" },
-  pricing_subtitle: { uz: "Bepul sinovdan boshlang, o'sishingiz bilan tarifni oshiring", ru: "Начните с бесплатного пробного периода и повышайте тариф по мере роста", en: "Start with a free trial and upgrade as you grow" },
-  pricing_per_doctor_note: { uz: "* Narx klinikadagi har bir shifokor uchun alohida hisoblanadi", ru: "* Цена рассчитывается отдельно за каждого врача в клинике", en: "* Price is calculated per doctor at your clinic" },
-  price_popular_badge: { uz: "Eng ko'p tanlanadi", ru: "Популярный", en: "Most popular" },
-  price_trial_name: { uz: "Sinov", ru: "Пробный", en: "Trial" },
-  price_trial_price: { uz: "Bepul", ru: "Бесплатно", en: "Free" },
-  price_trial_limit: { uz: "Kuniga 1 ta AI tahlili", ru: "1 анализ ИИ в день", en: "1 AI analysis per day" },
-  price_basic_name: { uz: "Asosiy", ru: "Базовый", en: "Basic" },
-  price_basic_price: { uz: "$39 / shifokor / oyiga", ru: "$39 / врач / в месяц", en: "$39 / doctor / month" },
-  price_basic_limit: { uz: "Kuniga 5 ta AI tahlili", ru: "5 анализов ИИ в день", en: "5 AI analyses per day" },
-  price_pro_name: { uz: "Pro", ru: "Про", en: "Pro" },
-  price_pro_price: { uz: "$59 / shifokor / oyiga", ru: "$59 / врач / в месяц", en: "$59 / doctor / month" },
-  price_pro_limit: { uz: "Kuniga 10 ta AI tahlili", ru: "10 анализов ИИ в день", en: "10 AI analyses per day" },
-  price_corporate_name: { uz: "Korporativ", ru: "Корпоративный", en: "Corporate" },
-  price_corporate_price: { uz: "Individual narx", ru: "Индивидуальная цена", en: "Custom pricing" },
-  price_corporate_limit: { uz: "Kuniga 20 ta AI tahlili", ru: "20 анализов ИИ в день", en: "20 AI analyses per day" },
 
   // --- Klinika so'rov formasi ---
   contact_field_name: { uz: "Ismingiz", ru: "Ваше имя", en: "Your name" },
@@ -261,10 +242,6 @@ const translations = {
   faq_1_a: { uz: "Ha. Barcha ma'lumotlar shifrlangan holda saqlanadi, parollar hash'lanadi, tizimga kirish JWT autentifikatsiya orqali himoyalangan. Batafsil - Maxfiylik siyosati sahifasida.", ru: "Да. Все данные хранятся в зашифрованном виде, пароли хешируются, вход в систему защищён JWT-аутентификацией. Подробнее - на странице политики конфиденциальности.", en: "Yes. All data is stored encrypted, passwords are hashed, and login is protected via JWT authentication. See the Privacy Policy page for details." },
   faq_2_q: { uz: "AI tashxis qo'yadimi?", ru: "Ставит ли ИИ диагноз?", en: "Does the AI make a diagnosis?" },
   faq_2_a: { uz: "Yo'q. AI hech qachon rasmiy tashxis yoki davolash tavsiyasi bermaydi - faqat umumiy ma'lumot beradi va kerak bo'lganda shifokorga murojaat qilishni tavsiya qiladi. Yakuniy qarorni doim shifokor qabul qiladi.", ru: "Нет. ИИ никогда не ставит официальный диагноз и не даёт рекомендаций по лечению - только общую информацию и совет обратиться к врачу при необходимости. Окончательное решение всегда принимает врач.", en: "No. The AI never provides an official diagnosis or treatment recommendation — only general information, and it advises seeing a doctor when needed. The doctor always makes the final decision." },
-  faq_3_q: { uz: "Bemorlar uchun bepulmi?", ru: "Бесплатно ли для пациентов?", en: "Is it free for patients?" },
-  faq_3_a: { uz: "Hozircha ha - ilova sinov rejimida, bemorlar uchun bepul taqdim etilmoqda.", ru: "Пока да - приложение находится в тестовом режиме и предоставляется пациентам бесплатно.", en: "Currently yes — the app is in test mode and offered to patients for free." },
-  faq_4_q: { uz: "Klinika uchun narx qanday belgilanadi?", ru: "Как формируется цена для клиники?", en: "How is clinic pricing determined?" },
-  faq_4_a: { uz: "Narx shifokorlar soniga va kunlik AI tahlil limitiga qarab belgilanadi - Sinov (bepul) dan Korporativgacha. Batafsil - yuqoridagi narxlar jadvalida.", ru: "Цена зависит от количества врачей и дневного лимита анализов ИИ - от Пробного (бесплатно) до Корпоративного. Подробнее - в таблице цен выше.", en: "Price depends on the number of doctors and the daily AI-analysis limit — from Trial (free) to Corporate. See the pricing table above for details." },
   faq_5_q: { uz: "ClinIQ boshqa tizimlardan nimasi bilan farq qiladi?", ru: "Чем ClinIQ отличается от других систем?", en: "How is ClinIQ different from other systems?" },
   faq_5_a: { uz: "ClinIQ - shaxsiy AI maslahat, favqulodda tibbiy karta (QR orqali, login'siz), elektron retsept, shifokor reytingi va klinikalarni narx/navbat bo'yicha solishtirish kabi xususiyatlarga ega, va klinikaga bormasdan mustaqil ro'yxatdan o'tish imkonini beradi.", ru: "ClinIQ предлагает персональную консультацию ИИ, карту неотложной помощи (через QR, без входа), электронный рецепт, рейтинг врачей и сравнение клиник по цене/очереди, а также самостоятельную регистрацию без визита в клинику.", en: "ClinIQ offers personal AI consultation, an emergency medical card (via QR, no login), electronic prescriptions, doctor ratings, and clinic comparison by price/queue — plus self-registration without visiting a clinic." },
   faq_6_q: { uz: "Telefonim yo'qolsa, Favqulodda kartam nima bo'ladi?", ru: "Что будет с картой неотложной помощи, если я потеряю телефон?", en: "What happens to my emergency card if I lose my phone?" },
@@ -296,7 +273,7 @@ export function LangProvider({ children }: { children: ReactNode }) {
   }
 
   function t(key: TranslationKey): string {
-    return translations[key]?.[lang] ?? key;
+    return translations[key]?.[lang === "uzc" ? "uz" : lang] ?? key;
   }
 
   return <LangContext.Provider value={{ lang, setLang, t }}>{children}</LangContext.Provider>;

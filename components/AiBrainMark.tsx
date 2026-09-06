@@ -14,7 +14,7 @@ export default function AiBrainMark() {
     uz: { eyebrow: "ClinIQ intellekti", title: "Klinik xavf ko'rsatkichi", assisted: "AI yordami", risk: "Umumiy xavf", low: "Past", stable: "Barqaror", insight: "AI tahlili", note: "Ko'rsatkichlar barqaror. Shifokor nazoratini davom ettiring.", decision: "Yakuniy qaror", controlled: "Shifokor nazoratida" },
     ru: { eyebrow: "Интеллект ClinIQ", title: "Обзор клинического риска", assisted: "С поддержкой ИИ", risk: "Общий риск", low: "Низкий", stable: "Стабильно", insight: "Анализ ИИ", note: "Показатели стабильны. Продолжите врачебный контроль.", decision: "Итоговое решение", controlled: "Под контролем врача" },
     en: { eyebrow: "ClinIQ intelligence", title: "Clinical risk overview", assisted: "AI assisted", risk: "Overall risk", low: "Low", stable: "Stable", insight: "AI insight", note: "Trend is stable. Continue clinician review.", decision: "Final decision", controlled: "Clinician controlled" },
-  }[lang];
+  }[lang === "uzc" ? "uz" : lang];
   return (
     <div className="product-visual relative h-full w-full overflow-hidden rounded-[1.75rem] p-4 sm:p-5">
       <div className="pointer-events-none absolute -right-16 -top-20 h-52 w-52 rounded-full bg-violet-500/20 blur-3xl" />
